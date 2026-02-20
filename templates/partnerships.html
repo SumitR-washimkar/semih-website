@@ -1,0 +1,424 @@
+{% extends 'base.html' %}
+
+{% block title %}Partnerships - MedTalks{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/partnerships.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/contact.css') }}">
+{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="partnerships-hero">
+    <div class="container">
+        <div class="hero-grid">
+            <div class="hero-content">
+                <h1 class="hero-title">PARTNERSHIPS</h1>
+                <h2 class="hero-heading">Institutional Solutions for Professional Medical Communication</h2>
+                <p class="hero-subheadline">MEDTALKS partners with universities, hospitals, schools, and clinics to deliver structured speaking training, scalable assessment, and AI-powered communication tools for healthcare and education systems.</p>
+                <p class="hero-supporting">Our partnership models are designed to support measurable speaking outcomes, academic integrity, and real-world clinical communication — without adding unsustainable teaching load or compromising professional standards.</p>
+                <a href="#contact" class="btn-signup">
+                    Request a Partnership Demo
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&h=600&fit=crop" alt="Partnership Illustration" class="partnership-img">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Section 2: Why Partner with MEDTALKS -->
+<section class="why-partner">
+    <div class="container">
+        <div class="why-partner-grid">
+            <!-- Left Side: 4 Images in Grid -->
+            <div class="single-image-container">
+                <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&h=600&fit=crop" alt="University partnership" class="partner-image">
+                <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=600&h=600&fit=crop" alt="Hospital collaboration" class="partner-image">
+                <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=600&h=600&fit=crop" alt="School education" class="partner-image">
+                <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=600&fit=crop" alt="Clinical training" class="partner-image">
+            </div>
+
+            <!-- Right Side: Content -->
+            <div class="why-partner-content">
+                <p class="section-tag">WHY PARTNER WITH MEDTALKS</p>
+                <h2 class="section-main-title">Built for Institutions, Not Casual Training</h2>
+                <p class="section-description">Professional communication cannot be outsourced to generic language platforms. MEDTALKS provides academically designed speaking systems that integrate into existing institutional structures.</p>
+
+                <h3 class="what-institutions-gain">What institutions gain:</h3>
+
+                <div class="numbered-benefits">
+                    <div class="benefit-item">
+                        <div class="benefit-number">01</div>
+                        <div class="benefit-content">
+                            <p>Profession-specific speaking pathways (B1–C1)</p>
+                        </div>
+                    </div>
+
+                    <div class="benefit-item">
+                        <div class="benefit-number">02</div>
+                        <div class="benefit-content">
+                            <p>Structured, repeatable communication training</p>
+                        </div>
+                    </div>
+
+                    <div class="benefit-item">
+                        <div class="benefit-number">03</div>
+                        <div class="benefit-content">
+                            <p>Scalable assessment without excessive staffing</p>
+                        </div>
+                    </div>
+
+                    <div class="benefit-item">
+                        <div class="benefit-number">04</div>
+                        <div class="benefit-content">
+                            <p>AI-supported practice aligned with academic standards</p>
+                        </div>
+                    </div>
+
+                    <div class="benefit-item">
+                        <div class="benefit-number">05</div>
+                        <div class="benefit-content">
+                            <p>Clear implementation and reporting frameworks</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Section 3: Core Partnership Solutions -->
+<section class="core-solutions">
+    <div class="solutions-container">
+        <div class="solutions-header">
+            <h2 class="solutions-title">Core Partnership Solutions</h2>
+            <p class="solutions-intro">MEDTALKS offers modular solutions that can be deployed independently or combined.</p>
+        </div>
+
+        <div class="solutions-cards-wrapper">
+            <div class="solution-card-new">
+                <div class="solution-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=400&h=300&fit=crop" alt="Dr Meddy" class="solution-image">
+                    <div class="solution-badge">POPULAR</div>
+                </div>
+                <div class="solution-info">
+                    <div class="solution-meta">
+                        <span class="solution-tag">Medical AI</span>
+                        <span class="solution-tag">Speaking</span>
+                    </div>
+                    <h3 class="solution-title">Dr Meddy</h3>
+                    <p class="solution-desc">Medical Speaking Agent for clinical communication training</p>
+                    <a href="#" class="solution-link">
+                        Learn More
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="solution-card-new">
+                <div class="solution-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=400&h=300&fit=crop" alt="Mr Brown" class="solution-image">
+                    <div class="solution-badge">ASSESSMENT</div>
+                </div>
+                <div class="solution-info">
+                    <div class="solution-meta">
+                        <span class="solution-tag">Assessment</span>
+                        <span class="solution-tag">General</span>
+                    </div>
+                    <h3 class="solution-title">Mr Brown</h3>
+                    <p class="solution-desc">General English Speaking Assessment Agent for institutions</p>
+                    <a href="#" class="solution-link">
+                        Learn More
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="solution-card-new">
+                <div class="solution-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=400&h=300&fit=crop" alt="OET Speaking Agents" class="solution-image">
+                    <div class="solution-badge">EXAM PREP</div>
+                </div>
+                <div class="solution-info">
+                    <div class="solution-meta">
+                        <span class="solution-tag">OET</span>
+                        <span class="solution-tag">Exam</span>
+                    </div>
+                    <h3 class="solution-title">OET Speaking Agents</h3>
+                    <p class="solution-desc">Exam-aligned role-play practice (Medicine, Dentistry, Veterinary Science)</p>
+                    <a href="#" class="solution-link">
+                        Learn More
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="solution-card-new">
+                <div class="solution-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=400&h=300&fit=crop" alt="MedTalks Coursebooks" class="solution-image">
+                    <div class="solution-badge">CURRICULUM</div>
+                </div>
+                <div class="solution-info">
+                    <div class="solution-meta">
+                        <span class="solution-tag">Coursebook</span>
+                        <span class="solution-tag">Blended</span>
+                    </div>
+                    <h3 class="solution-title">MedTalks Coursebooks</h3>
+                    <p class="solution-desc">Structured speaking curricula for classroom and blended delivery</p>
+                    <a href="#" class="solution-link">
+                        Learn More
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <p class="solutions-footer-text">Each solution is supported by onboarding, academic guidance, and optional reporting structures.</p>
+    </div>
+</section>
+
+<!-- Partnership Models Section -->
+<section class="partnership-models-section">
+    <div class="container">
+        <h2 class="models-main-heading">PARTNERSHIP MODELS</h2>
+
+        <div class="models-content-grid">
+            <!-- Left Side: Image (30%) -->
+            <div class="models-image-container">
+                <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=600&h=800&fit=crop" alt="University Partnership" class="models-image">
+            </div>
+
+            <!-- Right Side: Content (70%) -->
+            <div class="models-text-container">
+                <h3 class="models-heading">University Partnerships</h3>
+                <p class="models-paragraph">
+                    For universities and faculties that require measurable speaking outcomes at scale.
+                    <br><br>
+                    We support universities in launching speaking programmes aligned with curriculum objectives and clinical communication standards.
+                </p>
+
+                <!-- Tables Side by Side -->
+                <div class="models-tables-container">
+                    <!-- Table 1: Typical use cases -->
+                    <div class="models-table">
+                        <h4 class="table-title">Typical use cases:</h4>
+                        <ul class="table-list">
+                            <li>Medical English speaking labs and electives</li>
+                            <li>Faculty-wide speaking placement and progression workflows</li>
+                            <li>OET preparation modules (Medicine / Dentistry / Veterinary Science)</li>
+                            <li>Blended delivery using coursebooks + AI agents</li>
+                        </ul>
+                    </div>
+
+                    <!-- Table 2: What we provide -->
+                    <div class="models-table">
+                        <h4 class="table-title">What we provide:</h4>
+                        <ul class="table-list">
+                            <li>Department-aligned speaking pathways (B1–C1)</li>
+                            <li>Custom prompts, scenarios, and rubrics (CEFR-style, adaptable)</li>
+                            <li>Staff and student cohort onboarding</li>
+                            <li>Implementation guidance and reporting structure</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- School Partnerships - Reverse Layout -->
+    <div class="models-section-wrapper models-dark-bg">
+            <div class="models-content-grid models-content-reverse">
+                <!-- Left Side: Content (70%) -->
+                <div class="models-text-container">
+                    <h3 class="models-heading">School Partnerships</h3>
+                    <p class="models-paragraph">
+                        For schools that need scalable speaking assessment without heavy teacher allocation.
+                        <br><br>
+                        Mr Brown enables standardised speaking evaluation with consistent timing, prompts, and outcomes aligned with CEFR-based school rubrics.
+                    </p>
+
+                    <!-- Tables Side by Side -->
+                    <div class="models-tables-container">
+                        <!-- Table 1: Typical use cases -->
+                        <div class="models-table">
+                            <h4 class="table-title">Typical use cases:</h4>
+                            <ul class="table-list">
+                                <li>Placement speaking tests and level streaming</li>
+                                <li>Midterm and final speaking exams</li>
+                                <li>Progress checks across cohorts</li>
+                                <li>Standardised evaluation aligned with internal rubrics</li>
+                            </ul>
+                        </div>
+
+                        <!-- Table 2: What we provide -->
+                        <div class="models-table">
+                            <h4 class="table-title">What we provide:</h4>
+                            <ul class="table-list">
+                                <li>CEFR-aligned criteria adaptable to school needs</li>
+                                <li>Custom question sets co-designed with academic teams</li>
+                                <li>Clear reporting to support placement and progression decisions</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Right Side: Image (30%) -->
+                <div class="models-image-container">
+                    <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&h=800&fit=crop" alt="School Partnership" class="models-image">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Clinic Partnerships - Same Layout as First -->
+    <div class="container">
+        <div class="models-content-grid">
+            <!-- Left Side: Image (30%) -->
+            <div class="models-image-container">
+                <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=600&h=800&fit=crop" alt="Clinic Partnership" class="models-image">
+            </div>
+
+            <!-- Right Side: Content (70%) -->
+            <div class="models-text-container">
+                <h3 class="models-heading">Clinic Partnerships</h3>
+                <p class="models-paragraph">
+                    For private clinics that need confident, professional English communication in daily practice.
+                    <br><br>
+                    We support clinics with targeted speaking training focused on patient flow, explanations, and follow-up communication.
+                </p>
+
+                <!-- Tables Side by Side -->
+                <div class="models-tables-container">
+                    <!-- Table 1: Typical use cases -->
+                    <div class="models-table">
+                        <h4 class="table-title">Typical use cases:</h4>
+                        <ul class="table-list">
+                            <li>English for patient intake, triage, and follow-up</li>
+                            <li>Procedure explanations and post-treatment instructions</li>
+                            <li>Dentistry, aesthetic, physiotherapy clinic communication tracks</li>
+                            <li>Fast improvement through repeatable micro-sessions</li>
+                        </ul>
+                    </div>
+
+                    <!-- Table 2: What we provide -->
+                    <div class="models-table">
+                        <h4 class="table-title">What we provide:</h4>
+                        <ul class="table-list">
+                            <li>Specialty-focused speaking modules</li>
+                            <li>Patient-friendly, risk-appropriate communication patterns</li>
+                            <li>Flexible access for individual clinicians or teams</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Faculty Representative Programme - Reverse Layout -->
+    <div class="models-section-wrapper models-dark-bg">
+            <div class="models-content-grid models-content-reverse">
+                <!-- Left Side: Content (70%) -->
+                <div class="models-text-container">
+                    <h3 class="models-heading">Faculty Representative Programme</h3>
+                    <p class="models-paragraph">Become a MEDTALKS Faculty Representative</p>
+                    <p class="models-paragraph">
+                        Faculty representatives help deliver speaking workshops and demo sessions within their institutions while earning per event and per referral.
+                    </p>
+
+                    <!-- Tables Side by Side -->
+                    <div class="models-tables-container">
+                        <!-- Table 1: How it works -->
+                        <div class="models-table">
+                            <h4 class="table-title">How it works:</h4>
+                            <ul class="table-list">
+                                <li>Organise workshops, demos, or speaking challenges</li>
+                                <li>Promote MEDTALKS through official campus channels</li>
+                                <li>Refer enrolments using a unique link or code</li>
+                            </ul>
+                        </div>
+
+                        <!-- Table 2: How representatives are compensated -->
+                        <div class="models-table">
+                            <h4 class="table-title">How representatives are compensated:</h4>
+                            <ul class="table-list">
+                                <li>Payment per approved and completed event</li>
+                                <li>Payment per verified enrolment referral</li>
+                                <li>Optional performance-based bonuses</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Side: Image (30%) -->
+                <div class="models-image-container">
+                    <img src="https://images.unsplash.com/photo-1571260899304-425eee4c7efc?w=600&h=800&fit=crop" alt="Faculty Representative" class="models-image">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-contact-section">
+    <div class="container">
+        <div class="cta-contact-container">
+            <!-- Left Content -->
+            <div class="cta-contact-content">
+                <h2 class="cta-contact-title">Let's Build a Communication System That Works</h2>
+                <p class="cta-contact-description">
+                    If your institution values professional communication, patient safety, and measurable outcomes, MEDTALKS is ready to partner with you.
+                </p>
+
+                <div class="cta-contact-buttons">
+                    <a href="#" class="btn-cta-primary">Request a Partnership</a>
+                    <a href="#" class="btn-cta-secondary">Try Demo</a>
+                </div>
+
+                <div class="cta-contact-trust">
+                    <div class="trust-avatars">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Student"
+                            class="trust-avatar">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Student"
+                            class="trust-avatar">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Student"
+                            class="trust-avatar">
+                        <img src="https://randomuser.me/api/portraits/men/46.jpg" alt="Student"
+                            class="trust-avatar">
+                    </div>
+                    <p class="trust-text">Trusted by over 10k students</p>
+                </div>
+            </div>
+
+            <!-- Right Image/Video -->
+            <div class="cta-contact-media">
+                <div class="cta-media-wrapper">
+                    <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&h=400&fit=crop" alt="Medical Student"
+                        class="cta-image">
+                    <button class="cta-play-button" aria-label="Play video">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            fill="currentColor">
+                            <path d="M8 5v14l11-7z" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

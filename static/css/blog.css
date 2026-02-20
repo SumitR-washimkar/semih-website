@@ -1,0 +1,5 @@
+/* Blog Page Header Override */
+.page-header {
+    background: var(--primary-color);
+    text-align: center;
+}

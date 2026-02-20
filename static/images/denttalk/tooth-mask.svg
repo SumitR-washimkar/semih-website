@@ -1,0 +1,4 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+    <!-- Molar/Tooth Shape Path -->
+    <path d="M20,25 Q35,5 50,20 Q65,5 80,25 Q95,40 90,70 Q85,100 50,90 Q15,100 10,70 Q5,40 20,25 Z" fill="black"/>
+</svg>

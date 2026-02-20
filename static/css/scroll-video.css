@@ -1,0 +1,121 @@
+/* Scroll Video Section */
+.scroll-video-section {
+    position: relative;
+    width: 100%;
+    height: 400vh;
+    background: #000;
+}
+
+#scroll-video-canvas {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: block;
+}
+
+.scroll-video-content {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.scroll-video-text {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    color: white;
+}
+
+.scroll-video-title {
+    position: absolute;
+    top: 15%;
+    right: 5%;
+    max-width: 650px;
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #fff;
+    text-align: right;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.scroll-video-title.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.scroll-video-description {
+    position: absolute;
+    bottom: 15%;
+    left: 5%;
+    max-width: 500px;
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 1rem;
+    text-align: left;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.scroll-video-description:first-of-type {
+    bottom: 25%;
+}
+
+.scroll-video-description:last-of-type {
+    bottom: 10%;
+}
+
+.scroll-video-description.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+    .scroll-video-text {
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    .scroll-video-title {
+        position: static;
+        font-size: 1.5rem;
+        text-align: left;
+        max-width: 100%;
+        margin-bottom: 1.5rem;
+        padding: 1rem 1.5rem;
+        background: rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(8px);
+        border-radius: 8px;
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+    }
+
+    .scroll-video-description {
+        position: static;
+        font-size: 1rem;
+        max-width: 100%;
+        text-align: left;
+        padding: 1rem 1.5rem;
+        background: rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(8px);
+        border-radius: 8px;
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+    }
+
+    .scroll-video-description:first-of-type,
+    .scroll-video-description:last-of-type {
+        bottom: auto;
+    }
+}

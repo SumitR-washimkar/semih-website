@@ -1,0 +1,237 @@
+/* Dr Meddy Audio Practice Section */
+.dr-meddy-section {
+    padding: 5rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Parallax Background */
+.dr-meddy-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1920&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    opacity: 0.7;
+    z-index: 0;
+}
+
+/* Overlay for better readability */
+.dr-meddy-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(248, 249, 250, 0.9) 0%, rgba(255, 255, 255, 0.85) 50%, rgba(240, 244, 248, 0.9) 100%);
+    z-index: 1;
+}
+
+/* Ensure content stays above background */
+.dr-meddy-section > .container {
+    position: relative;
+    z-index: 2;
+}
+
+.dr-meddy-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.dr-meddy-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin-bottom: 1rem;
+}
+
+.dr-meddy-subtitle {
+    font-size: 1.1rem;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Audio Cards Grid */
+.audio-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Individual Audio Card */
+.audio-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem 1.5rem;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.audio-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(255, 77, 79, 0.12);
+    border-color: rgba(255, 77, 79, 0.2);
+}
+
+.audio-card-content {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex: 1;
+}
+
+/* Audio Wave Animation */
+.audio-wave {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    height: 30px;
+}
+
+.audio-wave-bar {
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, #ff4d4f 0%, #ff7875 100%);
+    border-radius: 4px;
+    animation: audioWave 1.2s ease-in-out infinite;
+}
+
+.audio-wave-bar:nth-child(1) {
+    height: 60%;
+    animation-delay: 0s;
+}
+
+.audio-wave-bar:nth-child(2) {
+    height: 100%;
+    animation-delay: 0.2s;
+}
+
+.audio-wave-bar:nth-child(3) {
+    height: 40%;
+    animation-delay: 0.4s;
+}
+
+.audio-wave-bar:nth-child(4) {
+    height: 80%;
+    animation-delay: 0.6s;
+}
+
+@keyframes audioWave {
+    0%, 100% {
+        transform: scaleY(1);
+    }
+    50% {
+        transform: scaleY(0.5);
+    }
+}
+
+/* Audio Info */
+.audio-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.audio-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #1a1a2e;
+}
+
+.audio-duration {
+    font-size: 0.8rem;
+    color: #888;
+}
+
+/* Play Button */
+.audio-play-btn {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ff4d4f 0%, #ff7875 100%);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+    box-shadow: 0 4px 15px rgba(255, 77, 79, 0.3);
+}
+
+.audio-play-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(255, 77, 79, 0.4);
+}
+
+.audio-play-btn svg {
+    width: 20px;
+    height: 20px;
+    color: #fff;
+}
+
+.audio-play-btn .play-icon {
+    display: block;
+}
+
+.audio-play-btn .pause-icon {
+    display: none;
+}
+
+.audio-play-btn.playing .play-icon {
+    display: none;
+}
+
+.audio-play-btn.playing .pause-icon {
+    display: block;
+}
+
+/* Responsive Styles */
+@media (max-width: 900px) {
+    .audio-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .dr-meddy-section {
+        padding: 3rem 0;
+    }
+
+    .dr-meddy-title {
+        font-size: 1.8rem;
+    }
+
+    .dr-meddy-subtitle {
+        font-size: 1rem;
+        padding: 0 1rem;
+    }
+
+    .audio-cards-grid {
+        grid-template-columns: 1fr;
+        padding: 0 1rem;
+    }
+
+    .audio-card {
+        padding: 1rem 1.25rem;
+    }
+
+    .audio-play-btn {
+        width: 42px;
+        height: 42px;
+    }
+}

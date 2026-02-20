@@ -1,0 +1,237 @@
+/* Team Section */
+.team-section {
+    padding: 6rem 0;
+    background: var(--bg-light);
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.section-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+}
+
+.section-subtitle {
+    color: var(--secondary-color);
+    font-weight: 600;
+    font-size: 0.875rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.team-card {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    background: linear-gradient(180deg, transparent 0%, transparent 50%, var(--primary-color) 50%, var(--primary-color) 100%);
+    transition: var(--transition);
+    cursor: pointer;
+    height: 450px;
+}
+
+.team-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+}
+
+.team-card:hover .team-image img {
+    transform: scale(1.05);
+}
+
+.team-image {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.team-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.team-image::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60%;
+    background: linear-gradient(to top, rgba(14, 65, 91, 0.95) 0%, transparent 100%);
+    pointer-events: none;
+}
+
+.team-logo {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 60px;
+    height: 190px;
+    background: var(--secondary-color);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--white);
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    letter-spacing: 3px;
+    opacity: 0.9;
+}
+
+.team-info {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    z-index: 3;
+    color: var(--white);
+}
+
+.team-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--white);
+}
+
+.team-designation {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.85);
+    font-weight: 500;
+}
+
+.team-arrow {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+    transition: var(--transition);
+}
+
+.team-card:hover .team-arrow {
+    background: var(--secondary-color);
+    transform: scale(1.1);
+}
+
+.team-arrow svg {
+    width: 24px;
+    height: 24px;
+    color: var(--primary-color);
+    transition: var(--transition);
+}
+
+.team-card:hover .team-arrow svg {
+    color: var(--white);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+
+    .team-card {
+        height: 400px;
+    }
+
+    .section-title {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .team-section {
+        padding: 4rem 0;
+    }
+
+    .section-header {
+        margin-bottom: 3rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .team-card {
+        height: 320px;
+        width: 100%;
+    }
+
+    .team-logo {
+        width: 50px;
+        height: 150px;
+        font-size: 1.2rem;
+    }
+
+    .team-info {
+        bottom: 25px;
+        left: 25px;
+    }
+
+    .team-name {
+        font-size: 1.3rem;
+    }
+
+    .team-designation {
+        font-size: 0.9rem;
+    }
+
+    .team-arrow {
+        bottom: 25px;
+        right: 25px;
+        width: 45px;
+        height: 45px;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-title {
+        font-size: 1.75rem;
+    }
+
+    .team-card {
+        height: 320px;
+    }
+
+    .team-info {
+        bottom: 20px;
+        left: 20px;
+    }
+
+    .team-arrow {
+        bottom: 20px;
+        right: 20px;
+    }
+}
