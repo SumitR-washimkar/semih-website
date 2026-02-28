@@ -1,0 +1,375 @@
+{% extends 'base.html' %}
+
+{% block title %}OET Speaking Agents - MedTalks{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/products.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/ecosystem.css') }}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/contact.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/product-custom.css') }}">
+{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section id="oet-agents-hero" class="product-hero">
+    <div class="container">
+        <div class="hero-grid">
+            <div class="hero-content">
+                <div class="glass-card-hero">
+                    <span class="hero-subtitle">OET SPEAKING SIMULATOR</span>
+                    <h1 class="hero-title">
+                        OET-Style Speaking Practice for Healthcare Professionals
+                    </h1>
+                    <p class="hero-description">
+                        OET Speaking Agents are AI-powered role-play simulators designed to replicate the official OET
+                        speaking experience — including structure, timing, and task demands.
+                    </p>
+                    <div class="hero-cta-buttons">
+                        <a href="#demo" class="btn-hero-primary">
+                            Try Free OET Role-play
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                        <a href="#pricing" class="btn-hero-secondary">
+                            Choose Track
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-image">
+                <div class="mockup-3d-wrapper">
+                    <div class="floating-badge badge-1">
+                        <i class="fas fa-file-medical-alt"></i>
+                        <span>Exam Structure</span>
+                    </div>
+                    <div class="floating-badge badge-2">
+                        <i class="fas fa-comment-dots"></i>
+                        <span>AI Feedback</span>
+                    </div>
+                    <img src="https://storage.googleapis.com/admin-dashboard-d5f22.firebasestorage.app/website/images/products/oet-agents-mockup.png"
+                        alt="OET Speaking Agents" class="product-hero-img-3d">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- What Is OET Speaking Agents -->
+<section class="what-is-section">
+    <div class="container">
+        <div class="what-is-grid">
+
+            <div class="green-panel">
+                <h2 class="green-panel-title">What Are OET Speaking Agents?</h2>
+                <p class="green-panel-text">
+                    OET Speaking Agents are AI-driven exam simulators built to mirror the official
+                    OET speaking sub-test. They are designed for deliberate, repeatable role-play
+                    practice — not teaching and not generic conversation.
+                </p>
+
+                <a href="#learn-more" class="btn-green-panel">
+                    Learn More
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                </a>
+            </div>
+
+            <div class="feature-cards">
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-stethoscope"></i>
+                    </div>
+                    <h3 class="feature-title">Exam-Accurate Role-plays</h3>
+                    <p class="feature-description">
+                        Simulates OET-style role cards, task demands, and professional context
+                        aligned with official exam expectations.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-stopwatch-20"></i>
+                    </div>
+                    <h3 class="feature-title">Correct Timing & Pacing</h3>
+                    <p class="feature-description">
+                        Follows exam-style timing to train candidates to manage
+                        pressure, structure, and clarity under time constraints.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="feature-title">Performance-Focused Feedback</h3>
+                    <p class="feature-description">
+                        Feedback targets communicative impact, coherence,
+                        language control, and exam-relevant performance criteria.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Tabbed Features -->
+<section class="tabbed-features-section">
+    <div class="container">
+
+        <div class="tabbed-header">
+            <h2 class="tabbed-title">Built for OET Exam Performance</h2>
+            <p class="tabbed-subtitle">
+                Focused speaking practice aligned with OET expectations — not general English.
+            </p>
+        </div>
+
+        <div class="tab-navigation">
+            <button class="tab-btn active" data-tab="roleplay-structure">
+                <div class="tab-icon"><i class="fas fa-clipboard"></i></div>
+                <span class="tab-label">Role-play Structure</span>
+            </button>
+
+            <button class="tab-btn" data-tab="exam-timing">
+                <div class="tab-icon"><i class="fas fa-stopwatch"></i></div>
+                <span class="tab-label">Exam Timing</span>
+            </button>
+
+            <button class="tab-btn" data-tab="feedback-criteria">
+                <div class="tab-icon"><i class="fas fa-check-circle"></i></div>
+                <span class="tab-label">Feedback Criteria</span>
+            </button>
+
+            <button class="tab-btn" data-tab="profession-tracks">
+                <div class="tab-icon"><i class="fas fa-user-md"></i></div>
+                <span class="tab-label">Profession Tracks</span>
+            </button>
+
+            <button class="tab-btn" data-tab="repeat-practice">
+                <div class="tab-icon"><i class="fas fa-redo"></i></div>
+                <span class="tab-label">Repeat Practice</span>
+            </button>
+        </div>
+
+        <div class="tab-content-grid">
+            <div class="tab-content-container">
+
+                <div class="tab-content active" id="roleplay-structure">
+                    <p class="tab-text">
+                        Each session follows the OET role-card format,
+                        requiring candidates to build rapport, manage tasks,
+                        and deliver clear, professional responses.
+                    </p>
+                    <a href="#demo" class="btn-tab-primary">Try Free Role-play</a>
+                </div>
+
+                <div class="tab-content" id="exam-timing">
+                    <p class="tab-text">
+                        Practice with realistic pacing to improve fluency,
+                        time awareness, and task completion under exam conditions.
+                    </p>
+                    <a href="#demo" class="btn-tab-primary">Try Free Role-play</a>
+                </div>
+
+                <div class="tab-content" id="feedback-criteria">
+                    <p class="tab-text">
+                        Feedback aligns with OET assessment focus:
+                        communicative effectiveness, language accuracy,
+                        and professional appropriacy.
+                    </p>
+                    <a href="#demo" class="btn-tab-primary">Try Free Role-play</a>
+                </div>
+
+                <div class="tab-content" id="profession-tracks">
+                    <p class="tab-text">
+                        Dedicated tracks for Medicine, Dentistry, and Veterinary Science,
+                        each aligned with profession-specific OET role-play demands.
+                    </p>
+                    <a href="#demo" class="btn-tab-primary">Choose Your Track</a>
+                </div>
+
+                <div class="tab-content" id="repeat-practice">
+                    <p class="tab-text">
+                        Repeat the same role-play multiple times to refine structure,
+                        phrasing, and confidence before exam day.
+                    </p>
+                    <a href="#demo" class="btn-tab-primary">Try Free Role-play</a>
+                </div>
+
+            </div>
+
+            <div class="tab-visual-container">
+                <div class="tab-visual-card">
+                    <img src="https://images.unsplash.com/photo-1559757175-5700dde675bc?w=800&h=600&fit=crop"
+                        alt="OET Speaking Simulation Interface" class="tab-visual-img">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- What Makes It Different -->
+<section class="different-section">
+    <div class="different-container">
+
+        <div class="different-content">
+            <p class="different-badge">WHAT MAKES OET SPEAKING AGENTS DIFFERENT</p>
+            <h2 class="different-main-title">Exam Simulation — Not Guesswork</h2>
+            <p class="different-description">
+                Designed specifically to reflect OET speaking demands,
+                not generic English or casual role-play.
+            </p>
+
+            <ul class="different-list">
+                <li class="different-item">
+                    <div class="different-icon">01</div>
+                    <div class="different-text">
+                        <h4>OET-style role cards</h4>
+                        <p>Realistic task instructions and professional context</p>
+                    </div>
+                </li>
+
+                <li class="different-item">
+                    <div class="different-icon">02</div>
+                    <div class="different-text">
+                        <h4>Exam-aligned pacing</h4>
+                        <p>Practice managing time and clarity simultaneously</p>
+                    </div>
+                </li>
+
+                <li class="different-item">
+                    <div class="different-icon">03</div>
+                    <div class="different-text">
+                        <h4>Targeted performance feedback</h4>
+                        <p>Focus on exam-relevant strengths and gaps</p>
+                    </div>
+                </li>
+
+                <li class="different-item">
+                    <div class="different-icon">04</div>
+                    <div class="different-text">
+                        <h4>Profession-specific tracks</h4>
+                        <p>Medicine, Dentistry, and Veterinary Science</p>
+                    </div>
+                </li>
+
+                <li class="different-item">
+                    <div class="different-icon">05</div>
+                    <div class="different-text">
+                        <h4>Deliberate repetition</h4>
+                        <p>Repeat practice to raise consistency and confidence</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="different-image-side">
+            <div class="different-image-card">
+                <img src="https://images.unsplash.com/photo-1516574187841-cb9cc2ca948b?w=800&h=600&fit=crop"
+                    alt="OET Speaking Exam Practice">
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- Ecosystem -->
+<section class="ecosystem-section">
+    <div class="container">
+        <div class="ecosystem-header">
+            <h2 class="ecosystem-title">MEDTALKS Speaking Ecosystem</h2>
+            <p class="ecosystem-subtitle">
+                OET Speaking Agents are part of a broader professional speaking system:
+            </p>
+        </div>
+
+        <div class="ecosystem-grid">
+            <div class="ecosystem-card ecosystem-card-main">
+                <h3 class="ecosystem-card-title">OET Speaking Agents</h3>
+                <p class="ecosystem-card-description">Exam-focused role-play practice</p>
+            </div>
+
+            <div class="ecosystem-card">
+                <h3 class="ecosystem-card-title">Dr Meddy</h3>
+                <p class="ecosystem-card-description">Clinical communication practice</p>
+            </div>
+
+            <div class="ecosystem-card">
+                <h3 class="ecosystem-card-title">Mr Brown</h3>
+                <p class="ecosystem-card-description">Speaking assessment at scale</p>
+            </div>
+
+            <div class="ecosystem-card">
+                <h3 class="ecosystem-card-title">MedTalks Coursebooks</h3>
+                <p class="ecosystem-card-description">Structured speaking curricula</p>
+            </div>
+        </div>
+
+        <p class="ecosystem-result-simple">
+            Professional speaking systems — from assessment to exam readiness.
+        </p>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-contact-section">
+    <div class="container">
+        <div class="cta-contact-container">
+
+            <div class="cta-contact-content">
+                <p class="cta-contact-label">PREPARE WITH CONFIDENCE</p>
+                <h2 class="cta-contact-title">
+                    Practise OET Speaking the Right Way
+                </h2>
+
+                <p class="cta-contact-description">
+                    Train with exam-accurate role-plays, structured feedback,
+                    and repeatable practice designed to raise your OET speaking performance.
+                </p>
+
+                <div class="cta-contact-buttons">
+                    <a href="#" class="btn-cta-primary">Try Free OET Role-play</a>
+                    <a href="#" class="btn-cta-secondary">Choose Your Track</a>
+                </div>
+            </div>
+
+            <div class="cta-contact-media">
+                <div class="cta-media-wrapper">
+                    <img src="https://images.unsplash.com/photo-1584982751601-97dcc096659c?w=600&h=400&fit=crop"
+                        alt="OET Speaking Practice" class="cta-image">
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', function () {
+                const targetTab = this.getAttribute('data-tab');
+                tabBtns.forEach(b => b.classList.remove('active'));
+                tabContents.forEach(c => c.classList.remove('active'));
+                this.classList.add('active');
+                document.getElementById(targetTab).classList.add('active');
+            });
+        });
+    });
+</script>
+
+{% endblock %}

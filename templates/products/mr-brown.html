@@ -1,0 +1,377 @@
+{% extends 'base.html' %}
+
+{% block title %}Mr Brown - MedTalks{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/products.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/ecosystem.css') }}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/contact.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/product-custom.css') }}">
+{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section id="mr-brown-hero" class="product-hero">
+    <div class="container">
+        <div class="hero-grid">
+            <div class="hero-content">
+                <div class="glass-card-hero">
+                    <span class="hero-subtitle">MR BROWN ASSESSMENT AGENT</span>
+                    <h1 class="hero-title">
+                        AI-Powered Speaking Assessment for Schools & Universities
+                    </h1>
+                    <p class="hero-description">
+                        Mr Brown is an AI-powered English speaking assessment agent designed for institutions that need
+                        reliable, scalable, and standardised speaking evaluation — not teaching and not casual
+                        conversation.
+                    </p>
+                    <div class="hero-cta-buttons">
+                        <a href="#demo" class="btn-hero-primary">
+                            Try Sample Assessment
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                        <a href="#pricing" class="btn-hero-secondary">
+                            View Pricing
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-image">
+                <div class="mockup-3d-wrapper">
+                    <div class="floating-badge badge-1">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>CEFR Scoring</span>
+                    </div>
+                    <div class="floating-badge badge-2">
+                        <i class="fas fa-users-cog"></i>
+                        <span>Institutional Scale</span>
+                    </div>
+                    <img src="https://storage.googleapis.com/admin-dashboard-d5f22.firebasestorage.app/website/images/products/mr-brown-mockup.png"
+                        alt="Mr. Brown Assessment" class="product-hero-img-3d">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- What Is Mr Brown Section -->
+<section class="what-is-section">
+    <div class="container">
+        <div class="what-is-grid">
+
+            <div class="green-panel">
+                <h2 class="green-panel-title">What Is Mr Brown?</h2>
+                <p class="green-panel-text">
+                    Mr Brown is a general English speaking assessment agent built for institutional use.
+                    It is designed to deliver fair, standardised, and repeatable speaking evaluation —
+                    not instruction, not conversation practice, and not entertainment.
+                </p>
+
+                <a href="#learn-more" class="btn-green-panel">
+                    Learn More
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                </a>
+            </div>
+
+            <div class="feature-cards">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <h3 class="feature-title">Standardised Assessment</h3>
+                    <p class="feature-description">
+                        Identical prompts, timing, and structure for every candidate — ensuring fairness
+                        and comparability across cohorts.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3 class="feature-title">CEFR-Aligned Scoring</h3>
+                    <p class="feature-description">
+                        Assessment logic aligned with Cambridge-style CEFR criteria,
+                        adaptable to your institution’s internal rubric.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-expand-arrows-alt"></i>
+                    </div>
+                    <h3 class="feature-title">Built for Scale</h3>
+                    <p class="feature-description">
+                        Designed to reduce examiner workload while maintaining academic reliability
+                        for large student populations.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Tabbed Features Section -->
+<section class="tabbed-features-section">
+    <div class="container">
+
+        <div class="tabbed-header">
+            <h2 class="tabbed-title">Reliable & Scalable Speaking Assessment</h2>
+            <p class="tabbed-subtitle">
+                AI-powered English speaking evaluation designed for academic institutions.
+            </p>
+        </div>
+
+        <div class="tab-navigation">
+            <button class="tab-btn active" data-tab="assessment-scenarios">
+                <div class="tab-icon"><i class="fas fa-clipboard-list"></i></div>
+                <span class="tab-label">Assessment Scenarios</span>
+            </button>
+
+            <button class="tab-btn" data-tab="structured-prompts">
+                <div class="tab-icon"><i class="fas fa-route"></i></div>
+                <span class="tab-label">Structured Prompts</span>
+            </button>
+
+            <button class="tab-btn" data-tab="scoring-logic">
+                <div class="tab-icon"><i class="fas fa-check-circle"></i></div>
+                <span class="tab-label">Scoring Logic</span>
+            </button>
+
+            <button class="tab-btn" data-tab="academic-integrity">
+                <div class="tab-icon"><i class="fas fa-shield-alt"></i></div>
+                <span class="tab-label">Academic Integrity</span>
+            </button>
+
+            <button class="tab-btn" data-tab="flexible-deployment">
+                <div class="tab-icon"><i class="fas fa-clock"></i></div>
+                <span class="tab-label">Flexible Deployment</span>
+            </button>
+        </div>
+
+        <div class="tab-content-grid">
+            <div class="tab-content-container">
+
+                <div class="tab-content active" id="assessment-scenarios">
+                    <p class="tab-text">
+                        Mr Brown conducts structured speaking assessments suitable for placement tests,
+                        exams, and progress monitoring across institutional programmes.
+                    </p>
+                    <a href="#demo" class="btn-tab-primary">Try Sample Assessment</a>
+                </div>
+
+                <div class="tab-content" id="structured-prompts">
+                    <p class="tab-text">
+                        Every assessment follows a fixed prompt flow and timing,
+                        ensuring consistency across candidates and sessions.
+                    </p>
+                    <a href="#demo" class="btn-tab-primary">Try Sample Assessment</a>
+                </div>
+
+                <div class="tab-content" id="scoring-logic">
+                    <p class="tab-text">
+                        Evaluation focuses on fluency, coherence, vocabulary range,
+                        grammatical control, and task fulfilment.
+                    </p>
+                    <a href="#demo" class="btn-tab-primary">Try Sample Assessment</a>
+                </div>
+
+                <div class="tab-content" id="academic-integrity">
+                    <p class="tab-text">
+                        Designed for formal academic use, supporting transparent evaluation
+                        and institutional reporting requirements.
+                    </p>
+                    <a href="#demo" class="btn-tab-primary">Try Sample Assessment</a>
+                </div>
+
+                <div class="tab-content" id="flexible-deployment">
+                    <p class="tab-text">
+                        Suitable for online, on-campus, and blended delivery models
+                        across schools and universities.
+                    </p>
+                    <a href="#demo" class="btn-tab-primary">Try Sample Assessment</a>
+                </div>
+
+            </div>
+
+            <div class="tab-visual-container">
+                <div class="tab-visual-card">
+                    <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800&h=600&fit=crop"
+                        alt="Mr Brown Speaking Assessment Interface" class="tab-visual-img">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- What Makes Mr Brown Different -->
+<section class="different-section">
+    <div class="different-container">
+
+        <div class="different-content">
+            <p class="different-badge">WHAT MAKES MR BROWN DIFFERENT</p>
+            <h2 class="different-main-title">Built for Assessment — Not Teaching</h2>
+            <p class="different-description">
+                Mr Brown is purpose-built for objective, scalable speaking evaluation in academic settings.
+            </p>
+
+            <ul class="different-list">
+                <li class="different-item">
+                    <div class="different-icon">01</div>
+                    <div class="different-text">
+                        <h4>Assessment-first design</h4>
+                        <p>Focused exclusively on evaluation, not instruction</p>
+                    </div>
+                </li>
+
+                <li class="different-item">
+                    <div class="different-icon">02</div>
+                    <div class="different-text">
+                        <h4>Standardised delivery</h4>
+                        <p>Identical prompts and timing for all candidates</p>
+                    </div>
+                </li>
+
+                <li class="different-item">
+                    <div class="different-icon">03</div>
+                    <div class="different-text">
+                        <h4>CEFR-aligned criteria</h4>
+                        <p>Adaptable scoring aligned to academic frameworks</p>
+                    </div>
+                </li>
+
+                <li class="different-item">
+                    <div class="different-icon">04</div>
+                    <div class="different-text">
+                        <h4>Reduced examiner workload</h4>
+                        <p>Scales assessment without compromising reliability</p>
+                    </div>
+                </li>
+
+                <li class="different-item">
+                    <div class="different-icon">05</div>
+                    <div class="different-text">
+                        <h4>Institution-ready architecture</h4>
+                        <p>Designed for exams, placement, and progress checks</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="different-image-side">
+            <div class="different-image-card">
+                <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=800&h=600&fit=crop"
+                    alt="Mr Brown Speaking Assessment">
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- Ecosystem Section -->
+<section class="ecosystem-section">
+    <div class="container">
+        <div class="ecosystem-header">
+            <h2 class="ecosystem-title">MEDTALKS Assessment & Speaking Ecosystem</h2>
+            <p class="ecosystem-subtitle">
+                Mr Brown operates within the broader MEDTALKS ecosystem:
+            </p>
+        </div>
+
+        <div class="ecosystem-grid">
+            <div class="ecosystem-card ecosystem-card-main">
+                <h3 class="ecosystem-card-title">Mr Brown (Assessment)</h3>
+                <p class="ecosystem-card-description">General English speaking assessment for institutions</p>
+            </div>
+
+            <div class="ecosystem-card">
+                <h3 class="ecosystem-card-title">Dr Meddy</h3>
+                <p class="ecosystem-card-description">Clinical speaking practice</p>
+            </div>
+
+            <div class="ecosystem-card">
+                <h3 class="ecosystem-card-title">OET Speaking Agents</h3>
+                <p class="ecosystem-card-description">Exam-style role-play assessment</p>
+            </div>
+
+            <div class="ecosystem-card">
+                <h3 class="ecosystem-card-title">MedTalks Coursebooks</h3>
+                <p class="ecosystem-card-description">Structured speaking curricula</p>
+            </div>
+        </div>
+
+        <p class="ecosystem-result-simple">
+            Reliable speaking assessment and communication systems — at scale.
+        </p>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-contact-section">
+    <div class="container">
+        <div class="cta-contact-container">
+
+            <div class="cta-contact-content">
+                <p class="cta-contact-label">BEGIN YOUR SPEAKING ASSESSMENT SOLUTION</p>
+                <h2 class="cta-contact-title">
+                    Standardise Speaking Assessment with Mr Brown
+                </h2>
+
+                <p class="cta-contact-description">
+                    Mr Brown helps institutions deliver fair, scalable, and CEFR-aligned speaking
+                    assessments while reducing examiner workload.
+                </p>
+
+                <div class="cta-contact-buttons">
+                    <a href="#" class="btn-cta-primary">Request Institutional Demo</a>
+                    <a href="#" class="btn-cta-secondary">View Pricing</a>
+                </div>
+
+                <div class="cta-contact-trust">
+                    <p class="trust-text">
+                        Used by schools and universities for scalable speaking assessment
+                    </p>
+                </div>
+            </div>
+
+            <div class="cta-contact-media">
+                <div class="cta-media-wrapper">
+                    <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=600&h=400&fit=crop"
+                        alt="Institutional Speaking Assessment" class="cta-image">
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', function () {
+                const targetTab = this.getAttribute('data-tab');
+                tabBtns.forEach(b => b.classList.remove('active'));
+                tabContents.forEach(c => c.classList.remove('active'));
+                this.classList.add('active');
+                document.getElementById(targetTab).classList.add('active');
+            });
+        });
+    });
+</script>
+
+{% endblock %}

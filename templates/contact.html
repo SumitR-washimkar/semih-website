@@ -1,0 +1,482 @@
+{% extends 'base.html' %}
+
+{% block title %}Contact - Medtalk{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/contact.css') }}">
+{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<section class="page-header">
+    <div class="container">
+        <h1>Our Contact</h1>
+        <div class="breadcrumb">
+            <a href="/">Home</a>
+            <span class="separator">/</span>
+            <span>Contact</span>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section class="contact-section">
+    <!-- Background Decorative Elements -->
+    <div class="contact-bg-blob blob-1"></div>
+    <div class="contact-bg-blob blob-2"></div>
+
+    <div class="contact-container secondary-overlap">
+        <!-- Left Side: Contact Form -->
+        <div class="contact-form-wrapper premium-glass">
+            <div class="form-header">
+                <h2 class="contact-form-title">Send us a message</h2>
+                <div class="title-underline"></div>
+            </div>
+            <p class="contact-form-description">
+                If you have questions about our programs, level placement, or learning structure, you can contact our
+                academic team directly.</br>
+                We respond personally and professionally.
+            </p>
+
+            {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+            {% for category, message in messages %}
+            <div class="contact-alert alert-{{ category }}">
+                {% if category == 'success' %}
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+                {% else %}
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="15" y1="9" x2="9" y2="15"></line>
+                    <line x1="9" y1="9" x2="15" y2="15"></line>
+                </svg>
+                {% endif %}
+                <span>{{ message }}</span>
+            </div>
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+
+            <form class="contact-form" id="contactForm" method="POST" action="{{ url_for('contact') }}">
+                <div class="form-row form-row-mobile-2">
+                    <div class="form-group floating-group">
+                        <div class="input-icon-wrapper">
+                            <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                            <input type="text" id="firstName" name="firstName" placeholder=" " required>
+                            <label for="firstName">First Name</label>
+                        </div>
+                    </div>
+                    <div class="form-group floating-group">
+                        <div class="input-icon-wrapper">
+                            <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                            <input type="text" id="lastName" name="lastName" placeholder=" " required>
+                            <label for="lastName">Last Name</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group floating-group">
+                        <div class="input-icon-wrapper">
+                            <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path
+                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                                </path>
+                            </svg>
+                            <input type="tel" id="phone" name="phone" placeholder=" " required>
+                            <label for="phone">Phone Number</label>
+                        </div>
+                    </div>
+                    <div class="form-group floating-group">
+                        <div class="input-icon-wrapper">
+                            <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                </path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                            <input type="email" id="email" name="email" placeholder=" " required>
+                            <label for="email">Email Address</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group floating-group">
+                    <div class="input-icon-wrapper">
+                        <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                        </svg>
+                        <input type="text" id="subject" name="subject" placeholder=" ">
+                        <label for="subject">Subject</label>
+                    </div>
+                </div>
+
+                <div class="form-group floating-group">
+                    <div class="input-icon-wrapper">
+                        <textarea id="message" name="message" placeholder=" " required></textarea>
+                        <label for="message">Your Message</label>
+                    </div>
+                </div>
+
+                <!-- Hidden field for combined name -->
+                <input type="hidden" id="name" name="name">
+
+                <!-- Cloudflare Turnstile Widget -->
+                <div class="form-group">
+                    <div class="cf-turnstile" data-sitekey="{{ turnstile_site_key }}" data-theme="light"
+                        data-size="normal"></div>
+                </div>
+
+                <button type="submit" class="form-submit-btn premium-btn" id="submitBtn">
+                    <span>Send Message</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
+                        <line x1="22" y1="2" x2="11" y2="13"></line>
+                        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                    </svg>
+                </button>
+            </form>
+        </div>
+
+        <!-- Right Side: Map -->
+        <div class="contact-map-wrapper fade-in-right">
+            <div class="contact-map">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2436.3489657707715!2d4.886707915744685!3d52.37452597979076!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c609c3db87e4bb%3A0xb3a175ceffbd0a9f!2sAmsterdam%2C%20Netherlands!5e0!3m2!1sen!2sus!4v1647095940000!5m2!1sen!2sus"
+                    loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Info Cards Section -->
+<section class="contact-info-section">
+    <div class="container">
+        <div class="contact-info-cards">
+            <!-- Our Office Card -->
+            <div class="info-card">
+                <div class="info-card-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                        <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                </div>
+                <h3 class="info-card-title">Our Office</h3>
+                <p class="info-card-text">6491 Brook Views, North Bryana, South Dakota 50890</p>
+                <a href="#" class="info-card-link">View on Maps</a>
+            </div>
+
+            <!-- Email Us Card -->
+            <div class="info-card">
+                <div class="info-card-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                    </svg>
+                </div>
+                <h3 class="info-card-title">Email Us</h3>
+                <p class="info-card-text">Please be patient, we're usually replying within 24 hours</p>
+                <a href="mailto:Medtalk@idesmail.com" class="info-card-link">Medtalk@idesmail.com</a>
+            </div>
+
+            <!-- Call Us Card -->
+            <div class="info-card">
+                <div class="info-card-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                        </path>
+                    </svg>
+                </div>
+                <h3 class="info-card-title">Call Us</h3>
+                <p class="info-card-text">Talk to us and see how we can work this together</p>
+                <a href="tel:+12346541890" class="info-card-link">+1 (234) 654 1 890 00</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="faq-section">
+    <div class="container">
+        <div class="faq-header">
+            <p class="faq-label">FAQS</p>
+            <h2 class="faq-title">Got Questions? We've Got Answers</h2>
+        </div>
+
+        <div class="faq-accordion">
+            <!-- FAQ Item 1 -->
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>How can I contact MEDTALKS?</span>
+                    <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg>
+                </button>
+                <div class="faq-answer">
+                    <p>You can contact MEDTALKS directly through the WhatsApp support button available on our platform.
+                        This connects you with a real member of our academic team, not an automated chatbot.</p>
+                </div>
+            </div>
+
+            <!-- FAQ Item 2 -->
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>What kind of support does MEDTALKS provide?</span>
+                    <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg>
+                </button>
+                <div class="faq-answer">
+                    <p>Our support team assists with:</p>
+                    <ul>
+                        <li>Program guidance and enrollment questions</li>
+                        <li>Level placement and program selection</li>
+                        <li>Technical support</li>
+                        <li>Payment-related questions</li>
+                    </ul>
+                    <p>Support is provided by senior academic team members who understand both the programs and the
+                        needs of healthcare professionals.</p>
+                </div>
+            </div>
+
+            <!-- FAQ Item 3 -->
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Is MEDTALKS support automated or AI-based?</span>
+                    <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg>
+                </button>
+                <div class="faq-answer">
+                    <p>No. MEDTALKS does not use automated help desks or generic chatbots for support. All support
+                        communication is handled by real humans from our academic team.</p>
+                </div>
+            </div>
+
+            <!-- FAQ Item 4 -->
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>When can I contact the MEDTALKS support team?</span>
+                    <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg>
+                </button>
+                <div class="faq-answer">
+                    <p>You can reach out via WhatsApp at any time. Messages are answered by our academic team as soon as
+                        possible, taking into account different time zones and clinical schedules.</p>
+                </div>
+            </div>
+
+            <!-- FAQ Item 5 -->
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Can I get help choosing the right program or level?</span>
+                    <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg>
+                </button>
+                <div class="faq-answer">
+                    <p>Yes. Our academic team will help you determine the most suitable program and entry level based on
+                        your background, goals, and current speaking ability.</p>
+                </div>
+            </div>
+
+            <!-- FAQ Item 6 -->
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Do I need to be enrolled to contact MEDTALKS?</span>
+                    <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg>
+                </button>
+                <div class="faq-answer">
+                    <p>No. You are welcome to contact us before enrolling if you have questions about the programs,
+                        structure, or learning system.</p>
+                </div>
+            </div>
+
+            <!-- FAQ Item 7 -->
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Can institutions or organizations contact MEDTALKS?</span>
+                    <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg>
+                </button>
+                <div class="faq-answer">
+                    <p>Yes. For academic, institutional, or partnership-related inquiries, you can contact MEDTALKS via
+                        the same WhatsApp support channel, and your request will be directed to the appropriate academic
+                        representative.</p>
+                </div>
+            </div>
+
+            <!-- FAQ Item 8 -->
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Do you offer phone support?</span>
+                    <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg>
+                </button>
+                <div class="faq-answer">
+                    <p>MEDTALKS primarily provides support through WhatsApp, as it allows efficient, documented
+                        communication suitable for international users. This ensures clarity, continuity, and timely
+                        assistance.</p>
+                </div>
+            </div>
+
+            <!-- FAQ Item 9 -->
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Is my communication with MEDTALKS confidential?</span>
+                    <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg>
+                </button>
+                <div class="faq-answer">
+                    <p>Yes. All communication with MEDTALKS is handled professionally and confidentially, in line with
+                        academic and data privacy standards.</p>
+                </div>
+            </div>
+
+            <!-- FAQ Item 10 -->
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>What if I need technical help during the program?</span>
+                    <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg>
+                </button>
+                <div class="faq-answer">
+                    <p>Technical support is available through the same WhatsApp channel. Our team will assist you with
+                        platform access, recordings, and AI practice tools.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-contact-section">
+    <div class="container">
+        <div class="cta-contact-container">
+            <!-- Left Content -->
+            <div class="cta-contact-content">
+                <p class="cta-contact-label">BEGIN YOUR MEDICAL SPEAKING TRAINING</p>
+                <h2 class="cta-contact-title">Start Your Medical Speaking Program Today</h2>
+                <p class="cta-contact-description">
+                    A structured, speaking-first medical English system guided by qualified academics and supported by
+                    AI – designed for doctors, dentists, and medical students with real clinical schedules.
+                </p>
+
+                <div class="cta-contact-buttons">
+                    <a href="#" class="btn-cta-primary">Get Started</a>
+                    <a href="#" class="btn-cta-secondary">Try Demo</a>
+                </div>
+
+                <div class="cta-contact-trust">
+                    <div class="trust-avatars">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Student" class="trust-avatar">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Student" class="trust-avatar">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Student" class="trust-avatar">
+                        <img src="https://randomuser.me/api/portraits/men/46.jpg" alt="Student" class="trust-avatar">
+                    </div>
+                    <p class="trust-text">Trusted by over 10k students</p>
+                </div>
+            </div>
+
+            <!-- Right Image/Video -->
+            <div class="cta-contact-media">
+                <div class="cta-media-wrapper">
+                    <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&h=400&fit=crop"
+                        alt="Medical Student" class="cta-image">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<!-- Cloudflare Turnstile Script -->
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+
+<!-- FAQ Accordion Script -->
+<script src="{{ url_for('static', filename='js/faq.js') }}"></script>
+
+<!-- Contact Form Handler -->
+<script>
+    // Prevent main.js from interfering with this form
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        // Remove any existing event listeners from main.js
+        const newForm = contactForm.cloneNode(true);
+        contactForm.parentNode.replaceChild(newForm, contactForm);
+
+        // Add our own submit handler
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+            const submitBtn = document.getElementById('submitBtn');
+
+            // Combine first and last name for backend
+            const firstName = document.getElementById('firstName').value.trim();
+            const lastName = document.getElementById('lastName').value.trim();
+
+            // Update hidden name field
+            document.getElementById('name').value = `${firstName} ${lastName}`;
+
+            // Disable submit button to prevent double submission
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Submitting...';
+
+            // Form will submit naturally - don't prevent default
+        });
+    }
+</script>
+{% endblock %}

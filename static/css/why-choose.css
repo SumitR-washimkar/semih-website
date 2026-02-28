@@ -1,0 +1,293 @@
+/* Why Choose Us Section */
+.why-choose-section {
+    padding: 6rem 0;
+    background: var(--primary-color);
+    overflow: hidden;
+}
+
+.why-choose-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+}
+
+/* Left Side - Image Section */
+.why-choose-image-side {
+    position: relative;
+    height: 600px;
+}
+
+.main-students-image {
+    position: relative;
+    width: 100%;
+    max-width: 470px;
+    height: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.main-students-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.quote-card {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    right: 40px;
+    background: var(--white);
+    border-radius: 16px;
+    padding: 1.75rem;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    z-index: 2;
+}
+
+.quote-text {
+    color: var(--text-dark);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
+}
+
+.quote-author {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.author-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--primary-light);
+}
+
+.author-name {
+    color: var(--text-dark);
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.author-title {
+    color: var(--primary-color);
+    font-size: 0.875rem;
+    margin: 0;
+}
+
+/* Right Side - Content Section */
+.why-choose-content {
+    color: var(--white);
+}
+
+.section-badge {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.section-main-title {
+    font-size: 2.75rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    color: var(--white);
+}
+
+.section-description {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 3rem;
+    max-width: 600px;
+}
+
+/* Features Grid */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.feature-item {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.feature-icon {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.feature-icon svg {
+    color: var(--white);
+    width: 24px;
+    height: 24px;
+}
+
+.feature-item:hover .feature-icon {
+    background: var(--white);
+    transform: translateY(-3px);
+}
+
+.feature-item:hover .feature-icon svg {
+    color: var(--primary-color);
+}
+
+.feature-text {
+    flex: 1;
+}
+
+.feature-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--white);
+    margin: 0 0 0.5rem 0;
+}
+
+.feature-description {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.75);
+    margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .why-choose-container {
+        gap: 4rem;
+    }
+
+    .section-main-title {
+        font-size: 2.25rem;
+    }
+
+    .quote-card {
+        right: -40px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .why-choose-container {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .why-choose-image-side {
+        height: 500px;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .main-students-image {
+        max-width: 100%;
+    }
+
+    .quote-card {
+        left: 20px;
+        right: 20px;
+        bottom: 20px;
+        padding: 1.5rem;
+    }
+
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.75rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .why-choose-section {
+        padding: 4rem 0;
+    }
+
+    .why-choose-container {
+        padding: 0 1.5rem;
+    }
+
+    .section-main-title {
+        font-size: 2rem;
+        margin-top: 2.5rem;
+    }
+
+    .section-description {
+        font-size: 0.95rem;
+        margin-bottom: 2rem;
+    }
+
+    .why-choose-image-side {
+        height: 450px;
+    }
+
+    .quote-card {
+        position: relative;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin-top: -60px;
+        padding: 1.25rem;
+    }
+
+    .quote-text {
+        font-size: 0.875rem;
+        margin-bottom: 1rem;
+    }
+
+    .author-avatar {
+        width: 45px;
+        height: 45px;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-main-title {
+        font-size: 1.75rem;
+    }
+
+    .why-choose-image-side {
+        height: 400px;
+    }
+
+    .feature-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .feature-icon svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .feature-title {
+        font-size: 1rem;
+    }
+
+    .feature-description {
+        font-size: 0.85rem;
+    }
+}

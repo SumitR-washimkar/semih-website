@@ -1,0 +1,384 @@
+{% extends 'base.html' %}
+
+{% block title %}MedTalks Coursebooks - MedTalks{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/products.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/ecosystem.css') }}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/contact.css') }}">
+{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="product-hero">
+    <!-- Decorative Background Blobs -->
+    <div class="hero-bg-blob blob-1"></div>
+    <div class="hero-bg-blob blob-2"></div>
+
+    <div class="container">
+        <div class="hero-grid">
+            <div class="hero-content">
+                <div class="glass-card-hero">
+                    <h1 class="hero-title">
+                        Speaking <span class="text-gradient">Coursebooks</span> for Medical Professionals
+                    </h1>
+
+                    <p
+                        style="color: white; font-size: 1.25rem; font-weight: 700; margin-bottom: 1.5rem; letter-spacing: 0.5px;">
+                        Elevate Your Clinical Authority</p>
+
+                    <p class="hero-description">
+                        MedTalks Coursebooks are structured speaking materials designed for healthcare professionals
+                        who need to convert medical knowledge into clear, confident communication.
+                    </p>
+
+                    <p class="hero-description">
+                        Built for real clinical performance, these coursebooks provide a complete,
+                        unit-based speaking syllabus — not generic textbooks and not exam shortcuts.
+                    </p>
+
+                    <div class="hero-cta-buttons">
+                        <a href="#sample" class="btn-hero-primary">
+                            Download a Sample Unit
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                        <a href="#adopt" class="btn-hero-secondary">
+                            Adopt for Your Programme
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-image">
+                <div class="mockup-3d-wrapper">
+                    <img src="https://storage.googleapis.com/admin-dashboard-d5f22.firebasestorage.app/website/images/products/coursebooks-mockup.png"
+                        alt="MedTalks Coursebooks" class="product-hero-img-3d">
+
+                    <!-- Floating Badges -->
+                    <div class="floating-badge badge-1">
+                        <i class="fas fa-book-open"></i>
+                        <span>18 Units</span>
+                    </div>
+                    <div class="floating-badge badge-2">
+                        <i class="fas fa-stethoscope"></i>
+                        <span>Clinical Focus</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- What Are MedTalks Coursebooks -->
+<section class="what-is-section">
+    <div class="container">
+        <div class="what-is-grid">
+
+            <div class="green-panel">
+                <h2 class="green-panel-title">What Are MedTalks Coursebooks?</h2>
+                <p class="green-panel-text">
+                    MedTalks Coursebooks are profession-specific speaking coursebooks developed exclusively
+                    for healthcare communication training.
+                    They are not mass-market textbooks and are not sold commercially.
+                </p>
+
+                <a href="#learn-more" class="btn-green-panel">
+                    Learn More
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                </a>
+            </div>
+
+            <div class="feature-cards">
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-book-medical"></i>
+                    </div>
+                    <h3 class="feature-title">Unit-Based Speaking Syllabus</h3>
+                    <p class="feature-description">
+                        Each coursebook follows a structured 18-unit syllabus aligned with real
+                        clinical, academic, and professional communication needs.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <h3 class="feature-title">Profession-Focused Content</h3>
+                    <p class="feature-description">
+                        Content is customised for Medicine, Dentistry, Nursing, Pharmacy,
+                        and allied health professions — not generic English.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3 class="feature-title">Built for Real Speaking</h3>
+                    <p class="feature-description">
+                        Every unit includes guided dialogues, role-plays, and speaking frameworks
+                        that reflect how healthcare professionals actually communicate.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Tabbed Features -->
+<section class="tabbed-features-section">
+    <div class="container">
+
+        <div class="tabbed-header">
+            <h2 class="tabbed-title">Structured Materials for Real Clinical Communication</h2>
+            <p class="tabbed-subtitle">
+                Designed to support classroom delivery, live speaking sessions,
+                and guided self-study.
+            </p>
+        </div>
+
+        <div class="tab-navigation">
+            <button class="tab-btn active" data-tab="speaking-frameworks">
+                <div class="tab-icon"><i class="fas fa-comments"></i></div>
+                <span class="tab-label">Speaking Frameworks</span>
+            </button>
+
+            <button class="tab-btn" data-tab="clinical-scenarios">
+                <div class="tab-icon"><i class="fas fa-stethoscope"></i></div>
+                <span class="tab-label">Clinical Scenarios</span>
+            </button>
+
+            <button class="tab-btn" data-tab="guided-dialogues">
+                <div class="tab-icon"><i class="fas fa-book-open"></i></div>
+                <span class="tab-label">Guided Dialogues</span>
+            </button>
+
+            <button class="tab-btn" data-tab="classroom-ready">
+                <div class="tab-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+                <span class="tab-label">Classroom Ready</span>
+            </button>
+
+            <button class="tab-btn" data-tab="institutional-use">
+                <div class="tab-icon"><i class="fas fa-university"></i></div>
+                <span class="tab-label">Institutional Use</span>
+            </button>
+        </div>
+
+        <div class="tab-content-grid">
+            <div class="tab-content-container">
+
+                <div class="tab-content active" id="speaking-frameworks">
+                    <p class="tab-text">
+                        Clear speaking frameworks guide learners through history taking,
+                        explanations, advice, and discharge communication.
+                    </p>
+                </div>
+
+                <div class="tab-content" id="clinical-scenarios">
+                    <p class="tab-text">
+                        Realistic clinical scenarios mirror everyday healthcare communication,
+                        helping learners practise with purpose.
+                    </p>
+                </div>
+
+                <div class="tab-content" id="guided-dialogues">
+                    <p class="tab-text">
+                        Step-by-step dialogues help learners move from controlled practice
+                        to confident free speaking.
+                    </p>
+                </div>
+
+                <div class="tab-content" id="classroom-ready">
+                    <p class="tab-text">
+                        Designed for live classes, speaking labs, electives,
+                        and blended learning environments.
+                    </p>
+                </div>
+
+                <div class="tab-content" id="institutional-use">
+                    <p class="tab-text">
+                        Ideal for universities, hospitals, and training programmes
+                        seeking structured speaking curricula.
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="tab-visual-container">
+                <div class="tab-visual-card">
+                    <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=800&h=600&fit=crop"
+                        alt="MedTalks Coursebook Sample Pages" class="tab-visual-img">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- What Makes Coursebooks Different -->
+<section class="different-section">
+    <div class="different-container">
+
+        <div class="different-content">
+            <p class="different-badge">WHAT MAKES MEDTALKS COURSEBOOKS DIFFERENT</p>
+            <h2 class="different-main-title">Speaking-First. Profession-Specific.</h2>
+            <p class="different-description">
+                These coursebooks are built for communication training —
+                not grammar-heavy study or passive reading.
+            </p>
+
+            <ul class="different-list">
+                <li class="different-item">
+                    <div class="different-icon">01</div>
+                    <div class="different-text">
+                        <h4>Speaking-first design</h4>
+                        <p>Every unit prioritises active speaking</p>
+                    </div>
+                </li>
+
+                <li class="different-item">
+                    <div class="different-icon">02</div>
+                    <div class="different-text">
+                        <h4>Profession-specific language</h4>
+                        <p>Medical, dental, nursing, and pharmacy contexts</p>
+                    </div>
+                </li>
+
+                <li class="different-item">
+                    <div class="different-icon">03</div>
+                    <div class="different-text">
+                        <h4>Clinically realistic scenarios</h4>
+                        <p>Built from real healthcare communication needs</p>
+                    </div>
+                </li>
+
+                <li class="different-item">
+                    <div class="different-icon">04</div>
+                    <div class="different-text">
+                        <h4>Academic integrity</h4>
+                        <p>Developed by qualified medical English educators</p>
+                    </div>
+                </li>
+
+                <li class="different-item">
+                    <div class="different-icon">05</div>
+                    <div class="different-text">
+                        <h4>Not sold commercially</h4>
+                        <p>Available only through MEDTALKS programmes</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="different-image-side">
+            <div class="different-image-card">
+                <img src="https://images.unsplash.com/photo-1532012197267-da84d127e765?w=800&h=600&fit=crop"
+                    alt="Healthcare Speaking Coursebooks">
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- Ecosystem -->
+<section class="ecosystem-section">
+    <div class="container">
+        <div class="ecosystem-header">
+            <h2 class="ecosystem-title">MEDTALKS Learning Ecosystem</h2>
+            <p class="ecosystem-subtitle">
+                MedTalks Coursebooks work alongside:
+            </p>
+        </div>
+
+        <div class="ecosystem-grid">
+            <div class="ecosystem-card ecosystem-card-main">
+                <h3 class="ecosystem-card-title">MedTalks Coursebooks</h3>
+                <p class="ecosystem-card-description">Structured speaking curricula</p>
+            </div>
+
+            <div class="ecosystem-card">
+                <h3 class="ecosystem-card-title">Dr Meddy</h3>
+                <p class="ecosystem-card-description">AI clinical speaking practice</p>
+            </div>
+
+            <div class="ecosystem-card">
+                <h3 class="ecosystem-card-title">Mr Brown</h3>
+                <p class="ecosystem-card-description">Speaking assessment systems</p>
+            </div>
+
+            <div class="ecosystem-card">
+                <h3 class="ecosystem-card-title">OET Speaking Agents</h3>
+                <p class="ecosystem-card-description">Exam-focused role-play practice</p>
+            </div>
+        </div>
+
+        <p class="ecosystem-result-simple">
+            Structured materials that turn knowledge into confident communication.
+        </p>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-contact-section">
+    <div class="container">
+        <div class="cta-contact-container">
+
+            <div class="cta-contact-content">
+                <p class="cta-contact-label">STRUCTURED SPEAKING STARTS HERE</p>
+                <h2 class="cta-contact-title">
+                    Adopt MedTalks Coursebooks
+                </h2>
+
+                <p class="cta-contact-description">
+                    Bring structured, speaking-first medical communication
+                    into your programme, classroom, or institution.
+                </p>
+
+                <div class="cta-contact-buttons">
+                    <a href="#" class="btn-cta-primary">Download Sample Unit</a>
+                    <a href="#" class="btn-cta-secondary">Adopt for Your Programme</a>
+                </div>
+            </div>
+
+            <div class="cta-contact-media">
+                <div class="cta-media-wrapper">
+                    <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&h=400&fit=crop"
+                        alt="Medical Speaking Materials" class="cta-image">
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', function () {
+                const targetTab = this.getAttribute('data-tab');
+                tabBtns.forEach(b => b.classList.remove('active'));
+                tabContents.forEach(c => c.classList.remove('active'));
+                this.classList.add('active');
+                document.getElementById(targetTab).classList.add('active');
+            });
+        });
+    });
+</script>
+
+{% endblock %}

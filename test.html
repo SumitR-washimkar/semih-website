@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+/* 1. Reset */
+body, html {
+margin: 0; padding: 0;
+width: 100%;
+background: #000;
+}
+/* 2. The Canvas (Fixed Background) */
+canvas#c {
+position: fixed;
+top: 0; left: 0;
+width: 100vw; height: 100vh;
+object-fit: cover;
+display: block;
+}
+/* 3. The Loading Overlay */
+#overlay {
+position: fixed; inset: 0;
+display: flex; flex-direction: column;
+align-items: center; justify-content: center;
+background: #000; color: white;
+font-family: 'Helvetica', sans-serif;
+z-index: 9999;
+transition: opacity 0.8s ease;
+pointer-events: none;
+}
+.countdown-text {
+font-size: 12px; letter-spacing: 4px;
+text-transform: uppercase; opacity: 0.6; margin-bottom: 10px;
+}
+.number{ font-size: 48px; font-weight: 200; }
+</style>
+</head>
+<body>
+<div id="overlay">
+<div class="countdown-text">Experience Loading</div>
+<div id="countdown" class="number">10</div>
+</div>
+<canvas id="c"></canvas>
+<!-- Spacer to enable scrolling - adjust height as needed -->
+<div style="height: 500vh; position: relative; z-index: 1;"></div>
+<script>
+// --- SETTINGS ---
+const vUrl = "static/videos/Recording.mp4"; // Make sure your video is compressed, and not too long forfasterloading!
+const totalFrames = 100; // Lowerthis to 60 if loading is too slow
+// ----------------
+const canvas = document.getElementById('c');
+const ctx = canvas.getContext('2d');
+const overlay = document.getElementById('overlay');
+const countdownEl = document.getElementById('countdown');
+const frames = [];
+const v = document.createElement('video');
+v.src = vUrl;
+v.crossOrigin = "anonymous";
+v.muted = true;
+v.preload = "auto";
+async function init() {
+try {
+await new Promise(r => { v.onloadedmetadata = r; v.load(); });
+const dur = v.duration;
+for(let i = 0; i < totalFrames; i++) {
+v.currentTime = (dur/ totalFrames) * i;
+await new Promise(r => {
+const onSeek = () => {
+v.removeEventListener('seeked', onSeek);
+const temp = document.createElement('canvas');
+temp.width = v.videoWidth; temp.height = v.videoHeight;
+temp.getContext('2d').drawImage(v, 0, 0);
+frames.push(temp);
+// Loader Progress
+const progress = frames.length / totalFrames;
+countdownEl.innerText = Math.max(1, Math.ceil(10 - (progress * 9)));
+r();
+};
+v.addEventListener('seeked', onSeek);
+});
+}
+// Remove Loader
+countdownEl.innerText = "READY";
+setTimeout(() => { overlay.style.opacity = '0'; }, 500);
+resize();
+updateScroll();
+} catch (e) {
+console.error(e);
+countdownEl.innerText = "ERROR";
+}
+}
+function draw(pct) {
+if (frames.length === 0)return;
+let idx = Math.floor(pct * (frames.length - 1));
+idx = Math.max(0, Math.min(idx, frames.length - 1));
+const img = frames[idx];
+const vArt = img.width / img.height;
+const cArt = canvas.width / canvas.height;
+let w, h, x, y;
+if (cArt > vArt) {
+w = canvas.width; h = canvas.width / vArt;
+x = 0; y = (canvas.height - h) / 2;
+} else {
+h = canvas.height; w = canvas.height * vArt;
+x = (canvas.width - w) / 2; y = 0;
+}
+ctx.clearRect(0,0,canvas.width, canvas.height);
+ctx.drawImage(img, x, y, w, h);
+}
+function updateScroll() {
+const scrollTop = window.scrollY || document.documentElement.scrollTop;
+const windowHeight = window.innerHeight;
+const docHeight = document.documentElement.scrollHeight;
+const totalScrollable = docHeight - windowHeight;
+// Avoid division by zero if page has no content yet
+let percent = totalScrollable > 0 ? scrollTop / totalScrollable : 0;
+draw(Math.max(0, Math.min(1, percent)));
+}
+function resize() {
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+updateScroll();
+}
+window.addEventListener('resize',resize);
+window.addEventListener('scroll', () => requestAnimationFrame(updateScroll));
+init();
+</script>
+</body>
+</html>

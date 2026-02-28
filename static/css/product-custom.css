@@ -1,0 +1,60 @@
+/* 
+   Page-Specific Product Hero Customizations
+   Targeting unique IDs to handle different device shapes (Phones vs Tablets)
+*/
+
+/* --- Dr. Meddy (Portrait Phone) --- */
+#dr-meddy-hero .badge-1 {
+    top: 5%;
+    right: 5%;
+    /* Brought closer to touch */
+}
+
+#dr-meddy-hero .badge-2 {
+    bottom: 5%;
+    left: 2%;
+    /* Brought closer to touch */
+}
+
+/* --- Mr. Brown (Landscape Tablet) --- */
+#mr-brown-hero .badge-1 {
+    top: 5%;
+    right: 8%;
+    /* Brining in to touch corners */
+}
+
+#mr-brown-hero .badge-2 {
+    bottom: 8%;
+    left: 5%;
+}
+
+/* --- OET Agents (Portrait Tablet) --- */
+#oet-agents-hero .badge-1 {
+    top: 12%;
+    right: 3%;
+}
+
+#oet-agents-hero .badge-2 {
+    bottom: 12%;
+    left: 2%;
+}
+
+/* Base adjustment to ensure badges don't overflow small screens */
+@media (max-width: 1200px) {
+    .floating-badge {
+        font-size: 0.75rem;
+        padding: 0.5rem 0.8rem;
+    }
+
+    #dr-meddy-hero .badge-1,
+    #mr-brown-hero .badge-1,
+    #oet-agents-hero .badge-1 {
+        right: -5%;
+    }
+
+    #dr-meddy-hero .badge-2,
+    #mr-brown-hero .badge-2,
+    #oet-agents-hero .badge-2 {
+        left: -5%;
+    }
+}

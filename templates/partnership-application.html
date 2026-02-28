@@ -1,0 +1,637 @@
+{% extends 'base.html' %}
+
+{% block title %}Partner Application - MedTalks{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/partnership-application.css') }}">
+{% endblock %}
+
+{% block content %}
+<!--Partner Application Hero -->
+<section class="application-hero">
+    <div class="container">
+        <div class="hero-content">
+            <h1 class="hero-title">Partner With Us to Deliver English Communication Excellence</h1>
+            <p class="hero-description">
+                Help doctors, nurses, and medical students improve global communication skills through certified medical
+                English programs.
+            </p>
+            <div class="hero-stats" style="position: relative; z-index: 2;">
+                <div class="stat">
+                    <span class="stat-number">10+</span>
+                    <span class="stat-label">Institutions</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">International</span>
+                    <span class="stat-label">Curriculum</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">24-48h</span>
+                    <span class="stat-label">Review Time</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Application Form Section -->
+<section class="application-section">
+    <div class="container">
+        <div class="application-form-container">
+
+            <!-- Progress Indicator -->
+            <div class="progress-indicator">
+                <div class="progress-steps">
+                    <div class="progress-step active" data-step="1" role="button" tabindex="0">
+                        <div class="step-number"><span class="step-num-text">1</span><i class="fas fa-check step-tick"
+                                style="display:none;"></i></div>
+                        <div class="step-label">Personal Info</div>
+                    </div>
+                    <div class="progress-step" data-step="2" role="button" tabindex="0">
+                        <div class="step-number"><span class="step-num-text">2</span><i class="fas fa-check step-tick"
+                                style="display:none;"></i></div>
+                        <div class="step-label">Institution Details</div>
+                    </div>
+                    <div class="progress-step" data-step="3" role="button" tabindex="0">
+                        <div class="step-number"><span class="step-num-text">3</span><i class="fas fa-check step-tick"
+                                style="display:none;"></i></div>
+                        <div class="step-label">Partnership Info</div>
+                    </div>
+                    <div class="progress-step" data-step="4" role="button" tabindex="0">
+                        <div class="step-number"><span class="step-num-text">4</span><i class="fas fa-check step-tick"
+                                style="display:none;"></i></div>
+                        <div class="step-label">Business Experience</div>
+                    </div>
+                    <div class="progress-step" data-step="5" role="button" tabindex="0">
+                        <div class="step-number"><span class="step-num-text">5</span><i class="fas fa-check step-tick"
+                                style="display:none;"></i></div>
+                        <div class="step-label">Agreement</div>
+                    </div>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+            </div>
+
+            <!-- Application Form -->
+            <form id="PartnerApplicationForm" class="partner-form" novalidate onsubmit="return false;">
+
+                <!-- Step 1: Personal Information -->
+                <div class="form-step active" data-step="1">
+                    <div class="step-header">
+                        <h2 class="step-title">Personal Information</h2>
+                        <p class="step-description">Tell us about yourself and your role.</p>
+                    </div>
+
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="firstName" class="form-label">First Name *</label>
+                            <input type="text" id="firstName" name="firstName" class="form-input" required>
+                            <span class="form-error"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="lastName" class="form-label">Last Name <span
+                                    style="font-size:0.8em;color:#888;font-weight:400;">(Optional)</span></label>
+                            <input type="text" id="lastName" name="lastName" class="form-input">
+                            <span class="form-error"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email Address *</label>
+                            <input type="email" id="email" name="email" class="form-input" required>
+                            <span class="form-error"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone" class="form-label">Phone Number *</label>
+                            <div class="phone-wrapper" style="display: flex; gap: 8px;">
+                                <select id="countryCode" name="countryCode" class="form-input" style="flex: 0 0 160px;"
+                                    required>
+                                    <option value="+91" selected>🇮🇳 India (+91)</option>
+                                    <option value="+1">🇺🇸 USA (+1)</option>
+                                    <option value="+44">🇬🇧 UK (+44)</option>
+                                    <option value="+61">🇦🇺 Australia (+61)</option>
+                                    <option value="+1-CA">🇨🇦 Canada (+1)</option>
+                                    <option value="+90">🇹🇷 Turkey (+90)</option>
+                                    <option value="+971">🇦🇪 UAE (+971)</option>
+                                    <option value="+966">🇸🇦 Saudi Arabia (+966)</option>
+                                    <option value="+49">🇩🇪 Germany (+49)</option>
+                                    <option value="+33">🇫🇷 France (+33)</option>
+                                    <option value="+39">🇮🇹 Italy (+39)</option>
+                                    <option value="+34">🇪🇸 Spain (+34)</option>
+                                    <option value="+31">🇳🇱 Netherlands (+31)</option>
+                                    <option value="+46">🇸🇪 Sweden (+46)</option>
+                                    <option value="+47">🇳🇴 Norway (+47)</option>
+                                    <option value="+353">🇮🇪 Ireland (+353)</option>
+                                    <option value="+81">🇯🇵 Japan (+81)</option>
+                                    <option value="+82">🇰🇷 South Korea (+82)</option>
+                                    <option value="+86">🇨🇳 China (+86)</option>
+                                    <option value="+65">🇸🇬 Singapore (+65)</option>
+                                    <option value="+60">🇲🇾 Malaysia (+60)</option>
+                                    <option value="+63">🇵🇭 Philippines (+63)</option>
+                                    <option value="+66">🇹🇭 Thailand (+66)</option>
+                                    <option value="+62">🇮🇩 Indonesia (+62)</option>
+                                    <option value="+92">🇵🇰 Pakistan (+92)</option>
+                                    <option value="+880">🇧🇩 Bangladesh (+880)</option>
+                                    <option value="+94">🇱🇰 Sri Lanka (+94)</option>
+                                    <option value="+977">🇳🇵 Nepal (+977)</option>
+                                    <option value="+27">🇿🇦 South Africa (+27)</option>
+                                    <option value="+234">🇳🇬 Nigeria (+234)</option>
+                                    <option value="+254">🇰🇪 Kenya (+254)</option>
+                                    <option value="+20">🇪🇬 Egypt (+20)</option>
+                                    <option value="+55">🇧🇷 Brazil (+55)</option>
+                                    <option value="+52">🇲🇽 Mexico (+52)</option>
+                                    <option value="+7">🇷🇺 Russia (+7)</option>
+                                    <option value="+48">🇵🇱 Poland (+48)</option>
+                                    <option value="+41">🇨🇭 Switzerland (+41)</option>
+                                    <option value="+43">🇦🇹 Austria (+43)</option>
+                                    <option value="+32">🇧🇪 Belgium (+32)</option>
+                                    <option value="+45">🇩🇰 Denmark (+45)</option>
+                                    <option value="+358">🇫🇮 Finland (+358)</option>
+                                    <option value="+351">🇵🇹 Portugal (+351)</option>
+                                    <option value="+30">🇬🇷 Greece (+30)</option>
+                                    <option value="+36">🇭🇺 Hungary (+36)</option>
+                                    <option value="+64">🇳🇿 New Zealand (+64)</option>
+                                    <option value="+974">🇶🇦 Qatar (+974)</option>
+                                    <option value="+968">🇴🇲 Oman (+968)</option>
+                                    <option value="+965">🇰🇼 Kuwait (+965)</option>
+                                    <option value="+973">🇧🇭 Bahrain (+973)</option>
+                                    <option value="+972">🇮🇱 Israel (+972)</option>
+                                </select>
+                                <input type="tel" id="phone" name="phone" class="form-input"
+                                    placeholder="Enter mobile (WhatsApp preferred)" style="flex: 1;" required>
+                            </div>
+                            <span class="form-error" id="phone-error"></span>
+                        </div>
+
+                        <div class="form-group form-group-full">
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="isWhatsapp" id="isWhatsapp" checked>
+                                <span class="checkmark"></span>
+                                <span class="checkbox-label" style="font-size: 0.9rem; color: #555;">This is my WhatsApp
+                                    number</span>
+                            </label>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="jobTitle" class="form-label">Role in Organization *</label>
+                            <select id="jobTitle" name="jobTitle" class="form-select" required>
+                                <option value="">Select your role</option>
+                                <option value="Director / Founder">Director / Founder</option>
+                                <option value="Academic Coordinator">Academic Coordinator</option>
+                                <option value="Faculty / Trainer">Faculty / Trainer</option>
+                                <option value="Business Development">Business Development</option>
+                                <option value="Consultant">Consultant</option>
+                                <option value="Other">Other</option>
+                            </select>
+                            <span class="form-error"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="linkedin" class="form-label">LinkedIn Profile *</label>
+                            <input type="url" id="linkedin" name="linkedin" class="form-input"
+                                placeholder="https://linkedin.com/in/your-profile" required>
+                            <span class="form-error"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2: Company Information -->
+                <div class="form-step" data-step="2">
+                    <div class="step-header">
+                        <h2 class="step-title">Institution / Organization Details</h2>
+                        <p class="step-description">Share details about your institution and student reach.</p>
+                    </div>
+
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="company" class="form-label">Institution / Company Name *</label>
+                            <input type="text" id="company" name="company" class="form-input" required>
+                            <span class="form-error"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="website" class="form-label">Website (Optional)</label>
+                            <input type="url" id="website" name="website" class="form-input"
+                                placeholder="https://yourinstitution.com">
+                            <span class="form-error"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="country" class="form-label">Country *</label>
+                            <select id="country" name="country" class="form-select" required>
+                                <option value="">Select your country</option>
+                                <!-- Major English-speaking countries -->
+                                <option value="India">India</option>
+                                <option value="United States">United States</option>
+                                <option value="United Kingdom">United Kingdom</option>
+                                <option value="Canada">Canada</option>
+                                <option value="Australia">Australia</option>
+                                <option value="New Zealand">New Zealand</option>
+                                <option value="Ireland">Ireland</option>
+                                <option value="South Africa">South Africa</option>
+                                <option value="Singapore">Singapore</option>
+                                <option value="Philippines">Philippines</option>
+                                <!-- Other major countries -->
+                                <option value="Turkey">Turkey</option>
+                                <option value="United Arab Emirates">United Arab Emirates</option>
+                                <option value="Saudi Arabia">Saudi Arabia</option>
+                                <option value="Germany">Germany</option>
+                                <option value="France">France</option>
+                                <option value="Japan">Japan</option>
+                                <option value="South Korea">South Korea</option>
+                                <option value="Nepal">Nepal</option>
+                                <option value="Sri Lanka">Sri Lanka</option>
+                                <option value="Bangladesh">Bangladesh</option>
+                                <option value="Pakistan">Pakistan</option>
+                                <option value="Nigeria">Nigeria</option>
+                                <option value="Other">Other</option>
+                            </select>
+                            <span class="form-error"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="orgType" class="form-label">Type of Organization *</label>
+                            <select id="orgType" name="orgType" class="form-select" required>
+                                <option value="">Select organization type</option>
+                                <option value="Medical College">Medical College</option>
+                                <option value="Nursing College">Nursing College</option>
+                                <option value="Hospital">Hospital / Clinic</option>
+                                <option value="EdTech Company">EdTech Company</option>
+                                <option value="Study Abroad Consultancy">Study Abroad Consultancy</option>
+                                <option value="Individual Trainer">Individual Trainer</option>
+                                <option value="Other">Other</option>
+                            </select>
+                            <span class="form-error"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="studentVolume" class="form-label">Approx. Number of Students per Year
+                                *</label>
+                            <select id="studentVolume" name="studentVolume" class="form-select" required>
+                                <option value="">Select student volume</option>
+                                <option value="0-100">0 - 100</option>
+                                <option value="100-500">100 - 500</option>
+                                <option value="500-1000">500 - 1000</option>
+                                <option value="1000+">1000+</option>
+                                <option value="Not Applicable">Not Applicable</option>
+                            </select>
+                            <span class="form-error"></span>
+                        </div>
+
+                        <div class="form-group form-group-full">
+                            <label class="form-label">Do you currently offer English training? *</label>
+                            <div class="checkbox-group">
+                                <label class="checkbox-item" style="cursor: pointer;">
+                                    <input type="radio" name="currentEnglishTraining" value="Yes" required>
+                                    <span class="radio-label">Yes, we have an existing English program</span>
+                                </label>
+                                <label class="checkbox-item" style="cursor: pointer;">
+                                    <input type="radio" name="currentEnglishTraining" value="No" required>
+                                    <span class="radio-label">No, we are looking to start one</span>
+                                </label>
+                            </div>
+                            <span class="form-error"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3: Partnership Information -->
+                <div class="form-step" data-step="3">
+                    <div class="step-header">
+                        <h2 class="step-title">Partnership Details</h2>
+                        <p class="step-description">Define your partnership approach and service offerings.</p>
+                    </div>
+
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="partnershipType" class="form-label">How Would You Like to Partner? *</label>
+                            <select id="partnershipType" name="partnershipType" class="form-select" required>
+                                <option value="">Select partnership type</option>
+                                <option value="Authorized Training Partner">Authorized Training Partner</option>
+                                <option value="Campus Program Partner">Campus Program Partner</option>
+                                <option value="Reseller / Referral Partner">Reseller / Referral Partner</option>
+                                <option value="Corporate Hospital Training Partner">Corporate Hospital Training
+                                    Partner</option>
+                                <option value="Faculty Representative">Faculty Representative</option>
+                            </select>
+                            <span class="form-error"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="expectedTimeline" class="form-label">Expected Start Timeline *</label>
+                            <select id="expectedTimeline" name="expectedTimeline" class="form-select" required>
+                                <option value="">Select timeline</option>
+                                <option value="Immediately">Immediately</option>
+                                <option value="1-3 months">1-3 months</option>
+                                <option value="3-6 months">3-6 months</option>
+                                <option value="Not sure yet">Not sure yet</option>
+                            </select>
+                            <span class="form-error"></span>
+                        </div>
+
+                        <div class="form-group form-group-full">
+                            <label class="form-label">Target Segments *</label>
+                            <div class="checkbox-group">
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="targetSegments" value="MBBS Students">
+                                    <span class="checkmark"></span>
+                                    <span class="checkbox-label">MBBS Students</span>
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="targetSegments" value="Nursing Students">
+                                    <span class="checkmark"></span>
+                                    <span class="checkbox-label">Nursing Students</span>
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="targetSegments" value="Doctors / Clinicians">
+                                    <span class="checkmark"></span>
+                                    <span class="checkbox-label">Doctors / Clinicians</span>
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="targetSegments" value="IELTS/OET Aspirants">
+                                    <span class="checkmark"></span>
+                                    <span class="checkbox-label">IELTS / OET Aspirants</span>
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="targetSegments" value="International Placement">
+                                    <span class="checkmark"></span>
+                                    <span class="checkbox-label">International Placement Candidates</span>
+                                </label>
+                            </div>
+                            <span class="form-error"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 4: Business Experience -->
+                <div class="form-step" data-step="4">
+                    <div class="step-header">
+                        <h2 class="step-title">Business Experience</h2>
+                        <p class="step-description">Share your experience and business goals.</p>
+                    </div>
+
+                    <div class="form-grid">
+                        <div class="form-group form-group-full">
+                            <label for="monthlyVolume" class="form-label">Expected Monthly Student / Staff Volume
+                                *</label>
+                            <input type="text" id="monthlyVolume" name="monthlyVolume" class="form-input"
+                                placeholder="e.g., 50 students/month" required>
+                            <span class="form-error"></span>
+                        </div>
+
+                        <div class="form-group form-group-full">
+                            <label for="whyPartner" class="form-label">Why do you want to partner with us? *</label>
+                            <textarea id="whyPartner" name="whyPartner" class="form-textarea" rows="4"
+                                placeholder="Please give a brief overview of how this partnership aligns with your goals..."
+                                required></textarea>
+                            <span class="form-error"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 5: Agreement & Terms -->
+                <div class="form-step" data-step="5">
+                    <div class="step-header">
+                        <h2 class="step-title">Agreement & Terms</h2>
+                        <p class="step-description">Review and agree to partnership terms.</p>
+                    </div>
+
+                    <div class="form-grid">
+                        <div class="form-group form-group-full">
+                            <label for="additionalInfo" class="form-label">Additional Information (Optional)</label>
+                            <textarea id="additionalInfo" name="additionalInfo" class="form-textarea" rows="4"
+                                placeholder="Anything else you'd like us to know about your business, goals, or questions about the partnership..."></textarea>
+                            <span class="form-error"></span>
+                        </div>
+
+                        <!-- Turnstile CAPTCHA -->
+                        <div class="form-group form-group-full">
+                            <label for="captcha" class="form-label">Security Verification *</label>
+                            <div class="cf-turnstile" data-sitekey="{{ turnstile_site_key }}" data-theme="light"
+                                data-language="auto" data-retry="auto" data-retry-interval="8000"
+                                data-refresh-expired="auto" data-appearance="always"
+                                data-response-field-name="cf-turnstile-response">
+                            </div>
+                            <span class="form-error" id="turnstile-error"></span>
+                        </div>
+
+                        <div class="form-group form-group-full">
+                            <div class="agreements-section">
+                                <div class="agreement-item">
+                                    <label class="checkbox-item">
+                                        <input type="checkbox" name="agreeToTerms" id="agreeToTerms" required>
+                                        <span class="checkmark"></span>
+                                        <span class="checkbox-label">I agree to the <a href="#" target="_blank">Terms
+                                                and Conditions</a> *</span>
+                                    </label>
+                                    <span class="form-error"></span>
+                                </div>
+
+                                <div class="agreement-item">
+                                    <label class="checkbox-item">
+                                        <input type="checkbox" name="authority" id="authority" required>
+                                        <span class="checkmark"></span>
+                                        <span class="checkbox-label">I confirm that I have the authority to enter
+                                            into partnership discussions on behalf of my institution. *</span>
+                                    </label>
+                                    <span class="form-error"></span>
+                                </div>
+
+                                <div class="agreement-item" style="margin-top: 1rem;">
+                                    <label class="form-label">Would you like to schedule a demo call after
+                                        submission?</label>
+                                    <div style="display: flex; gap: 1rem; margin-top: 0.5rem;">
+                                        <label class="checkbox-item" style="cursor: pointer;">
+                                            <input type="radio" name="demoCall" value="Yes" checked>
+                                            <span class="radio-label">Yes, please</span>
+                                        </label>
+                                        <label class="checkbox-item" style="cursor: pointer;">
+                                            <input type="radio" name="demoCall" value="No">
+                                            <span class="radio-label">No, just send info first</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form Navigation -->
+                <div class="form-navigation">
+                    <button type="button" class="btn btn-secondary prev-btn" style="display: none;">
+                        <i class="fas fa-arrow-left"></i>
+                        <span>Previous</span>
+                    </button>
+
+                    <button type="button" class="btn btn-primary next-btn">
+                        <span>Next</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+
+                    <button type="button" class="btn btn-primary submit-btn" style="display: none;">
+                        <span class="btn-text">Submit Application</span>
+                        <span class="btn-loading" style="display: none;">
+                            <i class="fas fa-spinner fa-spin"></i>
+                            <span>Submitting...</span>
+                        </span>
+                    </button>
+                </div>
+
+                <div id="form-success-message" style="display:none; text-align:center; padding: 3rem 1.5rem;">
+                    <!-- Success Icon -->
+                    <div
+                        style="width: 90px; height: 90px; background: linear-gradient(135deg, #0e415b, #1a6b8a); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; box-shadow: 0 8px 25px rgba(14,65,91,0.3);">
+                        <i class="fas fa-check" style="font-size: 2.4rem; color: white;"></i>
+                    </div>
+
+                    <!-- Thank You Title -->
+                    <h3 style="color: #0e415b; margin-bottom: 0.5rem; font-size: 1.8rem; font-weight: 700;">Thank You
+                        for Your Application!</h3>
+                    <p style="color: #555; font-size: 1.05rem; line-height: 1.7; margin-bottom: 1.5rem;">
+                        We have received your partnership application successfully.<br>
+                        We will <strong>reach out to you soon</strong>. Thanks for applying!
+                    </p>
+
+                    <!-- Reference Number Box -->
+                    <div id="reference-box"
+                        style="background: #f0f4f8; border: 2px dashed #0e415b; border-radius: 12px; padding: 1.2rem 2rem; display: inline-block; margin-bottom: 0.5rem;">
+                        <p
+                            style="margin: 0 0 0.4rem; color: #888; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 1.5px;">
+                            Your Reference ID</p>
+                        <p id="reference-number"
+                            style="margin: 0; color: #0e415b; font-size: 1.5rem; font-weight: 800; letter-spacing: 2px;">
+                        </p>
+                    </div>
+                    <div style="margin-bottom: 1.5rem;">
+                        <button type="button" onclick="copyToClipboard('reference-number', this)" class="copy-btn"
+                            style="background: none; border: 1px solid #0e415b; color: #0e415b; padding: 6px 16px; border-radius: 6px; cursor: pointer; font-size: 0.82rem; font-weight: 600; transition: all 0.2s;">
+                            <i class="fas fa-copy" style="margin-right: 4px;"></i> Copy Reference ID
+                        </button>
+                    </div>
+                    <p style="color: #999; font-size: 0.82rem; margin-bottom: 2rem;">
+                        <i class="fas fa-bookmark" style="margin-right: 4px;"></i>
+                        Please save your Reference ID for future correspondence.
+                    </p>
+
+                    <!-- Contact Section -->
+                    <div
+                        style="background: #f8f9fa; border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem; border-left: 4px solid #0e415b; text-align: left;">
+                        <p style="margin: 0 0 1rem; font-weight: 600; color: #0e415b; font-size: 1rem;">
+                            For any queries, feel free to reach out to us:</p>
+
+                        <!-- Email Row -->
+                        <div
+                            style="display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 0.8rem; flex-wrap: wrap;">
+                            <p style="margin: 0; color: #555; font-size: 0.95rem;">
+                                <i class="fas fa-envelope" style="color: #0e415b; margin-right: 8px;"></i>
+                                <a href="mailto:Medtalk@idesmail.com"
+                                    style="color: #0e415b; font-weight: 600; text-decoration: none;"
+                                    id="contact-email-link">Medtalk@idesmail.com</a>
+                            </p>
+                            <button type="button" onclick="copyText('Medtalk@idesmail.com', this)"
+                                class="copy-btn-small"
+                                style="background: none; border: 1px solid #ccc; color: #555; padding: 4px 10px; border-radius: 5px; cursor: pointer; font-size: 0.75rem; transition: all 0.2s; flex-shrink: 0;"
+                                title="Copy Email">
+                                <i class="fas fa-copy"></i> Copy
+                            </button>
+                        </div>
+
+                        <!-- Phone Row -->
+                        <div
+                            style="display: flex; align-items: center; justify-content: space-between; gap: 8px; flex-wrap: wrap;">
+                            <p style="margin: 0; color: #555; font-size: 0.95rem;">
+                                <i class="fas fa-phone" style="color: #0e415b; margin-right: 8px;"></i>
+                                <a href="tel:+12346541890"
+                                    style="color: #0e415b; font-weight: 600; text-decoration: none;"
+                                    id="contact-phone-link">+1 (234) 654 1890</a>
+                                <span style="color: #888; font-size: 0.82rem; margin-left: 4px;">(US)</span>
+                            </p>
+                            <button type="button" onclick="copyText('+1 (234) 654 1890', this)" class="copy-btn-small"
+                                style="background: none; border: 1px solid #ccc; color: #555; padding: 4px 10px; border-radius: 5px; cursor: pointer; font-size: 0.75rem; transition: all 0.2s; flex-shrink: 0;"
+                                title="Copy Phone">
+                                <i class="fas fa-copy"></i> Copy
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- What Happens Next -->
+                    <div style="text-align: left; max-width: 420px; margin: 0 auto;">
+                        <p style="margin: 0 0 0.8rem; font-weight: 600; color: #0e415b; font-size: 0.95rem;">What
+                            happens next?</p>
+                        <div style="display: flex; flex-direction: column; gap: 0.8rem;">
+                            <div style="display: flex; gap: 0.8rem; align-items: center;">
+                                <div
+                                    style="background: #e13732; color: white; width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0; font-size: 0.8rem;">
+                                    1</div>
+                                <p style="margin: 0; color: #555; font-size: 0.9rem;"><strong>Application
+                                        Review</strong> — Our team reviews within 24-48h</p>
+                            </div>
+                            <div style="display: flex; gap: 0.8rem; align-items: center;">
+                                <div
+                                    style="background: #e13732; color: white; width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0; font-size: 0.8rem;">
+                                    2</div>
+                                <p style="margin: 0; color: #555; font-size: 0.9rem;"><strong>Intro Call</strong> — We
+                                    schedule a call to discuss alignment</p>
+                            </div>
+                            <div style="display: flex; gap: 0.8rem; align-items: center;">
+                                <div
+                                    style="background: #e13732; color: white; width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0; font-size: 0.8rem;">
+                                    3</div>
+                                <p style="margin: 0; color: #555; font-size: 0.9rem;"><strong>Proposal &amp;
+                                        Onboarding</strong> — Custom plan and rapid rollout</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    </div>
+</section>
+
+<!-- Partnership Benefits Section -->
+<section class="benefits-preview">
+    <div class="container">
+        <div class="benefits-header">
+            <h2 class="benefits-title">Partner Benefits</h2>
+            <p class="benefits-description">What you get as a MedTalks Partner</p>
+        </div>
+
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <div class="benefit-icon">
+                    <i class="fas fa-handshake"></i>
+                </div>
+                <h3 class="benefit-title">Lucrative Commission</h3>
+                <p class="benefit-description">Earn lifetime commissions that scale with your success</p>
+            </div>
+
+            <div class="benefit-card">
+                <div class="benefit-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <h3 class="benefit-title">Partner Training</h3>
+                <p class="benefit-description">Comprehensive training and certification programs</p>
+            </div>
+
+            <div class="benefit-card">
+                <div class="benefit-icon">
+                    <i class="fas fa-headset"></i>
+                </div>
+                <h3 class="benefit-title">Dedicated Support</h3>
+                <p class="benefit-description">Personal partner manager and technical support</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
+
+{% block extra_js %}
+<!-- Cloudflare Turnstile Script -->
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+<script src="{{ url_for('static', filename='js/partnership-application.js') }}"></script>
+{% endblock %}

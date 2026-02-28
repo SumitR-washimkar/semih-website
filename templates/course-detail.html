@@ -1,0 +1,493 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ course.title }} - MedTalks{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/course-detail.css') }}">
+{% endblock %}
+
+{% block content %}
+<!-- Breadcrumb -->
+<nav class="course-breadcrumb">
+    <div class="container">
+        <a href="/">Home</a>
+        <span class="separator">›</span>
+        <a href="{{ course.category_info.url }}">{{ course.category_info.name }}</a>
+        <span class="separator">›</span>
+        <span class="current">{{ course.title }}</span>
+    </div>
+</nav>
+
+<!-- Sticky Floating Header -->
+<div class="sticky-course-header" id="stickyHeader">
+    <div class="container">
+        <div class="sticky-header-content">
+            <div class="sticky-info">
+                <span class="sticky-title">{{ course.title }}</span>
+                <div class="sticky-meta">
+                    <span class="sticky-price">{% if course.is_free %}Free{% else %}{{ course.formatted_discounted_price
+                        }}{% endif %}</span>
+                    <span class="sticky-stats">{{ course.stats.total_lessons }} Lessons • {{ course.duration_hours }}
+                        Hours</span>
+                </div>
+            </div>
+            <a href="#" class="btn-sticky-enroll">Enroll Now</a>
+        </div>
+    </div>
+</div>
+
+<!-- Course Hero Section -->
+<section class="course-hero" style="--category-color: {{ course.category_info.color }}">
+    <div class="container">
+        <div class="hero-grid">
+            <!-- Left: Course Info -->
+            <div class="hero-content">
+                <div class="course-category-badge">
+                    <span class="category-icon">{{ course.category_info.icon }}</span>
+                    <span>{{ course.category_info.name }}</span>
+                </div>
+
+                <h1 class="course-title">{{ course.title }}</h1>
+
+                <p class="course-description">{{ course.description }}</p>
+
+                <!-- Course Stats -->
+                <div class="course-stats-row">
+                    <div class="stat-item">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                        <span>{{ course.stats.total_sections }} Sections</span>
+                    </div>
+                    <div class="stat-item">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <polygon points="5 3 19 12 5 21 5 3" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        <span>{{ course.stats.total_lessons }} Lessons</span>
+                    </div>
+                    <div class="stat-item">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" />
+                            <polyline points="12,6 12,12 16,14" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        <span>{{ course.duration_hours }} Hours</span>
+                    </div>
+                    <div class="stat-item">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 20V10" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M18 20V4" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M6 20V16" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                        <span>{{ course.stats.level }}</span>
+                    </div>
+                    {% if course.enrolled_count > 0 %}
+                    <div class="stat-item">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M17 21V19C17 17.9391 16.5786 16.9217 15.8284 16.1716C15.0783 15.4214 14.0609 15 13 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                                d="M9 11C11.2091 11 13 9.20914 13 7C13 4.79086 11.2091 3 9 3C6.79086 3 5 4.79086 5 7C5 9.20914 6.79086 11 9 11Z"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                                d="M23 21V19C22.9993 18.1137 22.7044 17.2528 22.1614 16.5523C21.6184 15.8519 20.8581 15.3516 20 15.13"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                                d="M16 3.13C16.8604 3.35031 17.623 3.85071 18.1676 4.55232C18.7122 5.25392 19.0078 6.11683 19.0078 7.005C19.0078 7.89318 18.7122 8.75608 18.1676 9.45769C17.623 10.1593 16.8604 10.6597 16 10.88"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        <span>{{ course.enrolled_count }} Enrolled</span>
+                    </div>
+                    {% endif %}
+                </div>
+
+                <!-- Instructor Info -->
+                {% if course.instructor_name %}
+                <div class="instructor-card">
+                    {% if course.instructor_photo_url %}
+                    <img src="{{ course.instructor_photo_url }}" alt="{{ course.instructor_name }}"
+                        class="instructor-photo">
+                    {% else %}
+                    <div class="instructor-photo-placeholder">
+                        {{ course.instructor_name[0] }}
+                    </div>
+                    {% endif %}
+                    <div class="instructor-details">
+                        <span class="instructor-label">Instructor</span>
+                        <span class="instructor-name">{{ course.instructor_name }}</span>
+                        {% if course.instructor_description %}
+                        <span class="instructor-role">{{ course.instructor_description }}</span>
+                        {% endif %}
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+
+            <!-- Right: Course Card (Sticky) -->
+            <div class="hero-sidebar">
+                <div class="course-purchase-card">
+                    <!-- Course Thumbnail -->
+                    <div class="card-thumbnail">
+                        {% if course.thumbnail %}
+                        <img src="{{ course.thumbnail }}" alt="{{ course.title }}">
+                        {% else %}
+                        <div class="thumbnail-placeholder">
+                            <span>{{ course.category_info.icon }}</span>
+                        </div>
+                        {% endif %}
+
+                        {% if course.discount_percentage > 0 %}
+                        <div class="discount-badge">{{ course.discount_percentage }}% OFF</div>
+                        {% endif %}
+                    </div>
+
+                    <!-- Price -->
+                    <div class="card-price">
+                        {% if course.is_free %}
+                        <span class="price-current free">Free</span>
+                        {% else %}
+                        {% if course.discount_percentage > 0 %}
+                        <span class="price-original">{{ course.formatted_actual_price }}</span>
+                        <span class="price-current">{{ course.formatted_discounted_price }}</span>
+                        {% else %}
+                        <span class="price-current">{{ course.formatted_actual_price }}</span>
+                        {% endif %}
+                        {% endif %}
+                    </div>
+
+                    <!-- CTA Buttons -->
+                    <div class="card-actions">
+                        <a href="#" class="btn-primary-enroll">Enroll Now</a>
+                        <a href="#curriculum" class="btn-secondary-preview">View Curriculum</a>
+                    </div>
+
+                    <!-- Course Includes -->
+                    <div class="card-includes">
+                        <h4>This course includes:</h4>
+                        <ul>
+                            <li>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <polygon points="5 3 19 12 5 21 5 3" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                {{ course.stats.total_lessons }} video lessons
+                            </li>
+                            <li>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" />
+                                    <polyline points="12,6 12,12 16,14" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                {{ course.duration_hours }} hours of content
+                            </li>
+                            <li>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M22 11.08V12C21.9988 14.1564 21.3005 16.2547 20.0093 17.9818C18.7182 19.709 16.9033 20.9725 14.8354 21.5839C12.7674 22.1953 10.5573 22.1219 8.53447 21.3746C6.51168 20.6273 4.78465 19.2461 3.61096 17.4371C2.43727 15.628 1.87979 13.4881 2.02168 11.3363C2.16356 9.18455 2.99721 7.13631 4.39828 5.49706C5.79935 3.85781 7.69279 2.71537 9.79619 2.24013C11.8996 1.7649 14.1003 1.98232 16.07 2.85999"
+                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <polyline points="22,4 12,14.01 9,11.01" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                Full lifetime access
+                            </li>
+                            <li>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                    <line x1="8" y1="21" x2="16" y2="21" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <line x1="12" y1="17" x2="12" y2="21" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                Access on mobile & desktop
+                            </li>
+                            <li>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M14 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V8L14 2Z"
+                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <polyline points="14,2 14,8 20,8" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                Certificate of completion
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Course Content Section -->
+<section class="course-content-section" id="curriculum">
+    <div class="container">
+        <div class="content-grid">
+            <!-- Main Content -->
+            <div class="main-content">
+                <!-- Prerequisites -->
+                {% if course.prerequisites %}
+                <div class="content-block prerequisites-block">
+                    <h2>Prerequisites</h2>
+                    <div class="prerequisites-content">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" />
+                            <line x1="12" y1="16" x2="12" y2="12" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" />
+                            <line x1="12" y1="8" x2="12.01" y2="8" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" />
+                        </svg>
+                        <p>{{ course.prerequisites }}</p>
+                    </div>
+                </div>
+                {% endif %}
+
+                <!-- Course Curriculum -->
+                <div class="content-block curriculum-block">
+                    <div class="curriculum-header">
+                        <h2>Course Curriculum</h2>
+                        <div class="curriculum-summary">
+                            <span>{{ course.stats.total_sections }} sections</span>
+                            <span class="dot">•</span>
+                            <span>{{ course.stats.total_lessons }} lessons</span>
+                            <span class="dot">•</span>
+                            <span>{{ course.stats.total_duration_formatted }} total</span>
+                        </div>
+                    </div>
+
+                    {% if course.sections %}
+                    <div class="curriculum-accordion">
+                        {% for section in course.sections %}
+                        <div class="accordion-item">
+                            <div class="accordion-header" data-section="{{ loop.index }}">
+                                <div class="accordion-title">
+                                    <svg class="accordion-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <polyline points="6,9 12,15 18,9" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                    <span class="section-number">Section {{ loop.index }}</span>
+                                    <span class="section-title">{{ section.title }}</span>
+                                </div>
+                                <div class="accordion-meta">
+                                    <span>{{ section.lessons|length }} lessons</span>
+                                </div>
+                            </div>
+                            <div class="accordion-content" id="section-{{ loop.index }}">
+                                <ul class="lessons-list">
+                                    {% for lesson in section.lessons %}
+                                    <li class="lesson-item {% if lesson.is_preview %}is-preview{% endif %}" {% if
+                                        lesson.is_preview and lesson.video_url
+                                        %}data-preview-url="{{ lesson.video_url }}"
+                                        data-lesson-title="{{ lesson.title }}" {% endif %}>
+                                        <div class="lesson-info">
+                                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <polygon points="5 3 19 12 5 21 5 3" stroke="currentColor"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                            <span class="lesson-title">{{ lesson.title }}</span>
+                                            {% if lesson.is_preview %}
+                                            <span class="preview-badge">Preview</span>
+                                            {% endif %}
+                                        </div>
+                                        <span class="lesson-duration">{{ lesson.duration }} h</span>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    {% else %}
+                    <div class="no-curriculum">
+                        <p>Course curriculum will be available soon.</p>
+                    </div>
+                    {% endif %}
+                </div>
+
+                <!-- About Instructor -->
+                {% if course.instructor_name %}
+                <div class="content-block instructor-block">
+                    <h2>About the Instructor</h2>
+                    <div class="instructor-profile">
+                        {% if course.instructor_photo_url %}
+                        <img src="{{ course.instructor_photo_url }}" alt="{{ course.instructor_name }}"
+                            class="instructor-large-photo">
+                        {% else %}
+                        <div class="instructor-large-placeholder">
+                            {{ course.instructor_name[0] }}
+                        </div>
+                        {% endif %}
+                        <div class="instructor-bio">
+                            <h3>{{ course.instructor_name }}</h3>
+                            {% if course.instructor_description %}
+                            <p class="instructor-title">{{ course.instructor_description }}</p>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Video Preview Modal -->
+<div class="video-preview-modal" id="videoPreviewModal">
+    <div class="modal-overlay"></div>
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3 class="modal-title" id="modalLessonTitle">Lesson Preview</h3>
+            <button class="modal-close" id="closeVideoModal">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="18" y1="6" x2="6" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <line x1="6" y1="6" x2="18" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </button>
+        </div>
+        <div class="modal-video-container">
+            <video id="previewVideo" controls>
+                <source src="" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Accordion functionality
+        const accordionHeaders = document.querySelectorAll('.accordion-header');
+
+        accordionHeaders.forEach(header => {
+            header.addEventListener('click', function () {
+                const sectionId = this.getAttribute('data-section');
+                const content = document.getElementById('section-' + sectionId);
+                const accordionItem = this.parentElement;
+
+                // Toggle active state
+                accordionItem.classList.toggle('active');
+
+                // Toggle content visibility
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
+                } else {
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                }
+            });
+        });
+
+        // Open first section by default
+        const firstAccordion = document.querySelector('.accordion-item');
+        if (firstAccordion) {
+            firstAccordion.classList.add('active');
+            const firstContent = firstAccordion.querySelector('.accordion-content');
+            if (firstContent) {
+                firstContent.style.maxHeight = firstContent.scrollHeight + 'px';
+            }
+        }
+
+        // Sticky header behavior
+        const stickyHeader = document.getElementById('stickyHeader');
+        const heroSection = document.querySelector('.course-hero');
+
+        window.addEventListener('scroll', function () {
+            if (window.scrollY > heroSection.offsetTop + 100) {
+                stickyHeader.classList.add('visible');
+            } else {
+                stickyHeader.classList.remove('visible');
+            }
+        });
+
+        // Sidebar sticky behavior refinement
+        const sidebar = document.querySelector('.hero-sidebar');
+        if (sidebar && heroSection && window.innerWidth >= 992) {
+            window.addEventListener('scroll', function () {
+                if (window.scrollY > heroSection.offsetTop + 50) {
+                    sidebar.style.transform = `translateY(${Math.min(20, (window.scrollY - heroSection.offsetTop) * 0.1)}px)`;
+                } else {
+                    sidebar.style.transform = 'translateY(0)';
+                }
+            });
+        }
+
+        // Video Preview Modal Functionality
+        const videoModal = document.getElementById('videoPreviewModal');
+        const previewVideo = document.getElementById('previewVideo');
+        const modalTitle = document.getElementById('modalLessonTitle');
+        const closeModalBtn = document.getElementById('closeVideoModal');
+        const modalOverlay = document.querySelector('.modal-overlay');
+
+        // Get all preview lessons with video URLs
+        const previewLessons = document.querySelectorAll('.lesson-item.is-preview[data-preview-url]');
+
+        previewLessons.forEach(lesson => {
+            lesson.style.cursor = 'pointer';
+            lesson.addEventListener('click', function (e) {
+                e.stopPropagation();
+                const videoUrl = this.getAttribute('data-preview-url');
+                const lessonTitle = this.getAttribute('data-lesson-title');
+
+                if (videoUrl) {
+                    // Set video source and title
+                    previewVideo.querySelector('source').src = videoUrl;
+                    previewVideo.load();
+                    modalTitle.textContent = lessonTitle || 'Lesson Preview';
+
+                    // Show modal
+                    videoModal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                }
+            });
+        });
+
+        // Close modal function
+        function closeVideoModal() {
+            videoModal.classList.remove('active');
+            document.body.style.overflow = '';
+            previewVideo.pause();
+            previewVideo.currentTime = 0;
+        }
+
+        // Close modal on button click
+        if (closeModalBtn) {
+            closeModalBtn.addEventListener('click', closeVideoModal);
+        }
+
+        // Close modal on overlay click
+        if (modalOverlay) {
+            modalOverlay.addEventListener('click', closeVideoModal);
+        }
+
+        // Close modal on escape key
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape' && videoModal.classList.contains('active')) {
+                closeVideoModal();
+            }
+        });
+    });
+</script>
+{% endblock %}

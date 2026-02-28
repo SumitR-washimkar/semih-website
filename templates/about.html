@@ -1,0 +1,495 @@
+{% extends 'base.html' %}
+
+{% block title %}About - Medtalk{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/education-theme.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/drives-us.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/team.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/contact.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<!-- Education Theme Section -->
+<section class="education-theme-section">
+    <div class="container">
+        <!-- Header Text -->
+        <div class="theme-header">
+            <h2 class="theme-title">Medical communication is a discipline.
+                It requires accuracy, structure, and professional guidance — not improvisation.</h2>
+        </div>
+
+        <div class="theme-content">
+            <!-- Mobile: All images in one grid container -->
+            <div class="theme-images-wrapper">
+                <!-- Left Column - 2 stacked images -->
+                <div class="theme-left-images">
+                    <div class="theme-image-small">
+                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=300&h=200&fit=crop"
+                            alt="Students collaborating">
+                    </div>
+                    <div class="theme-image-large">
+                        <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?w=500&h=400&fit=crop"
+                            alt="Online learning">
+                    </div>
+                </div>
+
+                <!-- Middle Column - Main large image -->
+                <div class="theme-main-image">
+                    <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=400&h=500&fit=crop"
+                        alt="Students studying">
+
+                </div>
+            </div>
+
+            <!-- Right Column - Text box and small image -->
+            <div class="theme-text-content">
+                <div class="theme-text-box">
+                    <p class="theme-goal-label">Our goal:</p>
+                    <h2 class="theme-quote">"Communicate medical ideas clearly and confidently. Develop professional
+                        speaking competence."
+                    </h2>
+                </div>
+                <div class="theme-image-bottom">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=300&h=200&fit=crop"
+                        alt="Team collaboration">
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</section>
+
+<!-- Hero Section -->
+<section class="about-hero">
+    <div class="container">
+        <div class="hero-content">
+            <div class="hero-text">
+                <span class="hero-label">ABOUT US</span>
+                <h1 class="hero-title">Where Medical Language Meets Real Communication</h1>
+                <p class="hero-description">
+                    MEDTALKS is a specialist medical communication platform built on one clear principle:
+                    <b>medical English must be taught by trained professionals — not casual speakers.</b></br>
+
+                    Since 2012, MEDTALKS has been active in the field of professional language education under different
+                    names, delivering structured, speaking-focused medical English training across Türkiye, Azerbaijan,
+                    and the Middle East.</br>
+
+                    Long before talk-based platforms became popular, MEDTALKS was already dedicated to structured
+                    medical speaking, designed specifically for healthcare professionals who need to function
+                    confidently in real clinical and international environments.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="{{ url_for('contact') }}" class="btn-hero-primary">Get in Touch</a>
+                    <a href="#mission" class="btn-hero-secondary">Learn More</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=700&fit=crop"
+                    alt="Medical Education">
+                <div class="hero-image-decoration"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- What Drives Us Section -->
+<section class="drives-us-section">
+    <div class="container">
+        <div class="drives-us-content">
+            <!-- Left Side - Text Content -->
+            <div class="drives-us-left">
+                <span class="drives-us-badge">WHAT DRIVES US</span>
+                <h2 class="drives-us-title">Our commitment to professional medical communication.</h2>
+                <p class="drives-us-description">
+                    We are driven by a clear belief: medical communication is not casual language — it is a professional
+                    skill that directly affects patient trust, safety, and career mobility.
+                    MEDTALKS exists to make structured, high-quality medical speaking education accessible to healthcare
+                    professionals worldwide, without compromising academic standards.
+                </p>
+
+
+
+                <!-- Mission and Vision Cards -->
+                <div class="drives-us-cards">
+                    <!-- Mission Card -->
+                    <div class="drives-card">
+                        <div class="drives-card-header">
+                            <div class="drives-card-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor">
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                    <path d="M12 1v6m0 6v6m9-9h-6m-6 0H3"></path>
+                                </svg>
+                            </div>
+                            <h3 class="drives-card-title">Mission</h3>
+                        </div>
+                        <p class="drives-card-text">
+                            To train healthcare professionals to communicate clearly, confidently, and professionally in
+                            English by combining academic instruction with structured speaking practice designed for
+                            real clinical and international environments.
+                        </p>
+                    </div>
+
+                    <!-- Vision Card -->
+                    <div class="drives-card">
+                        <div class="drives-card-header">
+                            <div class="drives-card-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                </svg>
+                            </div>
+                            <h3 class="drives-card-title">Vision</h3>
+                        </div>
+                        <p class="drives-card-text">
+                            To become a globally trusted medical communication platform that supports doctors, dentists,
+                            nurses, and pharmacists in delivering their expertise clearly — wherever their careers take
+                            them.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side - Image -->
+            <div class="drives-us-right">
+                <div class="drives-us-image">
+                    <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=700&h=900&fit=crop"
+                        alt="Medical Education">
+                    <div class="drives-us-play-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="team-section" id="team">
+    <div class="container">
+        <div class="section-header">
+            <p class="section-subtitle">Meet Our Team</p>
+            <h2 class="section-title">Our Academic Team</h2>
+        </div>
+
+        <div class="team-grid">
+            <!-- Team Member 1 -->
+            <div class="team-card">
+                <div class="team-logo">MedTalks</div>
+                <div class="team-image">
+                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600&h=800&fit=crop"
+                        alt="Semih PALA">
+                </div>
+                <div class="team-info">
+                    <h3 class="team-name">Semih PALA</h3>
+                    <p class="team-designation">Director</p>
+                </div>
+                <div class="team-arrow">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M7 17L17 7M17 7H7M17 7V17" />
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Team Member 2 -->
+            <div class="team-card">
+                <div class="team-logo">MedTalks</div>
+                <div class="team-image">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&h=800&fit=crop"
+                        alt="Carol R.">
+                </div>
+                <div class="team-info">
+                    <h3 class="team-name">Carol R.</h3>
+                    <p class="team-designation">Teacher Trainer</p>
+                </div>
+                <div class="team-arrow">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M7 17L17 7M17 7H7M17 7V17" />
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Team Member 3 -->
+            <div class="team-card">
+                <div class="team-logo">MedTalks</div>
+                <div class="team-image">
+                    <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=600&h=800&fit=crop"
+                        alt="Nick C.">
+                </div>
+                <div class="team-info">
+                    <h3 class="team-name">Nick C.</h3>
+                    <p class="team-designation">Coordinating Instructor</p>
+                </div>
+                <div class="team-arrow">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M7 17L17 7M17 7H7M17 7V17" />
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Team Member 4 -->
+            <div class="team-card">
+                <div class="team-logo">MedTalks</div>
+                <div class="team-image">
+                    <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=600&h=800&fit=crop"
+                        alt="Cindy R.">
+                </div>
+                <div class="team-info">
+                    <h3 class="team-name">Cindy R.</h3>
+                    <p class="team-designation">Instructor</p>
+                </div>
+                <div class="team-arrow">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M7 17L17 7M17 7H7M17 7V17" />
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Team Member 5 -->
+            <div class="team-card">
+                <div class="team-logo">MedTalks</div>
+                <div class="team-image">
+                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=600&h=800&fit=crop"
+                        alt="Hussain A.">
+                </div>
+                <div class="team-info">
+                    <h3 class="team-name">Hussain A.</h3>
+                    <p class="team-designation">Marketing</p>
+                </div>
+                <div class="team-arrow">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M7 17L17 7M17 7H7M17 7V17" />
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Team Member 6 -->
+            <div class="team-card">
+                <div class="team-logo">MedTalks</div>
+                <div class="team-image">
+                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=600&h=800&fit=crop"
+                        alt="Julia T.">
+                </div>
+                <div class="team-info">
+                    <h3 class="team-name">Julia T.</h3>
+                    <p class="team-designation">Instructor</p>
+                </div>
+                <div class="team-arrow">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M7 17L17 7M17 7H7M17 7V17" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="faq-section">
+    <div class="container">
+        <div class="faq-header">
+            <p class="faq-label">FAQS</p>
+            <h2 class="faq-title">Frequently Asked Questions About MEDTALKS</h2>
+        </div>
+
+        <div class="faq-accordion">
+            <!-- FAQ Item 1 -->
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>What is MEDTALKS?</span>
+                    <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg>
+                </button>
+                <div class="faq-answer">
+                    <p>MEDTALKS is a specialist medical communication platform focused on spoken medical English. We
+                        train healthcare professionals to communicate clearly, confidently, and professionally in
+                        clinical, academic, and international environments.</p>
+                </div>
+            </div>
+
+            <!-- FAQ Item 2 -->
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Is MEDTALKS a general English learning platform?</span>
+                    <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg>
+                </button>
+                <div class="faq-answer">
+                    <p><strong>No.</strong><br>MEDTALKS does not teach general or conversational English. Our programs
+                        are designed exclusively for healthcare professionals and focus on real medical and professional
+                        communication, not casual conversation or grammar-heavy instruction.</p>
+                </div>
+            </div>
+
+            <!-- FAQ Item 3 -->
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Who teaches at MEDTALKS?</span>
+                    <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg>
+                </button>
+                <div class="faq-answer">
+                    <p>All MEDTALKS programs are taught by qualified medical English academics. Our instructors hold
+                        formal English Language Teaching (ELT) qualifications and specialize in Medical English or
+                        English for Specific Purposes (ESP). We do not employ untrained or casual speakers.</p>
+                </div>
+            </div>
+
+            <!-- FAQ Item 4 -->
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>How is MEDTALKS different from online speaking platforms?</span>
+                    <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg>
+                </button>
+                <div class="faq-answer">
+                    <p>MEDTALKS follows a structured, unit-based speaking curriculum. Speaking practice is guided by
+                        academic professionals and supported by AI tools designed specifically for medical
+                        communication. This ensures accuracy, safety, and professional relevance.</p>
+                </div>
+            </div>
+
+            <!-- FAQ Item 5 -->
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Does MEDTALKS use artificial intelligence?</span>
+                    <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg>
+                </button>
+                <div class="faq-answer">
+                    <p><strong>Yes — but responsibly.</strong><br>AI tools at MEDTALKS are used to support practice, not
+                        replace academic teaching. AI speaking agents simulate clinical and professional scenarios and
+                        help learners practice consistently alongside live academic instruction.</p>
+                </div>
+            </div>
+
+            <!-- FAQ Item 6 -->
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Is MEDTALKS suitable for busy healthcare professionals?</span>
+                    <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg>
+                </button>
+                <div class="faq-answer">
+                    <p><strong>Yes.</strong><br>MEDTALKS programs are designed for demanding clinical schedules. Live
+                        sessions are recorded, and learners can continue practicing with AI-supported speaking tools at
+                        any time, without falling behind.</p>
+                </div>
+            </div>
+
+            <!-- FAQ Item 7 -->
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>When was MEDTALKS established?</span>
+                    <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg>
+                </button>
+                <div class="faq-answer">
+                    <p>MEDTALKS has been active in professional language education since 2012, operating under different
+                        names before launching as MEDTALKS. Our focus on structured medical speaking predates the
+                        popularity of talk-based platforms.</p>
+                </div>
+            </div>
+
+            <!-- FAQ Item 8 -->
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Does MEDTALKS offer certification?</span>
+                    <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg>
+                </button>
+                <div class="faq-answer">
+                    <p>MEDTALKS provides professional training, not generic language certification. Our programs focus
+                        on real communication performance in clinical and academic contexts. Any certificates provided
+                        relate to course completion, not language level testing.</p>
+                </div>
+            </div>
+
+            <!-- FAQ Item 9 -->
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Who is MEDTALKS for?</span>
+                    <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg>
+                </button>
+                <div class="faq-answer">
+                    <p>MEDTALKS is designed for:</p>
+                    <ul>
+                        <li>Doctors and medical students</li>
+                        <li>Dentists and dental students</li>
+                        <li>Nurses and nursing students</li>
+                        <li>Pharmacists and pharmacy students</li>
+                    </ul>
+                    <p>If your work involves medical communication in English, MEDTALKS is built for you.</p>
+                </div>
+            </div>
+
+            <!-- FAQ Item 10 -->
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>How can I learn more or contact MEDTALKS?</span>
+                    <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg>
+                </button>
+                <div class="faq-answer">
+                    <p>You can contact us directly through our website using the Contact page or WhatsApp academic
+                        support. Our support is provided by real academic team members, not automated systems.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
+
+{% block extra_js %}
+<!-- FAQ Accordion Script -->
+<script src="{{ url_for('static', filename='js/faq.js') }}"></script>
+{% endblock %}

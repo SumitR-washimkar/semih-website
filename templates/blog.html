@@ -1,0 +1,200 @@
+{% extends 'base.html' %}
+
+{% block title %}Blog - MedTalks{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/blog.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/blog-posts.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/newsletter-cta.css') }}">
+{% endblock %}
+
+{% block content %}
+<section class="page-header">
+    <div class="container">
+        <h1>MedTalks Blog</h1>
+        <p>Insights, Tips, and News from Medical English Experts</p>
+    </div>
+</section>
+
+<!-- Blog Posts Section -->
+<section class="blog-posts-section">
+    <div class="container">
+        <div class="blog-posts-header">
+            <span class="blog-posts-badge">LATEST ARTICLES</span>
+            <h2 class="blog-posts-title">Expert Insights on Medical Communication</h2>
+            <p class="blog-posts-subtitle">
+                Practical tips, clinical speaking strategies, and industry insights to help you communicate confidently
+                in medical English.
+            </p>
+        </div>
+
+        <div class="blog-posts-grid">
+            {% if posts %}
+            {% for post in posts %}
+            <a href="{{ url_for('blog_post', slug=post.slug if post.slug else post.id) }}"
+                style="text-decoration: none; color: inherit;">
+                <article class="blog-post-card">
+                    <div class="blog-post-image">
+                        {% if post.featuredImage and post.featuredImage.url %}
+                        <img src="{{ post.featuredImage.url }}" alt="{{ post.title }}">
+                        {% else %}
+                        <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&h=400&fit=crop"
+                            alt="{{ post.title }}">
+                        {% endif %}
+                        <span class="blog-post-category">{{ post.category if post.category else 'Medical' }}</span>
+                    </div>
+                    <div class="blog-post-content">
+                        <div class="blog-post-meta">
+                            <span class="blog-post-date">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                                </svg>
+                                {% if post.createdAt %}
+                                {{ post.createdAt.strftime('%b %d, %Y') if post.createdAt is defined else 'Recent' }}
+                                {% else %}
+                                {{ post.date if post.date else 'Recent' }}
+                                {% endif %}
+                            </span>
+                            <span class="blog-post-reading-time">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <polyline points="12 6 12 12 16 14"></polyline>
+                                </svg>
+                                {{ post.reading_time if post.reading_time else '5 min read' }}
+                            </span>
+                        </div>
+                        <h3 class="blog-post-title">{{ post.title }}</h3>
+                        <p class="blog-post-excerpt">
+                            {% if post.excerpt %}
+                            {{ post.excerpt }}
+                            {% elif post.content %}
+                            {{ post.content[:200] }}...
+                            {% else %}
+                            Read this insightful article about medical communication.
+                            {% endif %}
+                        </p>
+                        <div class="blog-post-footer">
+                            <div class="blog-post-author">
+                                <div class="blog-post-author-avatar">
+                                    {% if post.updatedByPhotoURL %}
+                                    <img src="{{ post.updatedByPhotoURL }}"
+                                        alt="{{ post.updatedByName if post.updatedByName else 'Author' }}">
+                                    {% elif post.author and post.author.avatar %}
+                                    <img src="{{ post.author.avatar }}"
+                                        alt="{{ post.author.name if post.author.name else 'Author' }}">
+                                    {% elif post.createdByName %}
+                                    <img src="https://ui-avatars.com/api/?name={{ post.createdByName }}&background=random"
+                                        alt="{{ post.createdByName }}">
+                                    {% else %}
+                                    <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=100&h=100&fit=crop"
+                                        alt="Author">
+                                    {% endif %}
+                                </div>
+                                <span class="blog-post-author-name">
+                                    {% if post.updatedByName %}
+                                    {{ post.updatedByName }}
+                                    {% elif post.author and post.author.name %}
+                                    {{ post.author.name }}
+                                    {% elif post.createdByName %}
+                                    {{ post.createdByName }}
+                                    {% else %}
+                                    MedTalks Team
+                                    {% endif %}
+                                </span>
+                            </div>
+                            <span class="blog-post-read-more">
+                                Read More
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2">
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    <polyline points="12 5 19 12 12 19"></polyline>
+                                </svg>
+                            </span>
+                        </div>
+                    </div>
+                </article>
+            </a>
+            {% endfor %}
+            {% else %}
+            <div class="no-posts-message">
+                <p>No blog posts available at the moment. Check back soon!</p>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</section>
+
+<!-- Newsletter CTA Section -->
+<section class="newsletter-cta-section">
+    <div class="container">
+        <div class="newsletter-cta-glass-card">
+            <!-- Social Proof Avatar Stack -->
+            <div class="newsletter-social-proof">
+                <div class="newsletter-avatars-stack">
+                    <div class="avatar-stack-item"><img
+                            src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=100&h=100&fit=crop"
+                            alt="User"></div>
+                    <div class="avatar-stack-item"><img
+                            src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=100&h=100&fit=crop"
+                            alt="User"></div>
+                    <div class="avatar-stack-item"><img
+                            src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=100&h=100&fit=crop"
+                            alt="User"></div>
+                    <div class="avatar-stack-item"><img
+                            src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop"
+                            alt="User"></div>
+                </div>
+                <span class="social-proof-text">Joined by 500+ professionals</span>
+            </div>
+
+            <h2 class="newsletter-title">Stay Informed. Speak with Confidence.</h2>
+            <p class="newsletter-subtitle">
+                Get practical insights on medical communication, clinical speaking tips, and updates from the MEDTALKS
+                academic team — delivered directly to your inbox.
+            </p>
+
+            <form class="newsletter-form" id="newsletterForm">
+                <div class="form-input-pill">
+                    <input type="email" class="newsletter-input" placeholder="e.g. yourname@hospital.com" required
+                        name="email" id="newsletterEmail">
+                    <button type="submit" class="newsletter-button">Subscribe</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<script>
+    // Newsletter form submission
+    document.getElementById('newsletterForm').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const email = document.getElementById('newsletterEmail').value;
+
+        try {
+            const response = await fetch('/api/newsletter/subscribe', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ email, source: 'blog_page' })
+            });
+
+            const data = await response.json();
+
+            if (data.success) {
+                alert('Successfully subscribed to newsletter!');
+                document.getElementById('newsletterEmail').value = '';
+            } else {
+                alert(data.message || 'Failed to subscribe. Please try again.');
+            }
+        } catch (error) {
+            alert('An error occurred. Please try again later.');
+        }
+    });
+</script>
+{% endblock %}

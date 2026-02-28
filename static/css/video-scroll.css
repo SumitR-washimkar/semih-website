@@ -1,0 +1,29 @@
+/* Video Scroll Section */
+.video-scroll-section {
+    position: relative;
+    width: 100%;
+    background: #000;
+    overflow: hidden;
+}
+
+#video-canvas {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: block;
+}
+
+.video-scroll-spacer {
+    height: 500vh;
+    position: relative;
+    z-index: 1;
+}
+
+/* Mobile - just add some padding so laptop isn't cut off */
+@media (max-width: 768px) {
+    .video-scroll-spacer {
+        height: 400vh;
+    }
+}

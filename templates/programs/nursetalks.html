@@ -1,0 +1,1375 @@
+{% extends 'base.html' %}
+
+{% block title %}NurseTALKS - The Global Nursing Speaking Program{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/nursetalks.css') }}">
+{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="nurse-hero">
+    <div class="hero-bg-overlay"></div>
+    <div class="container hero-container">
+        <div class="hero-grid">
+            <div class="hero-content">
+                <p class="hero-audience">For Nurses & Nursing Students</p>
+                <h1>NurseTALKS</h1>
+                <h2 class="hero-subtitle">The Global Nursing Speaking Program</h2>
+                <p class="hero-description">Ward-focused nursing communication for confident patient care, reassurance,
+                    and handovers — designed for nurses advancing international careers.</p>
+                <div class="hero-cta-group">
+                    <a href="#enroll" class="btn-hero-primary">Get Started</a>
+                    <a href="#factors-section" class="btn-hero-secondary">Learn More →</a>
+                </div>
+            </div>
+            <div class="hero-visual-spacer">
+                <div class="iphone-3d-mockup">
+                    <div class="iphone-device">
+                        <!-- Metallic outer frame -->
+                        <div class="iphone-frame-metal"></div>
+                        <!-- Black inner bezel -->
+                        <div class="iphone-bezel">
+                            <!-- Dynamic Island -->
+                            <div class="iphone-notch">
+                                <div class="notch-camera"></div>
+                            </div>
+                            <!-- Screen with Reels-style video -->
+                            <div class="iphone-screen">
+                                <!-- Reel Carousel Container -->
+                                <div class="reel-carousel">
+                                    <!-- Reel 1: Sample 1 (Index 0) - Active -->
+                                    <div class="reel-item active" data-index="0">
+                                        <video class="reel-video" autoplay muted loop playsinline preload="none"
+                                            data-muted="true">
+                                            <source src="{{ url_for('static', filename='videos/Sample1.mp4') }}"
+                                                type="video/mp4">
+                                        </video>
+                                        <div class="reel-actions">
+                                            <div class="reel-action">
+                                                <svg viewBox="0 0 24 24" fill="white" width="22" height="22">
+                                                    <path
+                                                        d="M16.792 3.904A4.989 4.989 0 0 1 21.5 9.122c0 3.072-2.652 4.959-5.197 7.222-2.512 2.243-3.865 3.469-4.303 3.752-.477-.309-1.834-1.543-4.303-3.752C5.141 14.072 2.5 12.167 2.5 9.122a4.989 4.989 0 0 1 4.708-5.218 4.21 4.21 0 0 1 3.675 1.941c.84 1.175.98 1.763 1.12 1.763s.278-.588 1.11-1.766a4.17 4.17 0 0 1 3.679-1.938z" />
+                                                </svg>
+                                                <span>2.4K</span>
+                                            </div>
+                                            <div class="reel-action">
+                                                <svg viewBox="0 0 24 24" fill="white" width="22" height="22">
+                                                    <path d="M20.656 17.008a9.993 9.993 0 1 0-3.59 3.615L22 22z" />
+                                                </svg>
+                                                <span>186</span>
+                                            </div>
+                                            <div class="reel-action">
+                                                <svg viewBox="0 0 24 24" fill="white" width="22" height="22">
+                                                    <path
+                                                        d="M21.707 11.293l-8-8A1 1 0 0 0 12 4v4C7.582 8 4 11.582 4 16c0 1 .2 2.1.6 3a1 1 0 0 0 1.8-.2c.9-2.2 3-3.8 5.6-3.8h1v4a1 1 0 0 0 1.707.707l8-8a1 1 0 0 0 0-1.414z" />
+                                                </svg>
+                                            </div>
+                                            <div class="reel-action">
+                                                <svg viewBox="0 0 24 24" fill="white" width="22" height="22">
+                                                    <circle cx="12" cy="6" r="1.5" />
+                                                    <circle cx="12" cy="12" r="1.5" />
+                                                    <circle cx="12" cy="18" r="1.5" />
+                                                </svg>
+                                            </div>
+                                        </div>
+                                        <div class="reel-content">
+                                            <div class="reel-user">
+                                                <div class="reel-avatar">S</div>
+                                                <span class="reel-username">semih_medtalks</span>
+                                                <button class="reel-follow-btn">Follow</button>
+                                            </div>
+                                            <p class="reel-caption">Excel in nursing communication! 👩‍⚕️ Professional
+                                                English for nurses worldwide 🌍 #NurseTalks #NursingEnglish</p>
+                                            <div class="reel-music">
+                                                <svg viewBox="0 0 24 24" fill="white" width="10" height="10">
+                                                    <path d="M12 3v10.55A4 4 0 1 0 14 17V7h4V3h-6z" />
+                                                </svg>
+                                                <span class="reel-music-text">Original Audio - semih_medtalks</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Reel 2: Sample 2 (Index 1) -->
+                                    <div class="reel-item" data-index="1">
+                                        <video class="reel-video" muted loop playsinline preload="none"
+                                            data-muted="true">
+                                            <source src="{{ url_for('static', filename='videos/Sample2.mp4') }}"
+                                                type="video/mp4">
+                                        </video>
+                                        <div class="reel-actions">
+                                            <div class="reel-action">
+                                                <svg viewBox="0 0 24 24" fill="white" width="22" height="22">
+                                                    <path
+                                                        d="M16.792 3.904A4.989 4.989 0 0 1 21.5 9.122c0 3.072-2.652 4.959-5.197 7.222-2.512 2.243-3.865 3.469-4.303 3.752-.477-.309-1.834-1.543-4.303-3.752C5.141 14.072 2.5 12.167 2.5 9.122a4.989 4.989 0 0 1 4.708-5.218 4.21 4.21 0 0 1 3.675 1.941c.84 1.175.98 1.763 1.12 1.763s.278-.588 1.11-1.766a4.17 4.17 0 0 1 3.679-1.938z" />
+                                                </svg>
+                                                <span>3.1K</span>
+                                            </div>
+                                            <div class="reel-action">
+                                                <svg viewBox="0 0 24 24" fill="white" width="22" height="22">
+                                                    <path d="M20.656 17.008a9.993 9.993 0 1 0-3.59 3.615L22 22z" />
+                                                </svg>
+                                                <span>215</span>
+                                            </div>
+                                            <div class="reel-action">
+                                                <svg viewBox="0 0 24 24" fill="white" width="22" height="22">
+                                                    <path
+                                                        d="M21.707 11.293l-8-8A1 1 0 0 0 12 4v4C7.582 8 4 11.582 4 16c0 1 .2 2.1.6 3a1 1 0 0 0 1.8-.2c.9-2.2 3-3.8 5.6-3.8h1v4a1 1 0 0 0 1.707.707l8-8a1 1 0 0 0 0-1.414z" />
+                                                </svg>
+                                            </div>
+                                            <div class="reel-action">
+                                                <svg viewBox="0 0 24 24" fill="white" width="22" height="22">
+                                                    <circle cx="12" cy="6" r="1.5" />
+                                                    <circle cx="12" cy="12" r="1.5" />
+                                                    <circle cx="12" cy="18" r="1.5" />
+                                                </svg>
+                                            </div>
+                                        </div>
+                                        <div class="reel-content">
+                                            <div class="reel-user">
+                                                <div class="reel-avatar">S</div>
+                                                <span class="reel-username">semih_medtalks</span>
+                                                <button class="reel-follow-btn">Follow</button>
+                                            </div>
+                                            <p class="reel-caption">Clinical communication made easy! 💬 Join thousands
+                                                of medical professionals 🌍 #DoctorLife</p>
+                                            <div class="reel-music">
+                                                <svg viewBox="0 0 24 24" fill="white" width="10" height="10">
+                                                    <path d="M12 3v10.55A4 4 0 1 0 14 17V7h4V3h-6z" />
+                                                </svg>
+                                                <span class="reel-music-text">Original Audio - semih_medtalks</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Reel 3: Sample 3 (Index 2) -->
+                                    <div class="reel-item" data-index="2">
+                                        <video class="reel-video" muted loop playsinline preload="none"
+                                            data-muted="true">
+                                            <source src="{{ url_for('static', filename='videos/Sample3.mp4') }}"
+                                                type="video/mp4">
+                                        </video>
+                                        <div class="reel-actions">
+                                            <div class="reel-action">
+                                                <svg viewBox="0 0 24 24" fill="white" width="22" height="22">
+                                                    <path
+                                                        d="M16.792 3.904A4.989 4.989 0 0 1 21.5 9.122c0 3.072-2.652 4.959-5.197 7.222-2.512 2.243-3.865 3.469-4.303 3.752-.477-.309-1.834-1.543-4.303-3.752C5.141 14.072 2.5 12.167 2.5 9.122a4.989 4.989 0 0 1 4.708-5.218 4.21 4.21 0 0 1 3.675 1.941c.84 1.175.98 1.763 1.12 1.763s.278-.588 1.11-1.766a4.17 4.17 0 0 1 3.679-1.938z" />
+                                                </svg>
+                                                <span>2.7K</span>
+                                            </div>
+                                            <div class="reel-action">
+                                                <svg viewBox="0 0 24 24" fill="white" width="22" height="22">
+                                                    <path d="M20.656 17.008a9.993 9.993 0 1 0-3.59 3.615L22 22z" />
+                                                </svg>
+                                                <span>198</span>
+                                            </div>
+                                            <div class="reel-action">
+                                                <svg viewBox="0 0 24 24" fill="white" width="22" height="22">
+                                                    <path
+                                                        d="M21.707 11.293l-8-8A1 1 0 0 0 12 4v4C7.582 8 4 11.582 4 16c0 1 .2 2.1.6 3a1 1 0 0 0 1.8-.2c.9-2.2 3-3.8 5.6-3.8h1v4a1 1 0 0 0 1.707.707l8-8a1 1 0 0 0 0-1.414z" />
+                                                </svg>
+                                            </div>
+                                            <div class="reel-action">
+                                                <svg viewBox="0 0 24 24" fill="white" width="22" height="22">
+                                                    <circle cx="12" cy="6" r="1.5" />
+                                                    <circle cx="12" cy="12" r="1.5" />
+                                                    <circle cx="12" cy="18" r="1.5" />
+                                                </svg>
+                                            </div>
+                                        </div>
+                                        <div class="reel-content">
+                                            <div class="reel-user">
+                                                <div class="reel-avatar">S</div>
+                                                <span class="reel-username">semih_medtalks</span>
+                                                <button class="reel-follow-btn">Follow</button>
+                                            </div>
+                                            <p class="reel-caption">Transform your medical English skills! 📚 Expert-led
+                                                training for healthcare professionals 👨‍⚕️ #HealthcareEducation</p>
+                                            <div class="reel-music">
+                                                <svg viewBox="0 0 24 24" fill="white" width="10" height="10">
+                                                    <path d="M12 3v10.55A4 4 0 1 0 14 17V7h4V3h-6z" />
+                                                </svg>
+                                                <span class="reel-music-text">Original Audio - semih_medtalks</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Reel 4: MedTalk Intro (Index 3) -->
+                                    <div class="reel-item" data-index="3">
+                                        <video class="reel-video" muted loop playsinline preload="none"
+                                            data-muted="true">
+                                            <source src="{{ url_for('static', filename='videos/medtalkintro.mp4') }}"
+                                                type="video/mp4">
+                                        </video>
+                                        <div class="reel-actions">
+                                            <div class="reel-action">
+                                                <svg viewBox="0 0 24 24" fill="white" width="22" height="22">
+                                                    <path
+                                                        d="M16.792 3.904A4.989 4.989 0 0 1 21.5 9.122c0 3.072-2.652 4.959-5.197 7.222-2.512 2.243-3.865 3.469-4.303 3.752-.477-.309-1.834-1.543-4.303-3.752C5.141 14.072 2.5 12.167 2.5 9.122a4.989 4.989 0 0 1 4.708-5.218 4.21 4.21 0 0 1 3.675 1.941c.84 1.175.98 1.763 1.12 1.763s.278-.588 1.11-1.766a4.17 4.17 0 0 1 3.679-1.938z" />
+                                                </svg>
+                                                <span>2.4K</span>
+                                            </div>
+                                            <div class="reel-action">
+                                                <svg viewBox="0 0 24 24" fill="white" width="22" height="22">
+                                                    <path d="M20.656 17.008a9.993 9.993 0 1 0-3.59 3.615L22 22z" />
+                                                </svg>
+                                                <span>186</span>
+                                            </div>
+                                            <div class="reel-action">
+                                                <svg viewBox="0 0 24 24" fill="white" width="22" height="22">
+                                                    <path
+                                                        d="M21.707 11.293l-8-8A1 1 0 0 0 12 4v4C7.582 8 4 11.582 4 16c0 1 .2 2.1.6 3a1 1 0 0 0 1.8-.2c.9-2.2 3-3.8 5.6-3.8h1v4a1 1 0 0 0 1.707.707l8-8a1 1 0 0 0 0-1.414z" />
+                                                </svg>
+                                            </div>
+                                            <div class="reel-action">
+                                                <svg viewBox="0 0 24 24" fill="white" width="22" height="22">
+                                                    <circle cx="12" cy="6" r="1.5" />
+                                                    <circle cx="12" cy="12" r="1.5" />
+                                                    <circle cx="12" cy="18" r="1.5" />
+                                                </svg>
+                                            </div>
+                                        </div>
+                                        <div class="reel-content">
+                                            <div class="reel-user">
+                                                <div class="reel-avatar">S</div>
+                                                <span class="reel-username">semih_medtalks</span>
+                                                <button class="reel-follow-btn">Follow</button>
+                                            </div>
+                                            <p class="reel-caption">Welcome to MedTalk 🩺 Your journey to medical
+                                                English starts here! ✨ #MedTalk #NurseTalks</p>
+                                            <div class="reel-music">
+                                                <svg viewBox="0 0 24 24" fill="white" width="10" height="10">
+                                                    <path d="M12 3v10.55A4 4 0 1 0 14 17V7h4V3h-6z" />
+                                                </svg>
+                                                <span class="reel-music-text">Original Audio - semih_medtalks</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Status Bar -->
+                                <div class="status-bar">
+                                    <div class="status-time">9:41</div>
+                                    <div class="status-right">
+                                        <svg class="status-icon" viewBox="0 0 24 24" fill="white" width="14"
+                                            height="14">
+                                            <path
+                                                d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z" />
+                                            <path d="M7 3h10v2H7z" opacity="0.3" />
+                                        </svg>
+                                        <svg class="status-icon" viewBox="0 0 24 24" fill="white" width="14"
+                                            height="14">
+                                            <path
+                                                d="M1 9l2 2c4.97-4.97 13.03-4.97 18 0l2-2C16.93 2.93 7.08 2.93 1 9zm8 8l3 3 3-3c-1.65-1.66-4.34-1.66-6 0zm-4-4l2 2c2.76-2.76 7.24-2.76 10 0l2-2C15.14 9.14 8.87 9.14 5 13z" />
+                                        </svg>
+                                        <svg class="status-icon battery" viewBox="0 0 24 24" fill="white" width="18"
+                                            height="14">
+                                            <path
+                                                d="M15.67 4H14V2h-4v2H8.33C7.6 4 7 4.6 7 5.33v15.33C7 21.4 7.6 22 8.33 22h7.33c.74 0 1.34-.6 1.34-1.33V5.33C17 4.6 16.4 4 15.67 4z"
+                                                opacity="0.3" />
+                                            <rect x="8" y="6" width="8" height="12" fill="white" />
+                                        </svg>
+                                    </div>
+                                </div>
+
+                                <!-- Reels UI Overlay -->
+                                <div class="reel-overlay">
+                                    <div class="reel-mute-indicator">
+                                        <svg class="mute-icon" viewBox="0 0 24 24" fill="white" width="20" height="20">
+                                            <path
+                                                d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z" />
+                                        </svg>
+                                        <svg class="unmute-icon" viewBox="0 0 24 24" fill="white" width="20" height="20"
+                                            style="display: none;">
+                                            <path
+                                                d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z" />
+                                        </svg>
+                                    </div>
+                                    <div class="reel-top-bar">
+                                        <span class="reel-label">Reels</span>
+                                    </div>
+                                    <div class="reel-progress">
+                                        <div class="reel-progress-bar"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Side Buttons -->
+                        <div class="iphone-btn btn-mute"></div>
+                        <div class="iphone-btn btn-vol-up"></div>
+                        <div class="iphone-btn btn-vol-down"></div>
+                        <div class="iphone-btn btn-power"></div>
+                        <!-- Shadow -->
+                        <div class="iphone-shadow"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Introduction / Mission Section -->
+<section class="nurse-intro">
+    <div class="container">
+        <div class="intro-grid">
+
+            <!-- Left: Visuals -->
+            <div class="intro-visual">
+                <div class="stethoscope-wrapper">
+                    <div class="stethoscope-image"></div>
+
+                    <!-- Decorative Sparkles -->
+                    <div class="sparkle sparkle-1">&#10022;</div>
+                    <div class="sparkle sparkle-2">&#10022;</div>
+                    <div class="sparkle sparkle-3">&#10022;</div>
+
+                    <!-- Badge -->
+                    <div class="intro-badge">
+                        <span>NURSING<br>ENGLISH</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Content -->
+            <div class="intro-content">
+                <span class="eyebrow">About NurseTALKS</span>
+
+                <h2>Your Nursing Skills Are Life-Saving.</h2>
+                <h3 style="font-size: 1.5rem; color: #666; margin-bottom: 1.5rem;">Your English Should Be
+                    Ward-Ready.</h3>
+
+                <p class="intro-desc">
+                    Modern nursing is global. International patients, multidisciplinary teams, patient handovers, and
+                    overseas nursing careers demand clear, confident, patient-centered English.
+                </p>
+
+                <div class="check-list">
+                    <div class="check-item">
+                        <div class="check-icon">&#10003;</div>
+                        <span class="check-text"><strong>Speaking-First System:</strong> Built for ward-based
+                            communication.</span>
+                    </div>
+                    <div class="check-item">
+                        <div class="check-icon">&#10003;</div>
+                        <span class="check-text"><strong>Clinical Focus:</strong> Patient handovers, medication
+                            administration & discharge.</span>
+                    </div>
+                    <div class="check-item">
+                        <div class="check-icon cross">&#10005;</div>
+                        <span class="check-text" style="color: #666;">Not just a grammar course.</span>
+                    </div>
+                    <div class="check-item">
+                        <div class="check-icon cross">&#10005;</div>
+                        <span class="check-text" style="color: #666;">Not a lecture-based program.</span>
+                    </div>
+                </div>
+
+                <a href="#enroll" class="btn-intro">
+                    View Syllabus
+                </a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- What Is NurseTALKS Section -->
+<section class="nurse-what-is">
+    <div class="container">
+        <div class="what-is-wrapper">
+            <div class="what-is-grid">
+                <!-- Content Side -->
+                <div class="what-is-content">
+                    <span class="eyebrow" style="color: var(--nurse-primary);">Our Practice</span>
+                    <h2>What Is NurseTALKS?</h2>
+
+                    <p class="what-desc">
+                        NurseTALKS is a ward-focused nursing speaking program designed for nurses and
+                        nursing students who need to:
+                    </p>
+
+                    <div class="feature-list">
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M21 15C21 15.5304 20.7893 16.0391 20.4142 16.4142C20.0391 16.7893 19.5304 17 19 17H7L3 21V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H19C19.5304 3 20.0391 3.21071 20.4142 3.58579C20.7893 3.96086 21 4.46957 21 5V15Z"
+                                        stroke="white" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Patient Handover & Documentation</h4>
+                                <p>Communicate patient status, care plans, and shift reports clearly in English.</p>
+                            </div>
+                        </div>
+
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                                        stroke="white" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path d="M2 12H22" stroke="white" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path
+                                        d="M12 2C14.5013 4.73835 15.9228 8.29203 16 12C15.9228 15.708 14.5013 19.2616 12 22C9.49872 19.2616 8.07725 15.708 8 12C8.07725 8.29203 9.49872 4.73835 12 2V2Z"
+                                        stroke="white" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Global Communication</h4>
+                                <p>Present at conferences and communicate with international multidisciplinary teams.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="what-footer">
+                        The program focuses on real handovers, medication rounds, and patient education — not memorizing
+                        vocabulary lists.<br>
+                        <strong>NurseTALKS trains how nurses actually speak in real clinical settings.</strong>
+                    </p>
+                </div>
+
+                <!-- Image Side -->
+                <div class="what-is-image">
+                    <img src="https://storage.googleapis.com/admin-dashboard-d5f22.firebasestorage.app/website/images/nursetalks/nursetalks-1.png"
+                        alt="NurseTALKS in Action">
+
+                    <!-- Floating Pill -->
+                    <div class="floating-pill">
+                        <div class="pill-icon">&#128105;&#8205;&#9877;&#65039;</div>
+                        <div class="pill-content">
+                            <span>Real Ward Scenarios</span>
+                            <strong>100% Practical Focus</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Key Focus Areas Section -->
+<section class="nurse-focus">
+    <div class="container">
+        <div class="focus-header">
+            <span class="eyebrow">Key Focus Areas</span>
+            <h2>What You'll Master<br>in NurseTALKS</h2>
+        </div>
+
+        <div class="focus-grid">
+            <!-- Card 1 -->
+            <div class="focus-card">
+                <div class="focus-card-image">
+                    <img src="https://storage.googleapis.com/admin-dashboard-d5f22.firebasestorage.app/website/images/nursetalks/nursetalks-2.png"
+                        alt="Patient Handover & Shift Reports">
+                </div>
+                <div class="focus-card-body">
+                    <h3>Patient Handover & Shift Reports</h3>
+                    <p>Learn to deliver clear, structured patient handovers and shift reports confidently in English.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="focus-card">
+                <div class="focus-card-image">
+                    <img src="https://storage.googleapis.com/admin-dashboard-d5f22.firebasestorage.app/website/images/nursetalks/nursetalks-3.png"
+                        alt="Medication Administration">
+                </div>
+                <div class="focus-card-body">
+                    <h3>Medication Administration</h3>
+                    <p>Master the language needed to explain medications, dosages, and administration routes to patients
+                        and colleagues.</p>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="focus-card">
+                <div class="focus-card-image">
+                    <img src="https://storage.googleapis.com/admin-dashboard-d5f22.firebasestorage.app/website/images/nursetalks/nursetalks-1.png"
+                        alt="Patient Education & Discharge">
+                </div>
+                <div class="focus-card-body">
+                    <h3>Patient Education & Discharge</h3>
+                    <p>Develop skills in educating patients about their conditions, post-discharge care, and follow-up
+                        instructions in English.</p>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="focus-card">
+                <div class="focus-card-image">
+                    <img src="{{ url_for('static', filename='images/doctalks/teamwork-in-healthcare.png') }}"
+                        alt="International Nursing Careers">
+                </div>
+                <div class="focus-card-body">
+                    <h3>International Nursing Careers</h3>
+                    <p>Prepare for global nursing roles, international certifications, and careers in English-speaking
+                        professional environments.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Program Structure Section -->
+<section class="nurse-structure">
+    <div class="structure-parallax-bg"></div>
+    <div class="container">
+        <div class="structure-grid">
+            <!-- Left: Content -->
+            <div class="structure-content">
+                <span class="eyebrow">Program Structure</span>
+                <h2>How NurseTALKS Works</h2>
+                <p class="structure-desc">A hybrid speaking system combining live academics with AI-powered practice. 18
+                    nursing-specific units delivered over 3 months.</p>
+
+                <div class="structure-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">18</div>
+                        <div class="stat-label">Nursing-Specific Units</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">3</div>
+                        <div class="stat-label">Months Duration</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">5</div>
+                        <div class="stat-label">Max Group Size</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">7</div>
+                        <div class="stat-label">Days/Week Exposure</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Weekly Breakdown -->
+            <div class="structure-schedule">
+                <div class="schedule-card">
+                    <div class="schedule-item">
+                        <div class="schedule-icon live">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                <path
+                                    d="M17 21V19C17 17.94 16.58 16.92 15.83 16.17C15.08 15.42 14.06 15 13 15H5C3.94 15 2.92 15.42 2.17 16.17C1.42 16.92 1 17.94 1 19V21"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2" />
+                            </svg>
+                        </div>
+                        <div class="schedule-details">
+                            <h4>3 Days Live Speaking Classes</h4>
+                            <p>75-minute sessions with breakout-based, high speaking time and continuous teacher
+                                feedback.</p>
+                        </div>
+                        <span class="schedule-badge live-badge">Live</span>
+                    </div>
+
+                    <div class="schedule-divider"></div>
+
+                    <div class="schedule-item">
+                        <div class="schedule-icon ai">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <div class="schedule-details">
+                            <h4>4 Days AI Speaking Practice</h4>
+                            <p>Dr Meddy Ecosystem — nursing-specific AI practice designed for nursing scenarios, not
+                                general chat.</p>
+                        </div>
+                        <span class="schedule-badge ai-badge">AI</span>
+                    </div>
+
+                    <div class="schedule-divider"></div>
+
+                    <div class="schedule-item">
+                        <div class="schedule-icon access">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                <rect x="2" y="3" width="20" height="14" rx="2" stroke="currentColor"
+                                    stroke-width="2" />
+                                <path d="M8 21H16M12 17V21" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <div class="schedule-details">
+                            <h4>Full Access & Recordings</h4>
+                            <p>All sessions recorded. Lessons accessible anytime via student dashboard — from ward,
+                                home, or abroad.</p>
+                        </div>
+                        <span class="schedule-badge access-badge">24/7</span>
+                    </div>
+                </div>
+
+                <div class="materials-note">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                        <path d="M4 19.5C4 18.84 4.26 18.21 4.73 17.73C5.21 17.26 5.84 17 6.5 17H20"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        <path
+                            d="M6.5 2H20V22H6.5C5.84 22 5.21 21.74 4.73 21.27C4.26 20.79 4 20.16 4 19.5V4.5C4 3.84 4.26 3.21 4.73 2.73C5.21 2.26 5.84 2 6.5 2Z"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <span>Exclusive MEDTALKS Coursebooks — designed only for enrolled students.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- NurseTALKS Courses Section -->
+<section class="nurse-courses">
+    <div class="container">
+        <div class="courses-header">
+            <span class="eyebrow">Our Programs</span>
+            <h2>NurseTALKS Courses</h2>
+            <p>Explore our specialized nursing communication courses designed to elevate your professional English
+                skills.</p>
+        </div>
+
+        {% if courses %}
+        <div class="courses-grid">
+            {% for course in courses %}
+            <div class="course-card">
+                <!-- Course Thumbnail -->
+                <div class="course-thumbnail">
+                    {% if course.thumbnail %}
+                    <img src="{{ course.thumbnail }}" alt="{{ course.title }}">
+                    {% else %}
+                    <div class="thumbnail-placeholder">
+                        <span>&#128105;&#8205;&#9877;&#65039;</span>
+                    </div>
+                    {% endif %}
+
+                    {% if course.discount_percentage > 0 %}
+                    <div class="course-badge discount">{{ course.discount_percentage }}% OFF</div>
+                    {% endif %}
+
+                    {% if course.is_free %}
+                    <div class="course-badge free">FREE</div>
+                    {% endif %}
+
+                    <div class="course-level-badge {{ course.level }}">{{ course.stats.level }}</div>
+                </div>
+
+                <!-- Course Content -->
+                <div class="course-content">
+                    <h3 class="course-title">{{ course.title }}</h3>
+
+                    <p class="course-description">
+                        {{ course.description[:150] }}{% if course.description|length > 150 %}...{% endif %}
+                    </p>
+
+                    <!-- Course Meta Info -->
+                    <div class="course-meta">
+                        <div class="meta-item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                            <span>{{ course.stats.total_sections }} Sections</span>
+                        </div>
+                        <div class="meta-item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polygon points="5 3 19 12 5 21 5 3" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                            <span>{{ course.stats.total_lessons }} Lessons</span>
+                        </div>
+                        <div class="meta-item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" />
+                                <polyline points="12,6 12,12 16,14" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                            <span>{{ course.duration_hours }}h</span>
+                        </div>
+                    </div>
+
+                    <!-- Instructor Info -->
+                    {% if course.instructor_name %}
+                    <div class="course-instructor">
+                        {% if course.instructor_photo_url %}
+                        <img src="{{ course.instructor_photo_url }}" alt="{{ course.instructor_name }}"
+                            class="instructor-avatar">
+                        {% else %}
+                        <div class="instructor-avatar-placeholder">
+                            {{ course.instructor_name[0] }}
+                        </div>
+                        {% endif %}
+                        <div class="instructor-info">
+                            <span class="instructor-name">{{ course.instructor_name }}</span>
+                            {% if course.instructor_description %}
+                            <span class="instructor-role">{{ course.instructor_description }}</span>
+                            {% endif %}
+                        </div>
+                    </div>
+                    {% endif %}
+
+                    <!-- Course Footer: Price & CTA -->
+                    <div class="course-footer">
+                        <div class="course-price">
+                            {% if course.is_free %}
+                            <span class="price-current">Free</span>
+                            {% else %}
+                            {% if course.discount_percentage > 0 %}
+                            <span class="price-original">{{ course.formatted_actual_price }}</span>
+                            <span class="price-current">{{ course.formatted_discounted_price }}</span>
+                            {% else %}
+                            <span class="price-current">{{ course.formatted_actual_price }}</span>
+                            {% endif %}
+                            {% endif %}
+                        </div>
+                        <a href="{{ url_for('course_detail', course_id=course.id) }}" class="btn-enroll">View Course</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% else %}
+        <div class="no-courses">
+            <div class="no-courses-icon">&#128218;</div>
+            <h3>Courses Coming Soon</h3>
+            <p>We're working on amazing nursing communication courses. Stay tuned!</p>
+        </div>
+        {% endif %}
+    </div>
+</section>
+
+<!-- Communication Factors Section -->
+<section class="nurse-factors" id="nurse-factors-section">
+    <div class="container">
+        <!-- Header -->
+        <div class="factors-header-section">
+            <h2>Why Patients Trust One Nurse<br>Over Another</h2>
+            <p class="factors-intro">
+                Patients do not decide based on technical skills alone.
+                Communication quality is a decisive factor in patient trust and nursing care outcomes.
+            </p>
+        </div>
+
+        <!-- Main Content -->
+        <div class="factors-main-grid">
+            <!-- Left: Donut Chart -->
+            <div class="factors-chart-column">
+                <div class="donut-chart-wrapper">
+                    <svg class="donut-chart" viewBox="0 0 200 200">
+                        <!-- Background ring -->
+                        <circle cx="100" cy="100" r="80" fill="none" stroke="#e8f0f4" stroke-width="28" />
+                        <!-- Segment 3: Handover Quality (25%) -->
+                        <circle class="donut-segment segment-3" cx="100" cy="100" r="80" fill="none" stroke="#f59e0b"
+                            stroke-width="28" stroke-dasharray="0 502.65" stroke-dashoffset="-377.00"
+                            data-dash="125.66 376.99" />
+                        <!-- Segment 2: Empathy & Reassurance (35%) -->
+                        <circle class="donut-segment segment-2" cx="100" cy="100" r="80" fill="none" stroke="#22c55e"
+                            stroke-width="28" stroke-dasharray="0 502.65" stroke-dashoffset="-201.06"
+                            data-dash="175.93 326.72" />
+                        <!-- Segment 1: Clarity of Instruction (40%) -->
+                        <circle class="donut-segment segment-1" cx="100" cy="100" r="80" fill="none" stroke="#3b82f6"
+                            stroke-width="28" stroke-dasharray="0 502.65" stroke-dashoffset="0"
+                            data-dash="201.06 301.59" />
+                        <!-- Center text -->
+                        <text x="100" y="94" text-anchor="middle" fill="#0e415b" font-size="14"
+                            font-weight="800">100%</text>
+                        <text x="100" y="114" text-anchor="middle" fill="#666" font-size="8"
+                            font-weight="500">Communication</text>
+                    </svg>
+
+                    <!-- Legend -->
+                    <div class="donut-legend">
+                        <div class="legend-item">
+                            <span class="legend-dot" style="background: #3b82f6;"></span>
+                            <span class="legend-label">Clarity of Instruction</span>
+                            <span class="legend-value">40%</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-dot" style="background: #22c55e;"></span>
+                            <span class="legend-label">Empathy & Reassurance</span>
+                            <span class="legend-value">35%</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-dot" style="background: #f59e0b;"></span>
+                            <span class="legend-label">Handover Quality</span>
+                            <span class="legend-value">25%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Factor Cards -->
+            <div class="factors-list-column">
+                <div class="factor-card" data-color="#3b82f6">
+                    <div class="factor-card-header">
+                        <div class="factor-icon-wrap" style="background: rgba(59,130,246,0.1); color: #3b82f6;">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                                <path
+                                    d="M9 5H7C6.47 5 5.96 5.21 5.59 5.59C5.21 5.96 5 6.47 5 7V19C5 19.53 5.21 20.04 5.59 20.41C5.96 20.79 6.47 21 7 21H17C17.53 21 18.04 20.79 18.41 20.41C18.79 20.04 19 19.53 19 19V7C19 6.47 18.79 5.96 18.41 5.59C18.04 5.21 17.53 5 17 5H15"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <rect x="9" y="3" width="6" height="4" rx="1" stroke="currentColor" stroke-width="2" />
+                                <path d="M9 12H15M9 16H13" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" />
+                            </svg>
+                        </div>
+                        <div class="factor-card-title">
+                            <span class="factor-pct" style="color: #3b82f6;">40%</span>
+                            <h4>Clear Nursing Instruction</h4>
+                        </div>
+                    </div>
+                    <p>Patients need to understand their care plan, medications, and what to expect. Clear instructions
+                        improve compliance and reduce clinical errors.</p>
+                </div>
+
+                <div class="factor-card" data-color="#22c55e">
+                    <div class="factor-card-header">
+                        <div class="factor-icon-wrap" style="background: rgba(34,197,94,0.1); color: #22c55e;">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                                <path
+                                    d="M17 21V19C17 17.94 16.58 16.92 15.83 16.17C15.08 15.42 14.06 15 13 15H5C3.94 15 2.92 15.42 2.17 16.17C1.42 16.92 1 17.94 1 19V21"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2" />
+                                <path d="M23 21V19C22.99 18.11 22.7 17.24 22.15 16.53C21.61 15.82 20.85 15.32 20 15.13"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path
+                                    d="M16 3.13C16.85 3.32 17.62 3.83 18.16 4.54C18.71 5.25 19 6.13 19 7.02C19 7.91 18.71 8.79 18.16 9.5C17.62 10.21 16.85 10.72 16 10.91"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <div class="factor-card-title">
+                            <span class="factor-pct" style="color: #22c55e;">35%</span>
+                            <h4>Building Empathy & Reassurance</h4>
+                        </div>
+                    </div>
+                    <p>Patients often rely on their nurse as their most constant healthcare provider. The ability to
+                        reassure and build empathy directly affects patient comfort and recovery.</p>
+                </div>
+
+                <div class="factor-card" data-color="#f59e0b">
+                    <div class="factor-card-header">
+                        <div class="factor-icon-wrap" style="background: rgba(245,158,11,0.1); color: #f59e0b;">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                                <path
+                                    d="M12 1V23M17 5H9.5C8.57 5 7.68 5.37 7.03 6.03C6.37 6.68 6 7.57 6 8.5C6 9.43 6.37 10.32 7.03 10.97C7.68 11.63 8.57 12 9.5 12H14.5C15.43 12 16.32 12.37 16.97 13.03C17.63 13.68 18 14.57 18 15.5C18 16.43 17.63 17.32 16.97 17.97C16.32 18.63 15.43 19 14.5 19H6"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <div class="factor-card-title">
+                            <span class="factor-pct" style="color: #f59e0b;">25%</span>
+                            <h4>Handover Quality</h4>
+                        </div>
+                    </div>
+                    <p>Delivering clear, accurate patient handovers between shifts and departments is essential for
+                        patient safety and professional credibility.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Earnings Comparison Section -->
+<section class="nurse-earnings" id="nurse-earnings-section">
+    <div class="container">
+        <!-- Header -->
+        <div class="earnings-header-section">
+            <span class="eyebrow" style="color: rgba(255,255,255,0.5);">Global Opportunity</span>
+            <h2>Average Annual Nurse Earnings</h2>
+            <p class="earnings-intro">Relative earning potential across major international markets where English
+                proficiency is essential.</p>
+        </div>
+
+        <!-- Main Content -->
+        <div class="earnings-main-grid">
+            <!-- Left: Animated Bar Chart -->
+            <div class="earnings-chart-column">
+                <div class="earnings-chart">
+                    <h4 class="chart-title">Average Annual Nurse Earnings (Relative Index)</h4>
+                    <div class="chart-bars">
+                        <div class="chart-bar-group">
+                            <div class="chart-bar-wrapper">
+                                <span class="chart-bar-value">$85K</span>
+                                <div class="chart-bar bar-usa" data-height="85"></div>
+                            </div>
+                            <span class="chart-bar-label">
+                                <svg width="18" height="12" viewBox="0 0 18 12">
+                                    <rect width="18" height="12" fill="#002868" />
+                                    <rect y="0" width="18" height="1" fill="#BF0A30" />
+                                    <rect y="2" width="18" height="1" fill="#BF0A30" />
+                                    <rect y="4" width="18" height="1" fill="#BF0A30" />
+                                    <rect y="6" width="18" height="1" fill="#BF0A30" />
+                                    <rect y="8" width="18" height="1" fill="#BF0A30" />
+                                    <rect y="10" width="18" height="1" fill="#BF0A30" />
+                                    <rect width="8" height="6" fill="#002868" />
+                                </svg>
+                                USA
+                            </span>
+                        </div>
+                        <div class="chart-bar-group">
+                            <div class="chart-bar-wrapper">
+                                <span class="chart-bar-value">$65K</span>
+                                <div class="chart-bar bar-australia" data-height="65"></div>
+                            </div>
+                            <span class="chart-bar-label">
+                                <svg width="18" height="12" viewBox="0 0 18 12">
+                                    <rect width="18" height="12" fill="#00008B" />
+                                    <polygon points="0,0 3,2 0,4" fill="white" />
+                                    <polygon points="0,0 5,3" fill="#C8102E" stroke-width="0.3" />
+                                </svg>
+                                Australia
+                            </span>
+                        </div>
+                        <div class="chart-bar-group">
+                            <div class="chart-bar-wrapper">
+                                <span class="chart-bar-value">$45K</span>
+                                <div class="chart-bar bar-uk" data-height="45"></div>
+                            </div>
+                            <span class="chart-bar-label">
+                                <svg width="18" height="12" viewBox="0 0 18 12">
+                                    <rect width="18" height="12" fill="#012169" />
+                                    <polygon points="0,0 18,12" fill="none" stroke="white" stroke-width="2" />
+                                    <polygon points="18,0 0,12" fill="none" stroke="white" stroke-width="2" />
+                                    <rect x="7.5" width="3" height="12" fill="white" />
+                                    <rect y="4.5" width="18" height="3" fill="white" />
+                                    <rect x="8" width="2" height="12" fill="#C8102E" />
+                                    <rect y="5" width="18" height="2" fill="#C8102E" />
+                                </svg>
+                                UK
+                            </span>
+                        </div>
+                    </div>
+                    <p class="chart-source">Sources: US Bureau of Labor Statistics, Australian Government Job Outlook,
+                        NHS Digital.</p>
+                </div>
+            </div>
+
+            <!-- Right: Content -->
+            <div class="earnings-content-column">
+                <p class="earnings-description">Nurses working in countries such as the <strong>USA, Australia, and the
+                        UK</strong> operate in systems where:</p>
+
+                <div class="earnings-features">
+                    <div class="earnings-feature-card">
+                        <div class="ef-icon">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                                <path
+                                    d="M21 15C21 15.53 20.79 16.04 20.41 16.41C20.04 16.79 19.53 17 19 17H7L3 21V5C3 4.47 3.21 3.96 3.59 3.59C3.96 3.21 4.47 3 5 3H19C19.53 3 20.04 3.21 20.41 3.59C20.79 3.96 21 4.47 21 5V15Z"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <p>Patient communication is expected to be <strong>clear and reassuring</strong></p>
+                    </div>
+
+                    <div class="earnings-feature-card">
+                        <div class="ef-icon">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" />
+                                <path d="M2 12H22" stroke="currentColor" stroke-width="2" />
+                                <path
+                                    d="M12 2C14.5 4.74 15.92 8.29 16 12C15.92 15.71 14.5 19.26 12 22C9.5 19.26 8.08 15.71 8 12C8.08 8.29 9.5 4.74 12 2Z"
+                                    stroke="currentColor" stroke-width="2" />
+                            </svg>
+                        </div>
+                        <p>Professional interaction happens <strong>in English</strong></p>
+                    </div>
+
+                    <div class="earnings-feature-card">
+                        <div class="ef-icon">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                                <path
+                                    d="M20.84 4.61C20.33 4.1 19.72 3.7 19.05 3.44C18.38 3.18 17.67 3.05 16.95 3.05C16.24 3.05 15.53 3.18 14.86 3.44C14.19 3.7 13.58 4.1 13.07 4.61L12 5.68L10.93 4.61C9.9 3.58 8.51 3.01 7.05 3.01C5.6 3.01 4.21 3.58 3.17 4.61C2.14 5.64 1.57 7.04 1.57 8.49C1.57 9.95 2.14 11.34 3.17 12.38L4.24 13.45L12 21.21L19.76 13.45L20.83 12.38C21.34 11.87 21.74 11.26 22 10.59C22.26 9.92 22.39 9.21 22.39 8.49C22.39 7.78 22.26 7.07 22 6.4C21.74 5.73 21.34 5.12 20.84 4.61Z"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <p>Trust and explanation are directly linked to <strong>patient outcomes and career
+                                growth</strong></p>
+                    </div>
+                </div>
+
+                <div class="earnings-bottom-note">
+                    <p class="earnings-note"><em>Strong nursing skills are essential — but without confident
+                            professional English, access to these markets becomes limited.</em></p>
+                </div>
+
+                <div class="earnings-disclaimer">
+                    <div class="disclaimer-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                            <path
+                                d="M12 9V13M12 17H12.01M21 12C21 16.97 16.97 21 12 21C7.03 21 3 16.97 3 12C3 7.03 7.03 3 12 3C16.97 3 21 7.03 21 12Z"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                        </svg>
+                    </div>
+                    <p><strong>NurseTALKS does not promise income.</strong> It prepares nurses to function confidently
+                        in international professional environments where communication is non-negotiable.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Latest Articles Section -->
+<section class="nurse-articles">
+    <div class="container">
+        <div class="articles-header">
+            <div class="articles-header-left">
+                <span class="eyebrow">Our Latest Articles</span>
+                <h2>Our Latest <span class="text-highlight">News</span><br>& Blog Articles</h2>
+            </div>
+            <a href="{{ url_for('blog') }}" class="btn-view-all">
+                View All Blogs
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M5 12H19M12 5L19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </a>
+        </div>
+
+        <div class="articles-grid">
+            {% if blog_posts %}
+            {% for post in blog_posts %}
+            <a href="{{ url_for('blog_post', slug=post.slug if post.slug else post.id) }}" class="article-card-link">
+                <article class="article-card">
+                    <div class="article-image">
+                        {% if post.featuredImage and post.featuredImage.url %}
+                        <img src="{{ post.featuredImage.url }}" alt="{{ post.title }}">
+                        {% else %}
+                        <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&h=400&fit=crop"
+                            alt="{{ post.title }}">
+                        {% endif %}
+                        <span class="article-category">{{ post.category if post.category else 'Nursing' }}</span>
+                    </div>
+                    <div class="article-body">
+                        <div class="article-meta">
+                            <span class="article-date">
+                                {% if post.createdAt %}
+                                {{ post.createdAt.strftime('%b %d, %Y') }}
+                                {% else %}
+                                Recent
+                                {% endif %}
+                            </span>
+                        </div>
+                        <h3>{{ post.title }}</h3>
+                        <p>
+                            {% if post.excerpt %}
+                            {{ post.excerpt[:120] }}{% if post.excerpt|length > 120 %}...{% endif %}
+                            {% elif post.content %}
+                            {{ post.content[:120] }}...
+                            {% endif %}
+                        </p>
+                        <span class="article-read-more">Read More <span>&rarr;</span></span>
+                    </div>
+                </article>
+            </a>
+            {% endfor %}
+            {% else %}
+            <div class="no-articles">
+                <p>Blog articles coming soon. Stay tuned!</p>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</section>
+
+<!-- Student Testimonials Section -->
+<section class="nurse-testimonials">
+    <div class="container">
+        <!-- Header -->
+        <div class="testimonials-header">
+            <span class="eyebrow" style="color: rgba(255,255,255,0.4);">Testimonials</span>
+            <h2>What Our <span class="highlight">Students</span> Have to Say</h2>
+        </div>
+
+        <!-- Testimonial Cards -->
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="testimonial-stars">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="#fbbf24">
+                        <path
+                            d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
+                    </svg>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="#fbbf24">
+                        <path
+                            d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
+                    </svg>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="#fbbf24">
+                        <path
+                            d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
+                    </svg>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="#fbbf24">
+                        <path
+                            d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
+                    </svg>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="#fbbf24">
+                        <path
+                            d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
+                    </svg>
+                    <span class="star-rating">5.0</span>
+                </div>
+                <h4>Confident in Handovers!</h4>
+                <p class="testimonial-text">"After NurseTALKS, I can deliver patient handovers without hesitation. The
+                    ward scenarios were exactly what I needed."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">
+                        <span>A</span>
+                    </div>
+                    <div class="author-info">
+                        <strong>Nurse Ay&#351;e T.</strong>
+                        <span>ICU Nurse, Istanbul</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-stars">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="#fbbf24">
+                        <path
+                            d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
+                    </svg>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="#fbbf24">
+                        <path
+                            d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
+                    </svg>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="#fbbf24">
+                        <path
+                            d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
+                    </svg>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="#fbbf24">
+                        <path
+                            d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
+                    </svg>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="#fbbf24">
+                        <path
+                            d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
+                    </svg>
+                    <span class="star-rating">5.0</span>
+                </div>
+                <h4>Great for Ward Communication!</h4>
+                <p class="testimonial-text">"The small group size made all the difference. My communication with doctors
+                    and colleagues about patient care plans has improved dramatically."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">
+                        <span>M</span>
+                    </div>
+                    <div class="author-info">
+                        <strong>Nurse Mehmet B.</strong>
+                        <span>Emergency Nurse, Ankara</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-stars">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="#fbbf24">
+                        <path
+                            d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
+                    </svg>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="#fbbf24">
+                        <path
+                            d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
+                    </svg>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="#fbbf24">
+                        <path
+                            d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
+                    </svg>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="#fbbf24">
+                        <path
+                            d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
+                    </svg>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="#fbbf24">
+                        <path
+                            d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
+                    </svg>
+                    <span class="star-rating">5.0</span>
+                </div>
+                <h4>Perfect for Nursing Students!</h4>
+                <p class="testimonial-text">"As a nursing student preparing for international opportunities, NurseTALKS
+                    gave me the confidence I was missing. The AI practice kept me engaged every day."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">
+                        <span>S</span>
+                    </div>
+                    <div class="author-info">
+                        <strong>Selin K.</strong>
+                        <span>Nursing Student, Izmir</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="nurse-faq">
+    <div class="container">
+        <div class="nurse-faq-header">
+            <span class="eyebrow">FAQs</span>
+            <h2>NurseTALKS <span class="text-highlight">FAQ</span>: Your<br>Questions Answered</h2>
+        </div>
+
+        <div class="nurse-faq-grid">
+            <div class="nurse-faq-list">
+                <!-- FAQ 1 -->
+                <div class="nurse-faq-item">
+                    <button class="nurse-faq-question">
+                        <span>What is NurseTALKS?</span>
+                        <svg class="nurse-faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="12" y1="5" x2="12" y2="19" />
+                            <line x1="5" y1="12" x2="19" y2="12" />
+                        </svg>
+                    </button>
+                    <div class="nurse-faq-answer">
+                        <p>NurseTALKS is a ward-focused nursing speaking program designed for nurses and nursing
+                            students. It trains real nursing communication in English — not grammar, not vocabulary
+                            lists, but how nurses actually speak when delivering handovers, administering medications,
+                            and collaborating with healthcare teams.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="nurse-faq-item">
+                    <button class="nurse-faq-question">
+                        <span>Who is NurseTALKS for?</span>
+                        <svg class="nurse-faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="12" y1="5" x2="12" y2="19" />
+                            <line x1="5" y1="12" x2="19" y2="12" />
+                        </svg>
+                    </button>
+                    <div class="nurse-faq-answer">
+                        <p>NurseTALKS is designed for practicing nurses, clinical nurses, and nursing students who want
+                            to communicate confidently with patients, collaborate with healthcare professionals, work in
+                            multidisciplinary teams, or pursue nursing careers abroad.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="nurse-faq-item">
+                    <button class="nurse-faq-question">
+                        <span>How long is the program?</span>
+                        <svg class="nurse-faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="12" y1="5" x2="12" y2="19" />
+                            <line x1="5" y1="12" x2="19" y2="12" />
+                        </svg>
+                    </button>
+                    <div class="nurse-faq-answer">
+                        <p>The core program runs for 3 months (12 weeks), structured into 18 nursing-specific units. You
+                            get 3 days of live speaking classes and 4 days of AI practice per week — 7 days of exposure
+                            without burnout.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 4 -->
+                <div class="nurse-faq-item">
+                    <button class="nurse-faq-question">
+                        <span>What is the class size?</span>
+                        <svg class="nurse-faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="12" y1="5" x2="12" y2="19" />
+                            <line x1="5" y1="12" x2="19" y2="12" />
+                        </svg>
+                    </button>
+                    <div class="nurse-faq-answer">
+                        <p>Maximum 5 participants per group. This ensures breakout-based, high speaking time with
+                            continuous teacher feedback. Every student gets meaningful practice in every session.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 5 -->
+                <div class="nurse-faq-item">
+                    <button class="nurse-faq-question">
+                        <span>Is NurseTALKS different from general English courses?</span>
+                        <svg class="nurse-faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="12" y1="5" x2="12" y2="19" />
+                            <line x1="5" y1="12" x2="19" y2="12" />
+                        </svg>
+                    </button>
+                    <div class="nurse-faq-answer">
+                        <p>Yes. NurseTALKS uses profession-specific speaking curricula with academically trained
+                            instructors. The AI speaking partner is designed for nursing scenarios, not general chat. It
+                            is a structured, unit-based system — not random conversation practice.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 6 -->
+                <div class="nurse-faq-item">
+                    <button class="nurse-faq-question">
+                        <span>Can I access lessons after the live sessions?</span>
+                        <svg class="nurse-faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="12" y1="5" x2="12" y2="19" />
+                            <line x1="5" y1="12" x2="19" y2="12" />
+                        </svg>
+                    </button>
+                    <div class="nurse-faq-answer">
+                        <p>Yes. All live sessions are recorded and accessible anytime via your student dashboard. You
+                            can join from your ward, home, or abroad — and review lessons whenever you need.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right side decorative element -->
+            <div class="nurse-faq-visual">
+                <div class="faq-visual-card">
+                    <div class="faq-visual-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                            <path
+                                d="M9.09 9C9.3251 8.33167 9.78915 7.76811 10.4 7.40913C11.0108 7.05016 11.7289 6.91894 12.4272 7.03871C13.1255 7.15849 13.7588 7.52152 14.2151 8.06353C14.6713 8.60553 14.9211 9.29152 14.92 10C14.92 12 11.92 13 11.92 13"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" />
+                            <path d="M12 17H12.01" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                        </svg>
+                    </div>
+                    <h4>Have a different question?</h4>
+                    <p>Contact our team for personalized guidance about NurseTALKS.</p>
+                    <a href="{{ url_for('contact') }}" class="faq-contact-btn">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/reel-video.js') }}"></script>
+<script src="{{ url_for('static', filename='js/nursetalks.js') }}"></script>
+<script>
+    // NurseTALKS FAQ accordion
+    document.addEventListener('DOMContentLoaded', function () {
+        var faqItems = document.querySelectorAll('.nurse-faq-item');
+        faqItems.forEach(function (item) {
+            var btn = item.querySelector('.nurse-faq-question');
+            btn.addEventListener('click', function () {
+                var isActive = item.classList.contains('active');
+                faqItems.forEach(function (i) { i.classList.remove('active'); });
+                if (!isActive) { item.classList.add('active'); }
+            });
+        });
+    });
+</script>
+{% endblock %}

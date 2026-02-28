@@ -1,0 +1,391 @@
+﻿{% extends 'base.html' %}
+
+{% block title %}Partnerships - MedTalks{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/products.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/ecosystem.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/contact.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/product-custom.css') }}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/partnerships.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<!-- ============================================================ -->
+<!-- HERO SECTION -->
+<!-- ============================================================ -->
+<section id="partnerships-hero" class="product-hero partnerships-hero">
+    <div class="container">
+        <div class="hero-grid">
+            <div class="hero-content">
+                <div class="glass-card-hero">
+                    <div class="innovative-subtitle">
+                        <span class="pulse-dot"></span>
+                        <span class="subtitle-text">For Institutions</span>
+                    </div>
+                    <h1 class="hero-title">Elevating Clinical Communication at Scale</h1>
+                    <p class="hero-description">
+                        Equip your teams and students with the skills for safe, effective patient care. MEDTALKS
+                        partners with universities, hospitals, and clinics to deliver structured language pathways,
+                        scalable assessment, and AI-powered communication training.
+                    </p>
+                    <div class="hero-cta-buttons">
+                        <a href="{{ url_for('partnership_application') }}" class="btn-hero-primary"
+                            style="display: inline-flex; align-items: center; justify-content: center; gap: 0.8rem; text-decoration: none; padding: 1rem 3.5rem; border-radius: 50px; font-weight: 700; transition: all 0.3s ease; width: fit-content; font-size: 1.1rem;">
+                            Start Your Partnership Application
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="mockup-3d-wrapper">
+                    <div class="floating-badge badge-1">
+                        <i class="fas fa-university"></i>
+                        <span>University Ready</span>
+                    </div>
+                    <div class="floating-badge badge-2">
+                        <i class="fas fa-robot"></i>
+                        <span>AI-Powered</span>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&h=600&fit=crop"
+                        alt="Partnership Illustration" class="product-hero-img-3d">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- WHY PARTNER SECTION -->
+<!-- ============================================================ -->
+<section class="what-is-section" id="why-partner">
+    <div class="container">
+        <div class="what-is-grid">
+            <!-- Left Green Panel -->
+            <div class="green-panel">
+                <h2 class="green-panel-title">Why Partner with MEDTALKS?</h2>
+                <p class="green-panel-text">
+                    Professional communication cannot be outsourced to generic language platforms. MEDTALKS provides
+                    academically designed speaking systems that integrate into existing institutional structures.
+                </p>
+
+            </div>
+
+            <!-- Right Side: Feature Cards -->
+            <div class="feature-cards">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-route"></i>
+                    </div>
+                    <div class="feature-text-content">
+                        <h3 class="feature-title">Profession-Specific Pathways</h3>
+                        <p class="feature-description">
+                            Profession-specific speaking pathways from B1 to C1, structured and repeatable communication
+                            training aligned with clinical and academic standards.
+                        </p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-expand-arrows-alt"></i>
+                    </div>
+                    <div class="feature-text-content">
+                        <h3 class="feature-title">Scalable Without Staffing</h3>
+                        <p class="feature-description">
+                            Scalable assessment without excessive staffing AI-supported practice that grows with your
+                            cohort without adding unsustainable teaching load.
+                        </p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="feature-text-content">
+                        <h3 class="feature-title">Clear Implementation Frameworks</h3>
+                        <p class="feature-description">
+                            Clear implementation and reporting frameworks that support measurable speaking outcomes,
+                            academic integrity, and real-world clinical communication.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- WHAT INSTITUTIONS GAIN (TABBED FEATURES) -->
+<!-- ============================================================ -->
+<section class="tabbed-features-section">
+    <div class="container">
+        <div class="tabbed-header">
+            <h2 class="tabbed-title">What Institutions Gain</h2>
+            <p class="tabbed-subtitle">Built for Institutions, Not Casual Training each solution integrates into your
+                existing academic structure.</p>
+        </div>
+
+        <div class="tab-navigation">
+            <button class="tab-btn active" data-tab="tab-pathways">
+                <div class="tab-icon"><i class="fas fa-route"></i></div>
+                <span class="tab-label">Speaking Pathways</span>
+            </button>
+            <button class="tab-btn" data-tab="tab-training">
+                <div class="tab-icon"><i class="fas fa-redo-alt"></i></div>
+                <span class="tab-label">Repeatable Training</span>
+            </button>
+            <button class="tab-btn" data-tab="tab-scale">
+                <div class="tab-icon"><i class="fas fa-expand-arrows-alt"></i></div>
+                <span class="tab-label">Scalable Assessment</span>
+            </button>
+            <button class="tab-btn" data-tab="tab-ai">
+                <div class="tab-icon"><i class="fas fa-robot"></i></div>
+                <span class="tab-label">AI Practice</span>
+            </button>
+            <button class="tab-btn" data-tab="tab-reporting">
+                <div class="tab-icon"><i class="fas fa-chart-line"></i></div>
+                <span class="tab-label">Reporting</span>
+            </button>
+        </div>
+
+        <div class="tab-content-grid">
+            <div class="tab-content-container">
+                <div class="tab-content active" id="tab-pathways">
+                    <p class="tab-text">Profession-specific speaking pathways (B1C1) designed for healthcare
+                        professionals and academic institutions. Each pathway follows real professional communication
+                        logic not generic language drills.</p>
+                    <a href="{{ url_for('partnership_application') }}" class="btn-tab-primary"
+                        style="display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none;">
+                        Apply to Partner
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="tab-content" id="tab-training">
+                    <p class="tab-text">Structured, repeatable communication training that delivers consistent results
+                        across cohorts. Every student receives the same quality of practice, making outcomes measurable
+                        and comparable.</p>
+                    <a href="{{ url_for('partnership_application') }}" class="btn-tab-primary"
+                        style="display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none;">
+                        Apply to Partner
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="tab-content" id="tab-scale">
+                    <p class="tab-text">Scalable assessment without excessive staffing evaluate hundreds of students
+                        simultaneously with AI-powered speaking assessment. Reduce marking load while increasing
+                        assessment frequency and reliability.</p>
+                    <a href="{{ url_for('partnership_application') }}" class="btn-tab-primary"
+                        style="display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none;">
+                        Apply to Partner
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="tab-content" id="tab-ai">
+                    <p class="tab-text">AI-supported practice aligned with academic standards giving students access to
+                        structured speaking sessions anytime, without requiring teacher availability. Supports
+                        continuous progress between formal classes.</p>
+                    <a href="{{ url_for('partnership_application') }}" class="btn-tab-primary"
+                        style="display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none;">
+                        Apply to Partner
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="tab-content" id="tab-reporting">
+                    <p class="tab-text">Clear implementation and reporting frameworks that track student progress,
+                        identify gaps, and demonstrate outcomes to faculty and accreditation bodies. Supports placement,
+                        progression, and institutional reporting needs.</p>
+                    <a href="{{ url_for('partnership_application') }}" class="btn-tab-primary"
+                        style="display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none;">
+                        Apply to Partner
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="tab-visual-container">
+                <div class="tab-visual-card">
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=600&fit=crop"
+                        alt="Institution Partnership" class="tab-visual-img">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- PARTNERSHIP MODELS -->
+<!-- ============================================================ -->
+<section class="different-section">
+    <div class="different-container">
+        <div class="different-content">
+            <p class="different-badge">PARTNERSHIP MODELS</p>
+            <h2 class="different-main-title">Built for Every Institution Type</h2>
+            <p class="different-description">MEDTALKS offers modular partnership models designed to fit different
+                institutional needs universities, schools, clinics, and faculty representatives.</p>
+
+            <ul class="different-list">
+                <li class="different-item">
+                    <div class="different-icon">
+                        <i class="fas fa-university" style="font-size:1.1rem;"></i>
+                    </div>
+                    <div class="different-text">
+                        <h4>University Partnerships</h4>
+                        <p>Medical English speaking labs, OET prep modules, faculty-wide placement workflows, and
+                            blended delivery using coursebooks + AI agents.</p>
+                    </div>
+                </li>
+                <li class="different-item">
+                    <div class="different-icon">
+                        <i class="fas fa-school" style="font-size:1.1rem;"></i>
+                    </div>
+                    <div class="different-text">
+                        <h4>School Partnerships</h4>
+                        <p>Placement speaking tests, midterm and final exams, progress checks across cohorts, and
+                            CEFR-aligned evaluation aligned with school rubrics.</p>
+                    </div>
+                </li>
+                <li class="different-item">
+                    <div class="different-icon">
+                        <i class="fas fa-clinic-medical" style="font-size:1.1rem;"></i>
+                    </div>
+                    <div class="different-text">
+                        <h4>Clinic Partnerships</h4>
+                        <p>Patient intake and follow-up English, procedure explanations, post-treatment instructions,
+                            and specialty-focused speaking modules for clinicians.</p>
+                    </div>
+                </li>
+                <li class="different-item">
+                    <div class="different-icon">
+                        <i class="fas fa-user-tie" style="font-size:1.1rem;"></i>
+                    </div>
+                    <div class="different-text">
+                        <h4>Faculty Representative Programme</h4>
+                        <p>Organise workshops and demo sessions on campus. Earn per approved event and per verified
+                            enrolment referral through a unique link or code.</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="different-image-side">
+            <div class="different-image-card">
+                <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=800&h=900&fit=crop"
+                    alt="Partnership Models">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- CORE PARTNERSHIP SOLUTIONS (ECOSYSTEM STYLE) -->
+<!-- ============================================================ -->
+<section class="ecosystem-section">
+    <div class="container">
+        <div class="ecosystem-header">
+            <h2 class="ecosystem-title">Core Partnership Solutions</h2>
+            <p class="ecosystem-subtitle">MEDTALKS offers modular solutions that can be deployed independently or
+                combined. Each solution is supported by onboarding, academic guidance, and optional reporting
+                structures.</p>
+        </div>
+
+        <div class="ecosystem-grid">
+            <div class="ecosystem-card ecosystem-card-main">
+                <div class="ecosystem-card-icon">
+                    <i class="fas fa-stethoscope" style="width:32px;font-size:1.5rem;"></i>
+                </div>
+                <h3 class="ecosystem-card-title">Dr Meddy Medical AI</h3>
+                <p class="ecosystem-card-description">Medical Speaking Agent for clinical communication training</p>
+            </div>
+            <div class="ecosystem-card">
+                <div class="ecosystem-card-icon">
+                    <i class="fas fa-tasks" style="width:32px;font-size:1.5rem;"></i>
+                </div>
+                <h3 class="ecosystem-card-title">Mr Brown Assessment</h3>
+                <p class="ecosystem-card-description">General English Speaking Assessment Agent for institutions</p>
+            </div>
+            <div class="ecosystem-card">
+                <div class="ecosystem-card-icon">
+                    <i class="fas fa-clipboard-check" style="width:32px;font-size:1.5rem;"></i>
+                </div>
+                <h3 class="ecosystem-card-title">OET Speaking Agents</h3>
+                <p class="ecosystem-card-description">Exam-aligned role-play practice (Medicine, Dentistry, Veterinary
+                    Science)</p>
+            </div>
+            <div class="ecosystem-card">
+                <div class="ecosystem-card-icon">
+                    <i class="fas fa-book-open" style="width:32px;font-size:1.5rem;"></i>
+                </div>
+                <h3 class="ecosystem-card-title">MedTalks Coursebooks</h3>
+                <p class="ecosystem-card-description">Structured speaking curricula for classroom and blended delivery
+                </p>
+            </div>
+        </div>
+
+        <p class="ecosystem-result-simple">Each solution is supported by onboarding, academic guidance, and optional
+            reporting structures.</p>
+    </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- CTA SECTION -->
+<!-- ============================================================ -->
+<section class="cta-contact-section" id="contact">
+    <div class="container">
+        <div class="cta-contact-container">
+            <div class="cta-contact-content">
+                <p class="cta-contact-label">LET'S BUILD A COMMUNICATION SYSTEM THAT WORKS</p>
+                <h2 class="cta-contact-title">Partner with MEDTALKS</h2>
+                <p class="cta-contact-description">
+                    If your institution values professional communication, patient safety, and measurable outcomes,
+                    MEDTALKS is ready to partner with you.
+                </p>
+
+                <div class="cta-contact-buttons">
+                    <a href="{{ url_for('partnership_application') }}" class="btn-cta-primary"
+                        style="display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none;">Start
+                        Your Partnership Application <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="cta-contact-trust">
+                    <div class="trust-avatars">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Student" class="trust-avatar">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Student" class="trust-avatar">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Student" class="trust-avatar">
+                        <img src="https://randomuser.me/api/portraits/men/46.jpg" alt="Student" class="trust-avatar">
+                    </div>
+                    <p class="trust-text">Trusted by over 10k students</p>
+                </div>
+            </div>
+
+            <div class="cta-contact-media">
+                <div class="cta-media-wrapper">
+                    <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&h=400&fit=crop"
+                        alt="Medical Students" class="cta-image">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', function () {
+                const targetTab = this.getAttribute('data-tab');
+                tabBtns.forEach(b => b.classList.remove('active'));
+                tabContents.forEach(c => c.classList.remove('active'));
+                this.classList.add('active');
+                const targetContent = document.getElementById(targetTab);
+                if (targetContent) targetContent.classList.add('active');
+            });
+        });
+    });
+</script>
+
+{% endblock %}

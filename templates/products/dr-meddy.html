@@ -1,0 +1,464 @@
+{% extends 'base.html' %}
+
+{% block title %}Dr Meddy - MedTalks{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/products.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/ecosystem.css') }}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/contact.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/product-custom.css') }}">
+{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section id="dr-meddy-hero" class="product-hero">
+    <div class="container">
+        <div class="hero-grid">
+            <div class="hero-content">
+                <div class="glass-card-hero">
+                    <span class="hero-subtitle">DR MEDDY CLINICAL AGENT</span>
+                    <h1 class="hero-title">AI-Powered Clinical Speaking Practice for Healthcare Professionals</h1>
+                    <p class="hero-description">
+                        Dr Meddy is an AI-powered medical English speaking agent designed for healthcare professionals
+                        who need real clinical communication, not generic conversation practice.
+                    </p>
+                    <div class="hero-cta-buttons">
+                        <a href="#demo" class="btn-hero-primary">
+                            Try 2-Minute Demo
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                        <a href="#pricing" class="btn-hero-secondary">
+                            View Pricing
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="mockup-3d-wrapper">
+                    <div class="floating-badge badge-1">
+                        <i class="fas fa-microchip"></i>
+                        <span>AI Feedback</span>
+                    </div>
+                    <div class="floating-badge badge-2">
+                        <i class="fas fa-stethoscope"></i>
+                        <span>Clinical Logic</span>
+                    </div>
+                    <img src="https://storage.googleapis.com/admin-dashboard-d5f22.firebasestorage.app/website/images/products/dr-meddy-mockup.png"
+                        alt="Dr. Meddy AI Agent" class="product-hero-img-3d">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- What Is Dr Meddy Section -->
+<section class="what-is-section">
+    <div class="container">
+        <div class="what-is-grid">
+            <!-- Left Green Panel -->
+            <div class="green-panel">
+                <h2 class="green-panel-title">What Is Dr Meddy?</h2>
+                <p class="green-panel-text">
+                    Dr Meddy is an AI-powered medical speaking agent designed for healthcare professionals who need
+                    structured, realistic communication practice — not casual conversation or generic language drills.
+                </p>
+
+                <a href="#learn-more" class="btn-green-panel">
+                    Learn More
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                </a>
+            </div>
+
+            <!-- Right Side: Feature Cards -->
+            <div class="feature-cards">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-clipboard-check"></i>
+                    </div>
+                    <h3 class="feature-title">Clinically Structured Speaking</h3>
+                    <p class="feature-description">
+                        Dr Meddy follows real healthcare logic — from presenting complaints to explanation, instruction,
+                        and follow-up — helping professionals practise how medicine is actually spoken, not memorised.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-comment-medical"></i>
+                    </div>
+                    <h3 class="feature-title">Immediate, Actionable Feedback</h3>
+                    <p class="feature-description">
+                        Each session provides feedback on clarity, fluency, grammar, vocabulary, and patient-friendly
+                        tone, including guidance on high-risk wording to avoid in clinical settings.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <h3 class="feature-title">Designed for Real Medical Life</h3>
+                    <p class="feature-description">
+                        Built for busy clinicians and students, Dr Meddy offers 2–15 minute micro-sessions, repeatable
+                        anytime, supporting continuous progress alongside live classes or independent practice.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Tabbed Features Section -->
+<section class="tabbed-features-section">
+    <div class="container">
+        <!-- Section Header -->
+        <div class="tabbed-header">
+            <h2 class="tabbed-title">Reliable & Structured Medical Speaking Practice</h2>
+            <p class="tabbed-subtitle">AI-powered clinical communication training designed for healthcare professionals
+                — accurate, guided, and safe.</p>
+        </div>
+
+        <!-- Tab Navigation -->
+        <div class="tab-navigation">
+            <button class="tab-btn active" data-tab="clinical-scenarios">
+                <div class="tab-icon">
+                    <i class="fas fa-clipboard-check"></i>
+                </div>
+                <span class="tab-label">Clinical Scenarios</span>
+            </button>
+
+            <button class="tab-btn" data-tab="guided-flow">
+                <div class="tab-icon">
+                    <i class="fas fa-route"></i>
+                </div>
+                <span class="tab-label">Guided Speaking Flow</span>
+            </button>
+
+            <button class="tab-btn" data-tab="instant-feedback">
+                <div class="tab-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <span class="tab-label">Instant Feedback</span>
+            </button>
+
+            <button class="tab-btn" data-tab="medical-safety">
+                <div class="tab-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <span class="tab-label">Medical Safety Focus</span>
+            </button>
+
+            <button class="tab-btn" data-tab="flexible-practice">
+                <div class="tab-icon">
+                    <i class="fas fa-clock"></i>
+                </div>
+                <span class="tab-label">Flexible Practice</span>
+            </button>
+        </div>
+
+        <!-- Tab Content Grid -->
+        <div class="tab-content-grid">
+            <!-- Left Side: Tab Content -->
+            <div class="tab-content-container">
+                <!-- Tab 1: Clinical Scenarios -->
+                <div class="tab-content active" id="clinical-scenarios">
+                    <p class="tab-text">
+                        Dr Meddy simulates real patient and colleague interactions based on everyday clinical
+                        situations.
+                        You practise speaking through scenarios such as consultations, explanations, instructions,
+                        reassurance, and follow-up — exactly as they occur in real healthcare settings.
+                    </p>
+                    <a href="#demo" class="btn-tab-primary">
+                        Try a 2-Minute Demo
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Tab 2: Guided Speaking Flow -->
+                <div class="tab-content" id="guided-flow">
+                    <p class="tab-text">
+                        Each session follows clinical logic, not random conversation.
+                        Dr Meddy guides you step by step through structured medical communication, helping you organise
+                        your speech clearly and professionally.
+                    </p>
+                    <a href="#demo" class="btn-tab-primary">
+                        Try a 2-Minute Demo
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Tab 3: Instant Feedback -->
+                <div class="tab-content" id="instant-feedback">
+                    <p class="tab-text">After each interaction, you receive immediate feedback on:</p>
+                    <ul class="tab-list">
+                        <li>Clarity and fluency</li>
+                        <li>Grammar and phrasing</li>
+                        <li>Vocabulary and collocations</li>
+                        <li>Patient-friendly tone</li>
+                        <li>High-risk wording to avoid</li>
+                    </ul>
+                    <a href="#demo" class="btn-tab-primary">
+                        Try a 2-Minute Demo
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Tab 4: Medical Safety Focus -->
+                <div class="tab-content" id="medical-safety">
+                    <p class="tab-text">
+                        Dr Meddy is built with medical appropriacy in mind.
+                        It encourages precise, respectful, and patient-safe language aligned with professional
+                        healthcare communication standards.
+                    </p>
+                    <a href="#demo" class="btn-tab-primary">
+                        Try a 2-Minute Demo
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Tab 5: Flexible Practice -->
+                <div class="tab-content" id="flexible-practice">
+                    <p class="tab-text">
+                        Sessions last 2–15 minutes and can be repeated anytime.
+                        Dr Meddy fits real medical life — busy schedules, shift work, and missed live classes — without
+                        pressure or overload.
+                    </p>
+                    <a href="#demo" class="btn-tab-primary">
+                        Try a 2-Minute Demo
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right Side: Visual -->
+            <div class="tab-visual-container">
+                <div class="tab-visual-card">
+                    <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&h=600&fit=crop"
+                        alt="Dr Meddy Interface" class="tab-visual-img">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- What Makes Dr Meddy Different Section -->
+<section class="different-section">
+    <div class="different-container">
+        <!-- Left Side - Content -->
+        <div class="different-content">
+            <p class="different-badge">WHAT MAKES DR MEDDY DIFFERENT</p>
+            <h2 class="different-main-title">Built for Medicine — Not General Chat</h2>
+            <p class="different-description">Dr Meddy is purpose-built for healthcare professionals who need clinically
+                structured speaking practice, not generic conversation.</p>
+
+            <ul class="different-list">
+                <li class="different-item">
+                    <div class="different-icon">01</div>
+                    <div class="different-text">
+                        <h4>Clinically structured speaking</h4>
+                        <p>Follows healthcare logic (chief complaint → history → assessment → plan)</p>
+                    </div>
+                </li>
+                <li class="different-item">
+                    <div class="different-icon">02</div>
+                    <div class="different-text">
+                        <h4>Medical-appropriate language control</h4>
+                        <p>Encourages precise, professional, patient-safe phrasing</p>
+                    </div>
+                </li>
+                <li class="different-item">
+                    <div class="different-icon">03</div>
+                    <div class="different-text">
+                        <h4>Scenario-based progression</h4>
+                        <p>Focuses on moments where clinicians typically lose fluency: explanations, reassurance,
+                            consent, instructions, red flags</p>
+                    </div>
+                </li>
+                <li class="different-item">
+                    <div class="different-icon">04</div>
+                    <div class="different-text">
+                        <h4>Adaptive difficulty</h4>
+                        <p>Supports B1–C1 pathways with academic upgrades when ready</p>
+                    </div>
+                </li>
+                <li class="different-item">
+                    <div class="different-icon">05</div>
+                    <div class="different-text">
+                        <h4>Time-efficient design</h4>
+                        <p>Micro-sessions that still feel like real clinical exchanges</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Right Side - Single Image -->
+        <div class="different-image-side">
+            <div class="different-image-card">
+                <img src="https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=800&h=600&fit=crop"
+                    alt="Dr Meddy AI Medical Speaking Practice">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Dr Meddy AI Ecosystem Section -->
+<section class="ecosystem-section">
+    <div class="container">
+        <div class="ecosystem-header">
+            <h2 class="ecosystem-title">Dr Meddy AI Ecosystem</h2>
+            <p class="ecosystem-subtitle">Dr Meddy works alongside additional AI speaking roles inside MEDTALKS:</p>
+        </div>
+
+        <div class="ecosystem-grid">
+            <!-- Card 1 - Dr Meddy (Main Card) -->
+            <div class="ecosystem-card ecosystem-card-main">
+                <div class="ecosystem-card-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                    </svg>
+                </div>
+                <h3 class="ecosystem-card-title">Dr Meddy (Clinical)</h3>
+                <p class="ecosystem-card-description">Patient consultations & clinical explanations</p>
+            </div>
+
+            <!-- Card 2 - Dr Roley -->
+            <div class="ecosystem-card">
+                <div class="ecosystem-card-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="9" cy="7" r="4"></circle>
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                    </svg>
+                </div>
+                <h3 class="ecosystem-card-title">Dr Roley (Professional)</h3>
+                <p class="ecosystem-card-description">Doctor-to-doctor / team communication</p>
+            </div>
+
+            <!-- Card 3 - Dr Chatty -->
+            <div class="ecosystem-card">
+                <div class="ecosystem-card-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path
+                            d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                        </path>
+                    </svg>
+                </div>
+                <h3 class="ecosystem-card-title">Dr Chatty (Empathy)</h3>
+                <p class="ecosystem-card-description">Reassurance & emotional support language</p>
+            </div>
+
+            <!-- Card 4 - Dr Diago -->
+            <div class="ecosystem-card">
+                <div class="ecosystem-card-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="2" y1="12" x2="22" y2="12"></line>
+                        <path
+                            d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                        </path>
+                    </svg>
+                </div>
+                <h3 class="ecosystem-card-title">Dr Diago (Global)</h3>
+                <p class="ecosystem-card-description">International hospitals, travel & relocation scenarios</p>
+            </div>
+        </div>
+
+        <!-- Result Text -->
+        <p class="ecosystem-result-simple">Continuous professional English exposure — anytime, anywhere.</p>
+    </div>
+</section>
+
+<script>
+    // Tab switching functionality
+    document.addEventListener('DOMContentLoaded', function () {
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', function () {
+                const targetTab = this.getAttribute('data-tab');
+
+                // Remove active class from all buttons and contents
+                tabBtns.forEach(b => b.classList.remove('active'));
+                tabContents.forEach(c => c.classList.remove('active'));
+
+                // Add active class to clicked button
+                this.classList.add('active');
+
+                // Show corresponding content
+                const targetContent = document.getElementById(targetTab);
+                if (targetContent) {
+                    targetContent.classList.add('active');
+                }
+            });
+        });
+    });
+</script>
+
+<!-- CTA Section -->
+<section class="cta-contact-section">
+    <div class="container">
+        <div class="cta-contact-container">
+            <!-- Left Content -->
+            <div class="cta-contact-content">
+                <p class="cta-contact-label">BEGIN YOUR MEDICAL SPEAKING TRAINING</p>
+                <h2 class="cta-contact-title">Practice Clinical Communication with </br> Dr Meddy</h2>
+                <p class="cta-contact-description">
+                    Structured AI-powered speaking practice designed for healthcare professionals. Dr Meddy helps you
+                    develop clear, patient-safe medical communication — anytime, anywhere, without pressure.
+                </p>
+
+                <div class="cta-contact-buttons">
+                    <a href="#" class="btn-cta-primary"> Try 2-Minute Demo</a>
+                    <a href="#" class="btn-cta-secondary">View Pricing</a>
+                </div>
+
+                <div class="cta-contact-trust">
+                    <div class="trust-avatars">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Student" class="trust-avatar">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Student" class="trust-avatar">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Student" class="trust-avatar">
+                        <img src="https://randomuser.me/api/portraits/men/46.jpg" alt="Student" class="trust-avatar">
+                    </div>
+                    <p class="trust-text">Trusted by over 10k students</p>
+                </div>
+            </div>
+
+            <!-- Right Image/Video -->
+            <div class="cta-contact-media">
+                <div class="cta-media-wrapper">
+                    <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&h=400&fit=crop"
+                        alt="Medical Student" class="cta-image">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

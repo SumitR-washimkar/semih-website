@@ -1,0 +1,1103 @@
+{% extends 'base.html' %}
+
+{% block title %}Medtalk - Choose From Various Niches to Learn Today{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/scroll-video.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/popular-programs.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/team.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/testimonials.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/why-choose.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/dr-meddy.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/how-we-teach.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/blog-section.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/cta.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/placeholders.css') }}">
+{% endblock %}
+
+{% block content %}
+<section class="hero-section">
+    <div class="container">
+        <div class="hero-content">
+            <div class="hero-text">
+                <p class="hero-subtitle">WELCOME TO MEDTALKS
+                <h1 class="hero-title">Professional Medical English
+                    For Doctors Who Speak Globally</h1>
+                <p class="hero-description">
+                    You are trained as a medical professional.
+                    We train your voice to match your expertise — for clinics, international patients, exams, and global
+                    careers.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#" class="btn btn-get-started">Get Started</a>
+                    <a href="#" class="btn btn-try-demo">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                        Try Demo
+                    </a>
+                </div>
+
+                <div class="hero-stats">
+                    <div class="student-avatars">
+                        <img src="https://i.pravatar.cc/150?img=1" alt="Student 1">
+                        <img src="https://i.pravatar.cc/150?img=2" alt="Student 2">
+                        <img src="https://i.pravatar.cc/150?img=3" alt="Student 3">
+                        <img src="https://i.pravatar.cc/150?img=4" alt="Student 4">
+                    </div>
+                    <p class="stats-text">Trusted by over 30K students</p>
+                </div>
+            </div>
+
+            <div class="hero-images">
+                <div class="hero-image-card main-image">
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=600&fit=crop"
+                        alt="Students collaborating">
+                </div>
+
+                <div class="hero-image-card info-card">
+                    <div class="info-card-content">
+                        <h3>Get guidance from our team of educators</h3>
+                        <p>Our platform hosts over 2,000 online courses worldwide</p>
+                    </div>
+                </div>
+
+                <div class="hero-image-card student-image">
+                    <video id="hero-thumbnail" muted preload="metadata">
+                        <source src="{{ url_for('static', filename='videos/medtalkintro.mp4') }}#t=0.5"
+                            type="video/mp4">
+                    </video>
+                    <div class="play-button">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M8 5v14l11-7z" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="partners-section">
+    <div class="container">
+        <p class="partners-text animate-text">Collaborated with over 800+ trusted worldwide partners</p>
+        <div class="partners-marquee-wrapper">
+            <div class="partners-marquee">
+                <!-- First set of logos -->
+                <div class="partner-logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft">
+                </div>
+                <div class="partner-logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google">
+                </div>
+                <div class="partner-logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon">
+                </div>
+                <div class="partner-logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple">
+                </div>
+                <div class="partner-logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" alt="IBM">
+                </div>
+                <div class="partner-logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/50/Oracle_logo.svg" alt="Oracle">
+                </div>
+                <div class="partner-logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/f/f9/Salesforce.com_logo.svg"
+                        alt="Salesforce">
+                </div>
+                <div class="partner-logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Adobe_Corporate_logo.svg" alt="Adobe">
+                </div>
+                <div class="partner-logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/96/Microsoft_logo_%282012%29.svg"
+                        alt="Microsoft Azure">
+                </div>
+                <div class="partner-logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Meta-Logo.png" alt="Meta">
+                </div>
+                <!-- Duplicate set for seamless loop -->
+                <div class="partner-logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft">
+                </div>
+                <div class="partner-logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google">
+                </div>
+                <div class="partner-logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon">
+                </div>
+                <div class="partner-logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple">
+                </div>
+                <div class="partner-logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" alt="IBM">
+                </div>
+                <div class="partner-logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/50/Oracle_logo.svg" alt="Oracle">
+                </div>
+                <div class="partner-logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/f/f9/Salesforce.com_logo.svg"
+                        alt="Salesforce">
+                </div>
+                <div class="partner-logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/22/Adobe_Corporate_logo.svg" alt="Adobe">
+                </div>
+                <div class="partner-logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/96/Microsoft_logo_%282012%29.svg"
+                        alt="Microsoft Azure">
+                </div>
+                <div class="partner-logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg"
+                        alt="Meta">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="scroll-video-section" data-video-url="{{ url_for('static', filename='videos/Recording.mp4') }}">
+
+    <canvas id="scroll-video-canvas"></canvas>
+    <div class="scroll-video-content">
+        <div class="scroll-video-text">
+            <h2 class="scroll-video-title">Professional Medical Communication, In Practice</h2>
+            <p class="scroll-video-description">MEDTALKS is a specialist medical communication platform designed for
+                healthcare professionals who need to speak clearly, confidently, and professionally in real clinical and
+                international environments.</p>
+            <p class="scroll-video-description">Our programs combine academic-led live speaking instruction with
+                structured AI-supported practice, ensuring consistent progress without improvisation or casual
+                conversation.</p>
+        </div>
+    </div>
+</section>
+
+<section class="how-we-teach-section">
+    <div class="how-we-teach-container">
+        <div class="how-we-teach-image-side animate-grid">
+            <div class="method-image-card">
+                <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&h=600&fit=crop"
+                    alt="Live academics">
+                <div class="method-badge">
+                    <h4>Live Academics</h4>
+                    <p>Real instructors, real interaction</p>
+                </div>
+            </div>
+            <div class="method-image-card">
+                <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&h=600&fit=crop"
+                    alt="Unit-based curriculum">
+                <div class="method-badge">
+                    <h4>Unit-Based</h4>
+                    <p>Structured learning path</p>
+                </div>
+            </div>
+            <div class="method-image-card">
+                <img src="https://images.unsplash.com/photo-1551836022-4c4c79ecde51?w=600&h=600&fit=crop"
+                    alt="3+4 hybrid model">
+                <div class="method-badge">
+                    <h4>3+4 Hybrid</h4>
+                    <p>Perfect balance of learning</p>
+                </div>
+            </div>
+            <div class="method-image-card">
+                <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&h=600&fit=crop"
+                    alt="AI practice">
+                <div class="method-badge">
+                    <h4>AI-Enhanced</h4>
+                    <p>Practice anytime, anywhere</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="how-we-teach-content animate-slide-left">
+            <p class="teach-badge animate-text">HOW WE TEACH</p>
+            <h2 class="teach-main-title animate-text animate-delay-1">Human-Led. AI-Enhanced. Professionally Structured.
+            </h2>
+            <p class="teach-description animate-text animate-delay-2">Remove doubt about learning effectiveness. Our
+                methodology combines the best of human expertise with modern technology to ensure real progress.</p>
+
+            <ul class="methodology-list animate-stagger-container">
+                <li class="methodology-item">
+                    <div class="methodology-icon">01</div>
+                    <div class="methodology-text">
+                        <h4>Live Academics</h4>
+                        <p>Every session is led by qualified medical English instructors with formal ELT training, not
+                            casual tutors or conversation partners.</p>
+                    </div>
+                </li>
+                <li class="methodology-item">
+                    <div class="methodology-icon">02</div>
+                    <div class="methodology-text">
+                        <h4>Unit-Based Curriculum</h4>
+                        <p>Follow a structured progression through medical scenarios, vocabulary, and communication
+                            patterns — not random topics.</p>
+                    </div>
+                </li>
+                <li class="methodology-item">
+                    <div class="methodology-icon">03</div>
+                    <div class="methodology-text">
+                        <h4>3+4 Hybrid Model</h4>
+                        <p>Three hours of live instruction weekly, reinforced by four hours of AI-guided speaking
+                            practice for flexible, continuous improvement.</p>
+                    </div>
+                </li>
+                <li class="methodology-item">
+                    <div class="methodology-icon">04</div>
+                    <div class="methodology-text">
+                        <h4>Recordings + AI Practice</h4>
+                        <p>Access full session recordings and practice with our medical English AI system anytime to
+                            reinforce and accelerate learning.</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="why-choose-section">
+    <div class="why-choose-container">
+        <div class="why-choose-image-side animate-slide-right">
+            <div class="main-students-image">
+                <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=900&fit=crop"
+                    alt="Students studying together">
+            </div>
+            <div class="quote-card">
+                <p class="quote-text">"This is not a language course. It is a professional speaking system for
+                    healthcare professionals."</p>
+                <div class="quote-author">
+                    <div class="author-info">
+                        <h4 class="author-name">MEDTALKS Academic Team</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="why-choose-content animate-slide-left">
+            <p class="section-badge animate-text">WHY CHOOSE US</p>
+            <h2 class="section-main-title animate-text animate-delay-1">Medical Communication, Taught the Professional
+                Way</h2>
+            <p class="section-description animate-text animate-delay-2">MEDTALKS is designed exclusively for healthcare
+                professionals who need clear, confident, and accurate spoken English in real medical environments — not
+                generic language training.</p>
+
+            <div class="features-grid animate-stagger-container">
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                        </svg>
+                    </div>
+                    <div class="feature-text">
+                        <h3 class="feature-title">Academic Integrity First</h3>
+                        <p class="feature-description">All sessions are led by qualified medical English academics with
+                            formal ELT training and specialization in healthcare communication.</p>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"></path>
+                            <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                            <line x1="12" y1="19" x2="12" y2="23"></line>
+                            <line x1="8" y1="23" x2="16" y2="23"></line>
+                        </svg>
+                    </div>
+                    <div class="feature-text">
+                        <h3 class="feature-title">Speaking-First, Structured Learning</h3>
+                        <p class="feature-description">Every program follows a unit-based speaking curriculum, not
+                            random conversation or casual practice.</p>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                        </svg>
+                    </div>
+                    <div class="feature-text">
+                        <h3 class="feature-title">Real Clinical Scenarios</h3>
+                        <p class="feature-description">Practice patient consultations, procedure explanations,
+                            conferences, and health-tourism communication — exactly as they happen in real life.</p>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                    </div>
+                    <div class="feature-text">
+                        <h3 class="feature-title">Small Groups, High Attention</h3>
+                        <p class="feature-description">Limited group sizes ensure active participation, continuous
+                            feedback, and visible progress in every session.</p>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                        </svg>
+                    </div>
+                    <div class="feature-text">
+                        <h3 class="feature-title">Human-Led, AI-Enhanced Practice</h3>
+                        <p class="feature-description">Live academic instruction is reinforced with purpose-built AI
+                            speaking simulations for daily, flexible practice.</p>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="2" y1="12" x2="22" y2="12"></line>
+                            <path
+                                d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                            </path>
+                        </svg>
+                    </div>
+                    <div class="feature-text">
+                        <h3 class="feature-title">Built for Global Medical Careers</h3>
+                        <p class="feature-description">Prepare for international patients, exams, conferences, and
+                            careers — without language limiting your professional authority.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Dr Meddy Audio Practice Section -->
+<section class="dr-meddy-section">
+    <div class="container">
+        <div class="dr-meddy-header animate-text">
+            <h2 class="dr-meddy-title">See How Learners Practice with Dr Meddy</h2>
+            <p class="dr-meddy-subtitle">A guided, speaking-first AI experience designed for real medical communication
+                — not random chat.</p>
+        </div>
+
+        <div class="audio-cards-grid animate-grid">
+            <!-- Audio Card 1 -->
+            <div class="audio-card">
+                <div class="audio-card-content">
+                    <div class="audio-wave">
+                        <div class="audio-wave-bar"></div>
+                        <div class="audio-wave-bar"></div>
+                        <div class="audio-wave-bar"></div>
+                        <div class="audio-wave-bar"></div>
+                    </div>
+                    <div class="audio-info">
+                        <span class="audio-title">Patient History Taking</span>
+                        <span class="audio-duration">2:34</span>
+                    </div>
+                </div>
+                <button class="audio-play-btn" aria-label="Play audio">
+                    <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M8 5v14l11-7z" />
+                    </svg>
+                    <svg class="pause-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M6 4h4v16H6zM14 4h4v16h-4z" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Audio Card 2 -->
+            <div class="audio-card">
+                <div class="audio-card-content">
+                    <div class="audio-wave">
+                        <div class="audio-wave-bar"></div>
+                        <div class="audio-wave-bar"></div>
+                        <div class="audio-wave-bar"></div>
+                        <div class="audio-wave-bar"></div>
+                    </div>
+                    <div class="audio-info">
+                        <span class="audio-title">Explaining Diagnosis</span>
+                        <span class="audio-duration">3:12</span>
+                    </div>
+                </div>
+                <button class="audio-play-btn" aria-label="Play audio">
+                    <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M8 5v14l11-7z" />
+                    </svg>
+                    <svg class="pause-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M6 4h4v16H6zM14 4h4v16h-4z" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Audio Card 3 -->
+            <div class="audio-card">
+                <div class="audio-card-content">
+                    <div class="audio-wave">
+                        <div class="audio-wave-bar"></div>
+                        <div class="audio-wave-bar"></div>
+                        <div class="audio-wave-bar"></div>
+                        <div class="audio-wave-bar"></div>
+                    </div>
+                    <div class="audio-info">
+                        <span class="audio-title">Treatment Discussion</span>
+                        <span class="audio-duration">2:58</span>
+                    </div>
+                </div>
+                <button class="audio-play-btn" aria-label="Play audio">
+                    <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M8 5v14l11-7z" />
+                    </svg>
+                    <svg class="pause-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M6 4h4v16H6zM14 4h4v16h-4z" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Audio Card 4 -->
+            <div class="audio-card">
+                <div class="audio-card-content">
+                    <div class="audio-wave">
+                        <div class="audio-wave-bar"></div>
+                        <div class="audio-wave-bar"></div>
+                        <div class="audio-wave-bar"></div>
+                        <div class="audio-wave-bar"></div>
+                    </div>
+                    <div class="audio-info">
+                        <span class="audio-title">Pre-Surgery Briefing</span>
+                        <span class="audio-duration">4:15</span>
+                    </div>
+                </div>
+                <button class="audio-play-btn" aria-label="Play audio">
+                    <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M8 5v14l11-7z" />
+                    </svg>
+                    <svg class="pause-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M6 4h4v16H6zM14 4h4v16h-4z" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Audio Card 5 -->
+            <div class="audio-card">
+                <div class="audio-card-content">
+                    <div class="audio-wave">
+                        <div class="audio-wave-bar"></div>
+                        <div class="audio-wave-bar"></div>
+                        <div class="audio-wave-bar"></div>
+                        <div class="audio-wave-bar"></div>
+                    </div>
+                    <div class="audio-info">
+                        <span class="audio-title">Emergency Response</span>
+                        <span class="audio-duration">1:47</span>
+                    </div>
+                </div>
+                <button class="audio-play-btn" aria-label="Play audio">
+                    <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M8 5v14l11-7z" />
+                    </svg>
+                    <svg class="pause-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M6 4h4v16H6zM14 4h4v16h-4z" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Audio Card 6 -->
+            <div class="audio-card">
+                <div class="audio-card-content">
+                    <div class="audio-wave">
+                        <div class="audio-wave-bar"></div>
+                        <div class="audio-wave-bar"></div>
+                        <div class="audio-wave-bar"></div>
+                        <div class="audio-wave-bar"></div>
+                    </div>
+                    <div class="audio-info">
+                        <span class="audio-title">Follow-Up Instructions</span>
+                        <span class="audio-duration">2:21</span>
+                    </div>
+                </div>
+                <button class="audio-play-btn" aria-label="Play audio">
+                    <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M8 5v14l11-7z" />
+                    </svg>
+                    <svg class="pause-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M6 4h4v16H6zM14 4h4v16h-4z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="popular-programs-section">
+    <div class="container">
+        <div class="popular-programs-header">
+            <div class="popular-programs-title-group animate-text">
+                <h2>Popular Programs</h2>
+                <p class="popular-programs-subtitle">Speaking-first medical English programs trusted by healthcare
+                    professionals.</p>
+            </div>
+            <a href="#" class="explore-link animate-text animate-delay-1">Explore all programs →</a>
+        </div>
+
+        <div class="programs-grid animate-grid">
+            <!-- Card 1 - DocTALKS -->
+            <div class="program-card">
+                <div class="program-card-image">
+                    <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&h=400&fit=crop"
+                        alt="DocTALKS">
+                    <div class="program-badge">BEST SELLER</div>
+                </div>
+                <div class="program-card-content">
+                    <h3 class="program-card-title">DocTALKS – Medical Speaking for Doctors</h3>
+                    <p class="program-card-description">Clinical communication, international careers, and building
+                        professional confidence.</p>
+                    <p class="program-card-meta">For Doctors & Medical Students</p>
+                    <div class="program-rating">
+                        <span class="rating-stars">★★★★★</span>
+                        <span class="rating-number">5.0</span>
+                    </div>
+                    <div class="program-price">3-Month Program</div>
+                    <div class="program-card-footer">
+                        <div class="program-info-item">
+                            <span class="program-info-icon">🗂</span>
+                            <span>18 Units</span>
+                        </div>
+                        <div class="program-info-item">
+                            <span class="program-info-icon">👥</span>
+                            <span>Small Groups (Max 5)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 - DentTALKS -->
+            <div class="program-card">
+                <div class="program-card-image">
+                    <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=600&h=400&fit=crop"
+                        alt="DentTALKS">
+                    <div class="program-badge">BEST SELLER</div>
+                </div>
+                <div class="program-card-content">
+                    <h3 class="program-card-title">DentTALKS – Chairside Dental English</h3>
+                    <p class="program-card-description">Explain procedures clearly, build patient trust, and communicate
+                        without translators.</p>
+                    <p class="program-card-meta">For Dentists & Dental Students</p>
+                    <div class="program-rating">
+                        <span class="rating-stars">★★★★☆</span>
+                        <span class="rating-number">4.8</span>
+                    </div>
+                    <div class="program-price">3-Month Program</div>
+                    <div class="program-card-footer">
+                        <div class="program-info-item">
+                            <span class="program-info-icon">🗂</span>
+                            <span>18 Dental Units</span>
+                        </div>
+                        <div class="program-info-item">
+                            <span class="program-info-icon">👥</span>
+                            <span>Clinic-Focused Speaking</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 - NurseTALKS -->
+            <div class="program-card">
+                <div class="program-card-image">
+                    <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=600&h=400&fit=crop"
+                        alt="NurseTALKS">
+                    <div class="program-badge">BEST SELLER</div>
+                </div>
+                <div class="program-card-content">
+                    <h3 class="program-card-title">NurseTALKS – Nursing Communication</h3>
+                    <p class="program-card-description">Ward communication, patient reassurance, and advancing global
+                        nursing careers.</p>
+                    <p class="program-card-meta">For Nurses & Nursing Students</p>
+                    <div class="program-rating">
+                        <span class="rating-stars">★★★★☆</span>
+                        <span class="rating-number">4.9</span>
+                    </div>
+                    <div class="program-price">3-Month Program</div>
+                    <div class="program-card-footer">
+                        <div class="program-info-item">
+                            <span class="program-info-icon">🗂</span>
+                            <span>18 Nursing Units</span>
+                        </div>
+                        <div class="program-info-item">
+                            <span class="program-info-icon">👥</span>
+                            <span>Shift-Friendly Learning</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 4 - PharmaTALKS -->
+            <div class="program-card">
+                <div class="program-card-image">
+                    <img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=600&h=400&fit=crop"
+                        alt="PharmaTALKS">
+                    <div class="program-badge featured">FEATURED</div>
+                </div>
+                <div class="program-card-content">
+                    <h3 class="program-card-title">PharmaTALKS – Pharmacy Speaking</h3>
+                    <p class="program-card-description">Patient counselling, medication safety, and building
+                        professional collaboration skills.</p>
+                    <p class="program-card-meta">For Pharmacists & Pharmacy Students</p>
+                    <div class="program-rating">
+                        <span class="rating-stars">★★★★☆</span>
+                        <span class="rating-number">4.7</span>
+                    </div>
+                    <div class="program-price">3-Month Program</div>
+                    <div class="program-card-footer">
+                        <div class="program-info-item">
+                            <span class="program-info-icon">🗂</span>
+                            <span>18 Pharmacy Units</span>
+                        </div>
+                        <div class="program-info-item">
+                            <span class="program-info-icon">👥</span>
+                            <span>Clinical & Industry Focus</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="team-section">
+    <div class="container">
+        <div class="section-header animate-text">
+            <p class="section-subtitle">Meet Our Team</p>
+            <h2 class="section-title">Our Academic Team</h2>
+        </div>
+
+        <div class="team-grid animate-grid">
+            <!-- Team Member 1 -->
+            <div class="team-card">
+                <div class="team-logo">MedTalks</div>
+                <div class="team-image">
+                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600&h=800&fit=crop"
+                        alt="Semih PALA">
+                </div>
+                <div class="team-info">
+                    <h3 class="team-name">Semih PALA</h3>
+                    <p class="team-designation">Director</p>
+                </div>
+                <div class="team-arrow">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M7 17L17 7M17 7H7M17 7V17" />
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Team Member 2 -->
+            <div class="team-card">
+                <div class="team-logo">MedTalks</div>
+                <div class="team-image">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&h=800&fit=crop"
+                        alt="Carol R.">
+                </div>
+                <div class="team-info">
+                    <h3 class="team-name">Carol R.</h3>
+                    <p class="team-designation">Teacher Trainer</p>
+                </div>
+                <div class="team-arrow">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M7 17L17 7M17 7H7M17 7V17" />
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Team Member 3 -->
+            <div class="team-card">
+                <div class="team-logo">MedTalks</div>
+                <div class="team-image">
+                    <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=600&h=800&fit=crop"
+                        alt="Nick C.">
+                </div>
+                <div class="team-info">
+                    <h3 class="team-name">Nick C.</h3>
+                    <p class="team-designation">Coordinating Instructor</p>
+                </div>
+                <div class="team-arrow">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M7 17L17 7M17 7H7M17 7V17" />
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Team Member 4 -->
+            <div class="team-card">
+                <div class="team-logo">MedTalks</div>
+                <div class="team-image">
+                    <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=600&h=800&fit=crop"
+                        alt="Cindy R.">
+                </div>
+                <div class="team-info">
+                    <h3 class="team-name">Cindy R.</h3>
+                    <p class="team-designation">Instructor</p>
+                </div>
+                <div class="team-arrow">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M7 17L17 7M17 7H7M17 7V17" />
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Team Member 5 -->
+            <div class="team-card">
+                <div class="team-logo">MedTalks</div>
+                <div class="team-image">
+                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=600&h=800&fit=crop"
+                        alt="Hussain A.">
+                </div>
+                <div class="team-info">
+                    <h3 class="team-name">Hussain A.</h3>
+                    <p class="team-designation">Marketing</p>
+                </div>
+                <div class="team-arrow">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M7 17L17 7M17 7H7M17 7V17" />
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Team Member 6 -->
+            <div class="team-card">
+                <div class="team-logo">MedTalks</div>
+                <div class="team-image">
+                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=600&h=800&fit=crop"
+                        alt="Julia T.">
+                </div>
+                <div class="team-info">
+                    <h3 class="team-name">Julia T.</h3>
+                    <p class="team-designation">Instructor</p>
+                </div>
+                <div class="team-arrow">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M7 17L17 7M17 7H7M17 7V17" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="testimonials-section">
+    <div class="testimonials-header animate-text">
+        <h2 class="testimonials-title">What students are saying?</h2>
+        <p class="testimonials-subtitle">Don't just take our word for it—see what our students have to say about their
+            experience!</p>
+    </div>
+
+    <div class="testimonials-rows">
+        <!-- First Row - Scrolls Left -->
+        <div class="testimonials-row">
+            <div class="marquee-wrapper">
+                <div class="testimonials-marquee">
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">"I used to think I should wait until graduation to focus on English.
+                            I joined DocTALKS while still a student, and it changed how I see myself in international
+                            environments. Now I can speak without fear."</p>
+                        <div class="testimonial-author">
+                            <img src="https://i.pravatar.cc/100?img=11" alt="Ahmet Y." class="author-avatar">
+                            <div class="author-info">
+                                <h4 class="author-name">Ahmet Y.</h4>
+                                <p class="author-location">4th Year Medical Student, Türkiye</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">"I didn't want another grammar course. I wanted to speak. DocTALKS
+                            felt different from the first week. Even when I don't speak perfectly, I can express myself.
+                            I feel like I started a journey."</p>
+                        <div class="testimonial-author">
+                            <img src="https://i.pravatar.cc/100?img=45" alt="Leyla M." class="author-avatar">
+                            <div class="author-info">
+                                <h4 class="author-name">Leyla M.</h4>
+                                <p class="author-location">Medical Student, Azerbaijan</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">"I avoided talking in English before. Now I can discuss cases, even
+                            if slowly. I still have mistakes, but I don't freeze anymore. That alone changed my
+                            confidence."</p>
+                        <div class="testimonial-author">
+                            <img src="https://i.pravatar.cc/100?img=12" alt="Ivan P." class="author-avatar">
+                            <div class="author-info">
+                                <h4 class="author-name">Ivan P.</h4>
+                                <p class="author-location">Clinical Year Student, Russia</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Duplicate for seamless loop -->
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">"I used to think I should wait until graduation to focus on English.
+                            I joined DocTALKS while still a student, and it changed how I see myself in international
+                            environments. Now I can speak without fear."</p>
+                        <div class="testimonial-author">
+                            <img src="https://i.pravatar.cc/100?img=11" alt="Ahmet Y." class="author-avatar">
+                            <div class="author-info">
+                                <h4 class="author-name">Ahmet Y.</h4>
+                                <p class="author-location">4th Year Medical Student, Türkiye</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">"I didn't want another grammar course. I wanted to speak. DocTALKS
+                            felt different from the first week. Even when I don't speak perfectly, I can express myself.
+                            I feel like I started a journey."</p>
+                        <div class="testimonial-author">
+                            <img src="https://i.pravatar.cc/100?img=45" alt="Leyla M." class="author-avatar">
+                            <div class="author-info">
+                                <h4 class="author-name">Leyla M.</h4>
+                                <p class="author-location">Medical Student, Azerbaijan</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">"I avoided talking in English before. Now I can discuss cases, even
+                            if slowly. I still have mistakes, but I don't freeze anymore. That alone changed my
+                            confidence."</p>
+                        <div class="testimonial-author">
+                            <img src="https://i.pravatar.cc/100?img=12" alt="Ivan P." class="author-avatar">
+                            <div class="author-info">
+                                <h4 class="author-name">Ivan P.</h4>
+                                <p class="author-location">Clinical Year Student, Russia</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Second Row - Scrolls Right -->
+        <div class="testimonials-row">
+            <div class="marquee-wrapper">
+                <div class="testimonials-marquee">
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">"I work long shifts and miss some classes, but recordings and AI
+                            practice helped me stay consistent. My English is not perfect, but now I can explain
+                            diagnoses to foreign patients without a translator."</p>
+                        <div class="testimonial-author">
+                            <img src="https://i.pravatar.cc/100?img=47" alt="Dr. Ayşe K." class="author-avatar">
+                            <div class="author-info">
+                                <h4 class="author-name">Dr. Ayşe K.</h4>
+                                <p class="author-location">Internal Medicine Resident, Türkiye</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">"I attend international congresses regularly, but I used to stay
+                            silent. After DocTALKS, I started asking questions and networking. Even with mistakes,
+                            people understand me."</p>
+                        <div class="testimonial-author">
+                            <img src="https://i.pravatar.cc/100?img=13" alt="Dr. Murad H." class="author-avatar">
+                            <div class="author-info">
+                                <h4 class="author-name">Dr. Murad H.</h4>
+                                <p class="author-location">Cardiologist, Azerbaijan</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">"Health tourism patients made me anxious. I knew the procedure, but
+                            not how to explain it in English. Now I feel calmer, more professional, and more respected."
+                        </p>
+                        <div class="testimonial-author">
+                            <img src="https://i.pravatar.cc/100?img=14" alt="Dr. Emre S." class="author-avatar">
+                            <div class="author-info">
+                                <h4 class="author-name">Dr. Emre S.</h4>
+                                <p class="author-location">General Surgeon, Türkiye</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Duplicate for seamless loop -->
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">"I work long shifts and miss some classes, but recordings and AI
+                            practice helped me stay consistent. My English is not perfect, but now I can explain
+                            diagnoses to foreign patients without a translator."</p>
+                        <div class="testimonial-author">
+                            <img src="https://i.pravatar.cc/100?img=47" alt="Dr. Ayşe K." class="author-avatar">
+                            <div class="author-info">
+                                <h4 class="author-name">Dr. Ayşe K.</h4>
+                                <p class="author-location">Internal Medicine Resident, Türkiye</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">"I attend international congresses regularly, but I used to stay
+                            silent. After DocTALKS, I started asking questions and networking. Even with mistakes,
+                            people understand me."</p>
+                        <div class="testimonial-author">
+                            <img src="https://i.pravatar.cc/100?img=13" alt="Dr. Murad H." class="author-avatar">
+                            <div class="author-info">
+                                <h4 class="author-name">Dr. Murad H.</h4>
+                                <p class="author-location">Cardiologist, Azerbaijan</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">"Health tourism patients made me anxious. I knew the procedure, but
+                            not how to explain it in English. Now I feel calmer, more professional, and more respected."
+                        </p>
+                        <div class="testimonial-author">
+                            <img src="https://i.pravatar.cc/100?img=14" alt="Dr. Emre S." class="author-avatar">
+                            <div class="author-info">
+                                <h4 class="author-name">Dr. Emre S.</h4>
+                                <p class="author-location">General Surgeon, Türkiye</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="blog-section">
+    <div class="container">
+        <div class="blog-header animate-text">
+            <h2>Latest from MedTalks Blog</h2>
+            <p class="blog-subtitle">Insights, tips, and trends in medical English and healthcare education</p>
+        </div>
+
+        <div class="blog-grid animate-grid">
+            <!-- Blog Post 1 -->
+            <article class="blog-card">
+                <div class="blog-card-image">
+                    <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=400&fit=crop"
+                        alt="AI in Medical Education">
+                    <div class="blog-category">EdTech</div>
+                </div>
+                <div class="blog-card-content">
+                    <div class="blog-meta">
+                        <span class="blog-meta-item">
+                            <span class="blog-meta-icon">📅</span>
+                            <span>Jan 10, 2026</span>
+                        </span>
+                        <span class="blog-meta-item">
+                            <span class="blog-meta-icon">⏱</span>
+                            <span>5 min read</span>
+                        </span>
+                    </div>
+                    <h3 class="blog-card-title">How AI is Transforming Medical English Learning for Healthcare
+                        Professionals</h3>
+                    <p class="blog-card-excerpt">Discover how artificial intelligence is revolutionizing the way doctors
+                        and nurses learn medical English, making practice more accessible and personalized than ever
+                        before.</p>
+                    <a href="#" class="blog-read-more">Read More →</a>
+                </div>
+            </article>
+
+            <!-- Blog Post 2 -->
+            <article class="blog-card">
+                <div class="blog-card-image">
+                    <img src="https://images.unsplash.com/photo-1551076805-e1869033e561?w=600&h=400&fit=crop"
+                        alt="Speaking Skills">
+                    <div class="blog-category">Medical English</div>
+                </div>
+                <div class="blog-card-content">
+                    <div class="blog-meta">
+                        <span class="blog-meta-item">
+                            <span class="blog-meta-icon">📅</span>
+                            <span>Jan 8, 2026</span>
+                        </span>
+                        <span class="blog-meta-item">
+                            <span class="blog-meta-icon">⏱</span>
+                            <span>4 min read</span>
+                        </span>
+                    </div>
+                    <h3 class="blog-card-title">5 Essential Speaking Skills Every Medical Student Needs for
+                        International Practice</h3>
+                    <p class="blog-card-excerpt">Learn the critical communication skills that bridge the gap between
+                        medical knowledge and effective patient care in international healthcare settings.</p>
+                    <a href="#" class="blog-read-more">Read More →</a>
+                </div>
+            </article>
+
+            <!-- Blog Post 3 -->
+            <article class="blog-card">
+                <div class="blog-card-image">
+                    <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=400&fit=crop"
+                        alt="Online Learning">
+                    <div class="blog-category">Learning Tips</div>
+                </div>
+                <div class="blog-card-content">
+                    <div class="blog-meta">
+                        <span class="blog-meta-item">
+                            <span class="blog-meta-icon">📅</span>
+                            <span>Jan 5, 2026</span>
+                        </span>
+                        <span class="blog-meta-item">
+                            <span class="blog-meta-icon">⏱</span>
+                            <span>6 min read</span>
+                        </span>
+                    </div>
+                    <h3 class="blog-card-title">From Classroom to Clinic: Maximizing Your Medical English Learning
+                        During Busy Shifts</h3>
+                    <p class="blog-card-excerpt">Practical strategies for healthcare professionals to improve their
+                        medical English skills even with demanding clinical schedules and limited study time.</p>
+                    <a href="#" class="blog-read-more">Read More →</a>
+                </div>
+            </article>
+        </div>
+
+        <div class="blog-footer-link">
+            <a href="{{ url_for('blog') }}" class="view-all-blogs">View All Blog Posts →</a>
+        </div>
+    </div>
+</section>
+
+<section class="cta-section">
+    <div class="cta-container">
+        <div class="cta-content animate-scale">
+            <div class="cta-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="M12 6v6l4 2"></path>
+                </svg>
+                MEDICAL SPEAKING STARTS HERE
+            </div>
+
+            <h2 class="cta-title">Start Speaking Medical English With Confidence</h2>
+
+            <p class="cta-description">
+                Experience a structured, speaking-first medical English system guided by qualified academics and
+                supported by AI — designed for doctors and healthcare professionals with real clinical schedules.
+            </p>
+
+            <a href="#" class="cta-button">
+                Start Free Trial
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+            </a>
+        </div>
+    </div>
+</section>
+
+<script src="{{ url_for('static', filename='js/scroll-video.js') }}"></script>
+{% endblock %}
